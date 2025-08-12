@@ -89,8 +89,8 @@ export default function Home() {
           height={"100%"}
         />
       </div>
-      <FeaturesSection02 />
       <FeaturesSection03 />
+      <FeaturesSection02 />
       <div className="w-full overflow-hidden bg-white dark:bg-[#0B0B0F]">
         <MacbookScroll
           title={
