@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
-    const navItems = [
+  const navItems = [
     {
       name: "About Us",
       link: "#About Us",
@@ -19,10 +19,10 @@ export default function Home() {
       link: "#contact",
     },
   ];
- 
+
   // State to manage mobile menu visibility
   // This state will toggle the mobile menu open and close
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <div className="relative w-full bg-gradient-to-br from-[#f8fafc] via-[#e0e7ef] to-[#f1f5f9] dark:from-[#181c24] dark:via-[#232a36] dark:to-[#1a202c]">
       <Navbar>
@@ -32,11 +32,11 @@ export default function Home() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
-            <ModeToggle/>
+            <ModeToggle />
             <NavbarButton variant="primary">Book a call</NavbarButton>
           </div>
         </NavBody>
- 
+
         {/* Mobile Navigation */}
         <MobileNav>
           <MobileNavHeader>
@@ -46,7 +46,7 @@ export default function Home() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             />
           </MobileNavHeader>
- 
+
           <MobileNavMenu
             isOpen={isMobileMenuOpen}
             onClose={() => setIsMobileMenuOpen(false)}
@@ -62,13 +62,7 @@ export default function Home() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Login
-              </NavbarButton>
+              <ModeToggle />
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
@@ -81,12 +75,12 @@ export default function Home() {
         </MobileNav>
       </Navbar>
       <DummyContent />
- 
+
       {/* Navbar */}
     </div>
   );
 }
- 
+
 const DummyContent = () => {
   return (
     <div className="container mx-auto p-8 pt-24">
