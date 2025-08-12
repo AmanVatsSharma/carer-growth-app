@@ -1,4 +1,5 @@
 'use client';
+import { ModeToggle } from "@/components/theme/mode-toggle";
 import { MobileNav, MobileNavHeader, MobileNavMenu, MobileNavToggle, Navbar, NavbarButton, NavbarLogo, NavBody, NavItems } from "@/components/ui/resizable-navbar";
 import Image from "next/image";
 import { useState } from "react";
@@ -6,15 +7,15 @@ import { useState } from "react";
 export default function Home() {
     const navItems = [
     {
-      name: "Features",
-      link: "#features",
+      name: "About Us",
+      link: "#About Us",
     },
     {
-      name: "Pricing",
-      link: "#pricing",
+      name: "Find Programs",
+      link: "#programs",
     },
     {
-      name: "Contact",
+      name: "Contact Us",
       link: "#contact",
     },
   ];
@@ -23,7 +24,7 @@ export default function Home() {
   // This state will toggle the mobile menu open and close
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
-    <div className="relative w-full">
+    <div className="relative w-full bg-gradient-to-br from-[#f8fafc] via-[#e0e7ef] to-[#f1f5f9] dark:from-[#181c24] dark:via-[#232a36] dark:to-[#1a202c]">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
@@ -31,6 +32,7 @@ export default function Home() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <NavbarButton variant="secondary">Login</NavbarButton>
+            <ModeToggle/>
             <NavbarButton variant="primary">Book a call</NavbarButton>
           </div>
         </NavBody>
