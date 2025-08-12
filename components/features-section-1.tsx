@@ -1,7 +1,7 @@
 import React from "react";
 import { useId } from "react";
 
-export default function FeaturesSectionDemo() {
+export default function FeaturesSection01() {
   return (
     <div className="py-20 lg:py-40">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-2 max-w-7xl mx-auto">
@@ -26,44 +26,44 @@ export default function FeaturesSectionDemo() {
 
 const grid = [
   {
-    title: "HIPAA and SOC2 Compliant",
+    title: "Global Compliance & Security",
     description:
-      "Our applications are HIPAA and SOC2 compliant, your data is safe with us, always.",
+      "Your data is protected with top-tier international compliance standards, ensuring privacy and security for all your career documents.",
   },
   {
-    title: "Automated Social Media Posting",
+    title: "Personalized Career Roadmaps",
     description:
-      "Schedule and automate your social media posts across multiple platforms to save time and maintain a consistent online presence.",
+      "Receive tailored career plans and step-by-step guidance for your journey to work or study abroad, crafted by global experts.",
   },
   {
-    title: "Advanced Analytics",
+    title: "Premium Analytics & Progress Tracking",
     description:
-      "Gain insights into your social media performance with detailed analytics and reporting tools to measure engagement and ROI.",
+      "Monitor your application status, interview progress, and visa milestones with our advanced analytics dashboard.",
   },
   {
-    title: "Content Calendar",
+    title: "Interactive Application Calendar",
     description:
-      "Plan and organize your social media content with an intuitive calendar view, ensuring you never miss a post.",
+      "Never miss a deadline with our intuitive calendar for university, job, and visa applications worldwide.",
   },
   {
-    title: "Audience Targeting",
+    title: "Targeted Country & Program Matching",
     description:
-      "Reach the right audience with advanced targeting options, including demographics, interests, and behaviors.",
+      "Find the best-fit countries, universities, and employers based on your profile, goals, and preferences.",
   },
   {
-    title: "Social Listening",
+    title: "Real-Time Global Updates",
     description:
-      "Monitor social media conversations and trends to stay informed about what your audience is saying and respond in real-time.",
+      "Stay informed with the latest news on immigration, scholarships, and job opportunities across the globe.",
   },
   {
-    title: "Customizable Templates",
+    title: "Professional Document Templates",
     description:
-      "Create stunning social media posts with our customizable templates, designed to fit your brand's unique style and voice.",
+      "Access customizable CV, SOP, and cover letter templates designed for international standards.",
   },
   {
-    title: "Collaboration Tools",
+    title: "Collaboration & Expert Support",
     description:
-      "Work seamlessly with your team using our collaboration tools, allowing you to assign tasks, share drafts, and provide feedback in real-time.",
+      "Work with mentors, counselors, and your family in one place—share drafts, get feedback, and track progress together.",
   },
 ];
 

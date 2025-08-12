@@ -1,4 +1,7 @@
 'use client';
+import FeaturesSection01 from "@/components/features-section-1";
+import FeaturesSection02 from "@/components/features-section-2";
+import FeaturesSection03 from "@/components/features-section-3";
 import { ModeToggle } from "@/components/theme/mode-toggle";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
 import { MobileNav, MobileNavHeader, MobileNavMenu, MobileNavToggle, Navbar, NavbarButton, NavbarLogo, NavBody, NavItems } from "@/components/ui/resizable-navbar";
@@ -86,6 +89,8 @@ export default function Home() {
           height={"100%"}
         />
       </div>
+      <FeaturesSection02 />
+      <FeaturesSection03 />
       <div className="w-full overflow-hidden bg-white dark:bg-[#0B0B0F]">
         <MacbookScroll
           title={
@@ -102,7 +107,7 @@ export default function Home() {
           showGradient={false}
         />
       </div>
-
+      <FeaturesSection01 />
       <DummyContent />
     </div>
   );

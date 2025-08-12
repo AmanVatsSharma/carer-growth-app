@@ -6,35 +6,35 @@ import { motion } from "motion/react";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 
 
-export default function FeaturesSectionDemo() {
+export default function FeaturesSection03() {
   const features = [
     {
-      title: "Track issues effectively",
+      title: "Track Your Global Applications",
       description:
-        "Track and manage your project issues with ease using our intuitive interface.",
+        "Easily manage and monitor all your job, university, and visa applications worldwide in one place.",
       skeleton: <SkeletonOne />,
       className:
         "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
     },
     {
-      title: "Capture pictures with AI",
+      title: "AI-Powered Document Assistance",
       description:
-        "Capture stunning photos effortlessly using our advanced AI technology.",
+        "Let our AI help you create, review, and optimize your CVs, SOPs, and cover letters for international standards.",
       skeleton: <SkeletonTwo />,
       className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
     },
     {
-      title: "Watch our AI on YouTube",
+      title: "Learn from Success Stories",
       description:
-        "Whether its you or Tyler Durden, you can get to know about our product on YouTube",
+        "Watch real stories and tips from successful candidates who landed their dream careers abroad.",
       skeleton: <SkeletonThree />,
       className:
         "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
     },
     {
-      title: "Deploy in seconds",
+      title: "Global Opportunities, Fast Deployment",
       description:
-        "With our blazing fast, state of the art, cutting edge, we are so back cloud servies (read AWS) - you can deploy your model in seconds.",
+        "Discover and apply to new opportunities worldwide—our platform gets you started in seconds.",
       skeleton: <SkeletonFour />,
       className: "col-span-1 lg:col-span-3 border-b lg:border-none",
     },

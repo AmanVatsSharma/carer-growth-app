@@ -10,51 +10,51 @@ import {
   IconTerminal2,
 } from "@tabler/icons-react";
 
-export default function FeaturesSectionDemo() {
+export default function FeaturesSection02() {
   const features = [
     {
-      title: "Built for developers",
+      title: "Expert Guidance for Global Careers",
       description:
-        "Built for engineers, developers, dreamers, thinkers and doers.",
+        "Get one-on-one support from international career advisors and mentors for every step of your journey.",
       icon: <IconTerminal2 />,
     },
     {
-      title: "Ease of use",
+      title: "Seamless Application Experience",
       description:
-        "It's as easy as using an Apple, and as expensive as buying one.",
+        "Our platform is designed for ease—apply to jobs, universities, and visas abroad with just a few clicks.",
       icon: <IconEaseInOut />,
     },
     {
-      title: "Pricing like no other",
+      title: "Transparent & Flexible Pricing",
       description:
-        "Our prices are best in the market. No cap, no lock, no credit card required.",
+        "Choose from flexible plans with no hidden fees. Premium support and resources included.",
       icon: <IconCurrencyDollar />,
     },
     {
-      title: "100% Uptime guarantee",
-      description: "We just cannot be taken down by anyone.",
+      title: "Global Access, 24/7",
+      description: "Access your dashboard and support anytime, anywhere in the world.",
       icon: <IconCloud />,
     },
     {
-      title: "Multi-tenant Architecture",
-      description: "You can simply share passwords instead of buying new seats",
+      title: "Multi-Country Application Support",
+      description: "Apply to multiple countries and programs with a single profile and unified process.",
       icon: <IconRouteAltLeft />,
     },
     {
-      title: "24/7 Customer Support",
+      title: "Dedicated Success Managers",
       description:
-        "We are available a 100% of the time. Atleast our AI Agents are.",
+        "Our team is always available to answer your questions and guide you through every challenge.",
       icon: <IconHelp />,
     },
     {
-      title: "Money back guarantee",
+      title: "Satisfaction Guarantee",
       description:
-        "If you donot like EveryAI, we will convince you to like us.",
+        "If you’re not satisfied, we’ll work with you until you are. Your success is our mission.",
       icon: <IconAdjustmentsBolt />,
     },
     {
-      title: "And everything else",
-      description: "I just ran out of copy ideas. Accept my sincere apologies",
+      title: "All-in-One Career Platform",
+      description: "From research to relocation, manage your entire international career journey in one place.",
       icon: <IconHeart />,
     },
   ];
