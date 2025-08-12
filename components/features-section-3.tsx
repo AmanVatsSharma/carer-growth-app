@@ -47,8 +47,7 @@ export default function FeaturesSection03() {
         </h4>
 
         <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
-          From Image generation to video generation, Everything AI has APIs for
-          literally everything. It can even create this website copy for you.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed sint nihil tempore vitae, odio velit, voluptas mollitia eligendi ullam suscipit saepe, culpa atque illo laboriosam?
         </p>
       </div>
 
