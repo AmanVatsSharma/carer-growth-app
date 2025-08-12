@@ -3,6 +3,7 @@ import { ModeToggle } from "@/components/theme/mode-toggle";
 import { MobileNav, MobileNavHeader, MobileNavMenu, MobileNavToggle, Navbar, NavbarButton, NavbarLogo, NavBody, NavItems } from "@/components/ui/resizable-navbar";
 import Image from "next/image";
 import { useState } from "react";
+import ReactPlayer from "react-player";
 
 export default function Home() {
   const navItems = [
@@ -74,9 +75,17 @@ export default function Home() {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
+      <div className="main-video w-full overflow-hidden">
+        <ReactPlayer
+        src="https://www.formeeexpress.com/video/LandingPageVideo.mp4"
+        loop
+        playing
+        muted
+        width={"100%"}
+        height={"100%"}
+        />
+      </div>
       <DummyContent />
-
-      {/* Navbar */}
     </div>
   );
 }
