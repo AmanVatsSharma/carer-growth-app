@@ -31,7 +31,7 @@ export default function Home() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Login</NavbarButton>
+            {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
             <ModeToggle/>
             <NavbarButton variant="primary">Book a call</NavbarButton>
           </div>
