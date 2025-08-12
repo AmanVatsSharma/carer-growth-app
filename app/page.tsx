@@ -62,7 +62,7 @@ export default function Home() {
                 <span className="block">{item.name}</span>
               </a>
             ))}
-            <div className="flex w-full flex-col gap-4">
+            <div className="flex items-center w-full flex-col gap-4">
               <ModeToggle />
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
