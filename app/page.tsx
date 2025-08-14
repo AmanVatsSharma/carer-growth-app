@@ -2,6 +2,8 @@
 import FeaturesSection01 from "@/components/features-section-1";
 import FeaturesSection02 from "@/components/features-section-2";
 import FeaturesSection03 from "@/components/features-section-3";
+import { HeroVariation1, HeroVariation2 } from "@/components/home-page/cta-hero";
+import FuturisticCta from "@/components/home-page/futuristic-cta";
 import BrandsLoveUs from "@/components/home-page/logo-cloud-marquee";
 import { ModeToggle } from "@/components/theme/mode-toggle";
 import Beams from "@/components/ui/beams-bg";
@@ -25,6 +27,7 @@ export default function Home() {
           height={"100%"}
         />
       </div>
+
       <div className="relative w-full h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-900 via-yellow-800 to-yellow-700">
         {/* Top-left gold beams */}
         <div className="absolute top-0 left-0 w-full sm:w-1/2 h-1/2 pointer-events-none z-0">
@@ -33,7 +36,7 @@ export default function Home() {
             beamHeight={18}
             beamNumber={8}
             lightColor="#FFD700"
-            speed={4.5}
+            speed={9}
             noiseIntensity={1.2}
             scale={0.18}
             rotation={-35}
@@ -46,7 +49,7 @@ export default function Home() {
             beamHeight={18}
             beamNumber={8}
             lightColor="#FFEA70"
-            speed={4.5}
+            speed={9}
             noiseIntensity={1.2}
             scale={0.18}
             rotation={35}
@@ -87,11 +90,86 @@ export default function Home() {
         </div>
       </div>
 
+      {/* <div className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
+        <Beams
+          beamWidth={1.5}
+          beamHeight={25}
+          beamNumber={20}
+          lightColor="#FFD700"
+          speed={12}
+          noiseIntensity={0.8}
+          scale={0.15}
+          rotation={0}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/80 z-10" />
+        <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 w-full">
+          <h1 className="text-white text-4xl sm:text-6xl md:text-8xl font-extrabold drop-shadow-2xl mb-6 animate-fade-in-up tracking-tighter leading-tight">
+            <span className="bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-400 bg-clip-text text-transparent">
+              Your Future Awaits
+            </span>
+          </h1>
+          <p className="text-white/80 text-lg sm:text-xl md:text-2xl font-light mb-10 max-w-3xl animate-fade-in-up delay-200 drop-shadow-lg leading-relaxed">
+            Step into a world of opportunity. We specialize in crafting international careers and educational journeys tailored to your ambitions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400 w-full sm:w-auto">
+            <Button className="bg-gradient-to-r from-yellow-500 to-yellow-700 text-black px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:scale-105 transition-transform duration-300 border-2 border-yellow-400 w-full sm:w-auto">
+              Begin Your Journey
+            </Button>
+            <Button variant="outline" className="text-white border-white/50 bg-transparent px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:bg-white/10 hover:scale-105 transition-all duration-300 w-full sm:w-auto">
+              Explore Services
+            </Button>
+          </div>
+        </div>
+      </div> */}
+
+      <div className="relative w-full h-screen bg-black">
+        {/* 1. The beams component will render as the dynamic background */}
+        <Beams
+          beamWidth={1.5}
+          beamHeight={25}
+          beamNumber={20}
+          lightColor="#FFD700" // Golden color for the beams
+          speed={12}
+          noiseIntensity={0.8}
+          scale={0.15}
+          rotation={0}
+        />
+
+        {/* Top Gradient */}
+        <div className="absolute top-0  w-full h-32 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
+
+        {/* Bottom Gradient */}
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
+
+        {/* 2. The new CTA component renders on top */}
+        {/* <FuturisticCta /> */}
+      </div>
+
+
+      {/* <div className="relative w-full h-screen bg-black"> */}
+      {/* The beams will render as the background */}
+      {/* <Beams
+          beamWidth={1.5}
+          beamHeight={25}
+          beamNumber={20}
+          lightColor="#FFD700"
+          speed={12}
+          noiseIntensity={0.8}
+          scale={0.15}
+          rotation={0}
+        /> */}
+
+      {/* Place your chosen hero variation here. It will appear over the beams. */}
+      {/* <HeroVariation1 /> */}
+      {/* <HeroVariation2 /> */}
+      {/* <HeroVariation3 /> */}
+      {/* </div> */}
+
       <BrandsLoveUs />
       <FeaturesSection03 />
       <FeaturesSection02 />
       <div className="w-full overflow-hidden bg-white dark:bg-[#0B0B0F]">
-        <MacbookScroll
+        {/* <MacbookScroll
           title={
             <span>
               Get out of Your Screen and Call Us Now. <br /> No kidding.
@@ -104,7 +182,7 @@ export default function Home() {
           }
           src={`https://media.ahmedabadmirror.com/am/uploads/mediaGallery/image/1668670929290.jpg-org`}
           showGradient={false}
-        />
+        /> */}
       </div>
       <FeaturesSection01 />
       <DummyContent />
