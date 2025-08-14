@@ -146,6 +146,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
 };
 
 export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <motion.div
       animate={{
