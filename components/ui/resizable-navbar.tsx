@@ -1,4 +1,6 @@
-// ts-ignore
+// @ts-ignore
+// This file is a client component and uses motion/react for animations
+// It is designed to be used in a Next.js application with TypeScript
 "use client";
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
@@ -7,7 +9,7 @@ import {
   AnimatePresence,
   useScroll,
   useMotionValueEvent,
-} from "framer-motion";
+} from "motion/react";
 
 import React, { useRef, useState } from "react";
 
@@ -70,14 +72,14 @@ export const Navbar = ({ children, className }: NavbarProps) => {
     <motion.div
       ref={ref}
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
-      className={cn("sticky inset-x-0 top-0 z-40 w-full", className)}
+      className={cn("sticky inset-x-0 top-20 z-40 w-full", className)}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
           ? React.cloneElement(
-            child as React.ReactElement<{ visible?: boolean }>,
-            { visible },
-          )
+              child as React.ReactElement<{ visible?: boolean }>,
+              { visible },
+            )
           : child,
       )}
     </motion.div>
@@ -147,7 +149,6 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
 };
 
 export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <motion.div
       animate={{
@@ -263,9 +264,9 @@ export const NavbarButton = ({
   className?: string;
   variant?: "primary" | "secondary" | "dark" | "gradient";
 } & (
-    | React.ComponentPropsWithoutRef<"a">
-    | React.ComponentPropsWithoutRef<"button">
-  )) => {
+  | React.ComponentPropsWithoutRef<"a">
+  | React.ComponentPropsWithoutRef<"button">
+)) => {
   const baseStyles =
     "px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
@@ -279,7 +280,6 @@ export const NavbarButton = ({
   };
 
   return (
-    // @ts-ignore
     <Tag
       href={href || undefined}
       className={cn(baseStyles, variantStyles[variant], className)}
