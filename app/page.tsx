@@ -2,6 +2,7 @@
 import FeaturesSection01 from "@/components/features-section-1";
 import FeaturesSection02 from "@/components/features-section-2";
 import FeaturesSection03 from "@/components/features-section-3";
+import BrandsLoveUs from "@/components/home-page/logo-cloud-marquee";
 import { ModeToggle } from "@/components/theme/mode-toggle";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
 import { MobileNav, MobileNavHeader, MobileNavMenu, MobileNavToggle, Navbar, NavbarButton, NavbarLogo, NavBody, NavItems } from "@/components/ui/resizable-navbar";
@@ -10,75 +11,8 @@ import { useState } from "react";
 import ReactPlayer from "react-player";
 
 export default function Home() {
-  const navItems = [
-    {
-      name: "About Us",
-      link: "#About Us",
-    },
-    {
-      name: "Find Programs",
-      link: "#programs",
-    },
-    {
-      name: "Contact Us",
-      link: "#contact",
-    },
-  ];
-
-  // State to manage mobile menu visibility
-  // This state will toggle the mobile menu open and close
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <div className="relative w-full bg-gradient-to-br from-[#f8fafc] via-[#e0e7ef] to-[#f1f5f9] dark:from-[#181c24] dark:via-[#232a36] dark:to-[#1a202c]">
-      <Navbar>
-        {/* Desktop Navigation */}
-        <NavBody>
-          <NavbarLogo />
-          <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
-            {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
-            <ModeToggle />
-            <NavbarButton variant="primary">Book a call</NavbarButton>
-          </div>
-        </NavBody>
-
-        {/* Mobile Navigation */}
-        <MobileNav>
-          <MobileNavHeader>
-            <NavbarLogo />
-            <MobileNavToggle
-              isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
-          </MobileNavHeader>
-
-          <MobileNavMenu
-            isOpen={isMobileMenuOpen}
-            onClose={() => setIsMobileMenuOpen(false)}
-          >
-            {navItems.map((item, idx) => (
-              <a
-                key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300"
-              >
-                <span className="block">{item.name}</span>
-              </a>
-            ))}
-            <div className="flex items-center w-full flex-col gap-4">
-              <ModeToggle />
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Book a call
-              </NavbarButton>
-            </div>
-          </MobileNavMenu>
-        </MobileNav>
-      </Navbar>
       <div className="main-video w-full overflow-hidden">
         <ReactPlayer
           src="https://www.formeeexpress.com/video/LandingPageVideo.mp4"
@@ -89,6 +23,7 @@ export default function Home() {
           height={"100%"}
         />
       </div>
+      <BrandsLoveUs />
       <FeaturesSection03 />
       <FeaturesSection02 />
       <div className="w-full overflow-hidden bg-white dark:bg-[#0B0B0F]">
