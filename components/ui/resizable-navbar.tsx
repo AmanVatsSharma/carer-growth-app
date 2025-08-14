@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 // This file is a client component and uses motion/react for animations
 // It is designed to be used in a Next.js application with TypeScript
