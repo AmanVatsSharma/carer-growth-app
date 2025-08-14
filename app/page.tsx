@@ -4,6 +4,7 @@ import FeaturesSection02 from "@/components/features-section-2";
 import FeaturesSection03 from "@/components/features-section-3";
 import { HeroVariation1, HeroVariation2 } from "@/components/home-page/cta-hero";
 import FuturisticCta from "@/components/home-page/futuristic-cta";
+import { ThreeDMarqueeSection } from "@/components/home-page/hero-section";
 import BrandsLoveUs from "@/components/home-page/logo-cloud-marquee";
 import { ModeToggle } from "@/components/theme/mode-toggle";
 import Beams from "@/components/ui/beams-bg";
@@ -128,7 +129,7 @@ export default function Home() {
           beamWidth={1.5}
           beamHeight={25}
           beamNumber={20}
-          lightColor="#FFD700" // Golden color for the beams
+          lightColor="#FFffff" // Golden color for the beams
           speed={12}
           noiseIntensity={0.8}
           scale={0.15}
@@ -144,7 +145,8 @@ export default function Home() {
         {/* 2. The new CTA component renders on top */}
         {/* <FuturisticCta /> */}
       </div>
-
+      <span className=" h-10 bg-grey-800 w-full" />
+      <ThreeDMarqueeSection />
 
       {/* <div className="relative w-full h-screen bg-black"> */}
       {/* The beams will render as the background */}
