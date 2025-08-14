@@ -1,6 +1,3 @@
-// @ts-ignore
-// This file is a client component and uses motion/react for animations
-// It is designed to be used in a Next.js application with TypeScript
 "use client";
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
