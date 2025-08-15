@@ -6,6 +6,7 @@ import { HeroVariation1, HeroVariation2 } from "@/components/home-page/cta-hero"
 import FuturisticCta from "@/components/home-page/futuristic-cta";
 import { ThreeDMarqueeSection } from "@/components/home-page/hero-section";
 import BrandsLoveUs from "@/components/home-page/logo-cloud-marquee";
+import CtaSectionSimple from "@/components/home-page/simple-cta";
 import { ModeToggle } from "@/components/theme/mode-toggle";
 import Beams from "@/components/ui/beams-bg";
 import { Button } from "@/components/ui/button";
@@ -28,6 +29,8 @@ export default function Home() {
           height={"100%"}
         />
       </div>
+
+      <CtaSectionSimple />
 
       <div className="relative w-full h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-900 via-yellow-800 to-yellow-700">
         {/* Top-left gold beams */}
