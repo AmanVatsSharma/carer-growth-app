@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 // Main component
 export default function ValuePropSection() {
@@ -88,76 +89,69 @@ export default function ValuePropSection() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          {/* Tab buttons */}
-          <div className="flex justify-center border-b border-gray-200 dark:border-gray-700 mb-12">
+          {/* Tab buttons and content using Tabs component */}
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <TabsList className="flex justify-center border-b border-gray-200 dark:border-gray-700 mb-12 bg-transparent">
+              {tabs.map((tab) => (
+                <TabsTrigger key={tab.id} value={tab.id} className="mx-1">
+                  {tab.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
             {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`${
-                  activeTab === tab.id
-                    ? 'border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-200 dark:hover:border-gray-600'
-                } relative whitespace-nowrap text-base font-medium py-4 px-1 border-b-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 mx-4`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Content Display */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[550px]">
-            {/* Image Section */}
-            <div className="relative h-80 lg:h-[500px] w-full rounded-lg overflow-hidden shadow-2xl">
-               <AnimatePresence mode="wait">
-                  <motion.img
-                      key={activeTab}
-                      src={currentContent.image}
-                      alt={currentContent.alt}
+              <TabsContent key={tab.id} value={tab.id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[550px]">
+                {/* Image Section */}
+                <div className="relative h-80 lg:h-[500px] w-full rounded-lg overflow-hidden shadow-2xl">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={tab.id}
+                      src={content[tab.id].image}
+                      alt={content[tab.id].alt}
                       variants={imageVariants}
                       initial="initial"
-                      animate="animate"
+                      animate={activeTab === tab.id ? "animate" : "initial"}
                       exit="exit"
                       className="absolute inset-0 w-full h-full object-cover"
                       onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/600x600/E0E0E0/000000?text=Image'; }}
-                  />
-              </AnimatePresence>
-            </div>
-
-            {/* Text Content Section */}
-            <div className="relative">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTab}
-                  variants={contentVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                >
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                    {currentContent.title}
-                  </h3>
-                  <p className="mt-4 text-gray-600 dark:text-gray-300 text-lg">
-                    {currentContent.description}
-                  </p>
-                  <ul className="mt-8 space-y-4">
-                    {currentContent.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
-                        <CheckCircle className="flex-shrink-0 w-6 h-6 text-blue-500 dark:text-blue-400 mt-1 mr-3" />
-                        <span className="text-gray-700 dark:text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-10">
-                    <button className="group flex items-center justify-center px-8 py-4 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-1 dark:ring-offset-gray-900">
-                      {currentContent.cta}
-                      <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                    </button>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
+                    />
+                  </AnimatePresence>
+                </div>
+                {/* Text Content Section */}
+                <div className="relative">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={tab.id}
+                      variants={contentVariants}
+                      initial="initial"
+                      animate={activeTab === tab.id ? "animate" : "initial"}
+                      exit="exit"
+                    >
+                      <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+                        {content[tab.id].title}
+                      </h3>
+                      <p className="mt-4 text-gray-600 dark:text-gray-300 text-lg">
+                        {content[tab.id].description}
+                      </p>
+                      <ul className="mt-8 space-y-4">
+                        {content[tab.id].features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <CheckCircle className="flex-shrink-0 w-6 h-6 text-blue-500 dark:text-blue-400 mt-1 mr-3" />
+                            <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-10">
+                        <button className="group flex items-center justify-center px-8 py-4 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-1 dark:ring-offset-gray-900">
+                          {content[tab.id].cta}
+                          <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                        </button>
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </TabsContent>
+            ))}
+          </Tabs>
         </div>
       </div>
     </div>

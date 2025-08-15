@@ -1,5 +1,7 @@
 import React from 'react';
 import { cn } from "@/lib/utils";
+import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "../ui/select";
+import { Input } from "../ui/input";
 
 // You can replace these with your actual image URLs
 const avatarImages = [
@@ -106,11 +108,37 @@ export default function CtaSectionSimple({
             </div>
           </div>
           {/* Right Button Section */}
-          <div className="w-full sm:w-auto flex-shrink-0 mt-8 lg:mt-0 flex justify-center lg:justify-end">
-            <button className="group flex items-center justify-center px-7 py-3 sm:px-8 sm:py-4 font-bold text-white bg-purple-600 dark:bg-purple-500 rounded-full hover:bg-purple-700 dark:hover:bg-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 dark:focus:ring-purple-400 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base sm:text-lg">
-              Book a call
-              <ArrowRightIcon />
-            </button>
+          <div className="w-full sm:w-auto flex-shrink-0 mt-8 lg:mt-0 flex flex-col gap-6 justify-center lg:justify-end items-center">
+            <form className="w-full max-w-md flex flex-col gap-4 items-center">
+              <Input
+                placeholder="Your Name"
+                className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-neutral-900 shadow-sm px-4 py-2 text-base"
+              />
+              <div className="flex w-full gap-0 items-center rounded-lg overflow-hidden border border-gray-300 dark:border-gray-700 bg-white dark:bg-neutral-900 shadow-sm">
+                <Select defaultValue="+91">
+                  <SelectTrigger className="rounded-none border-none bg-transparent px-4 py-2 text-base min-w-[70px] focus:ring-0 focus:outline-none">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="+91">+91</SelectItem>
+                    <SelectItem value="+1">+1</SelectItem>
+                    <SelectItem value="+44">+44</SelectItem>
+                    <SelectItem value="+61">+61</SelectItem>
+                    <SelectItem value="+971">+971</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Input
+                  placeholder="Phone Number"
+                  className="rounded-none border-none bg-transparent px-4 py-2 text-base flex-1 focus:ring-0 focus:outline-none"
+                  type="tel"
+                />
+              </div>
+
+              <button className="group w-full flex items-center justify-center px-7 py-3 sm:px-8 sm:py-4 font-bold text-white bg-purple-600 dark:bg-purple-500 rounded-full hover:bg-purple-700 dark:hover:bg-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 dark:focus:ring-purple-400 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base sm:text-lg mt-2">
+                Book a call
+                <ArrowRightIcon />
+              </button>
+            </form>
           </div>
         </div>
       </div>
