@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { LampContainer } from "../ui/lamp";
-import { Button } from "./button";
+import { Button } from "../ui/button";
 
 export function LampHero({
     Title = "Build Careers the right way",
@@ -29,7 +29,7 @@ export function LampHero({
                 <Button
                     variant="default"
                     size="lg"
-                    className="bg-gradient-to-r from-cyan-700 to-slate-500 text-white font-bold shadow-xl border-2 border-white rounded-full px-10 py-6 text-lg animate-pulse hover:scale-105 hover:bg-purple-600 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 font-bold"
+                    className="bg-gradient-to-r from-cyan-700 to-slate-500 text-white font-bold shadow-xl border-2 border-white rounded-full px-10 py-6 text-lg animate-pulse hover:scale-105 hover:bg-cyan-700 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-700 font-bold"
                     onClick={() => window.open('tel:+1234567890')}
                 >
                     Book a Call & Consult
