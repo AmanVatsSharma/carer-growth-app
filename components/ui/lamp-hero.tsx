@@ -29,7 +29,7 @@ export function LampHero({
                 <Button
                     variant="default"
                     size="lg"
-                    className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold shadow-xl border-2 border-purple-300 rounded-full px-8 py-4 text-lg animate-pulse hover:scale-105 hover:bg-purple-600 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                    className="bg-gradient-to-r from-cyan-700 to-slate-500 text-white font-bold shadow-xl border-2 border-white rounded-full px-10 py-6 text-lg animate-pulse hover:scale-105 hover:bg-purple-600 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 font-bold"
                     onClick={() => window.open('tel:+1234567890')}
                 >
                     Book a Call & Consult
