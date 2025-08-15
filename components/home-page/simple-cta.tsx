@@ -1,4 +1,5 @@
 import React from 'react';
+import { cn } from "@/lib/utils";
 
 // You can replace these with your actual image URLs
 const avatarImages = [
@@ -40,15 +41,31 @@ const ArrowRightIcon = () => (
     </svg>
 );
 
-export default function CtaSectionSimple() {
+export default function CtaSectionSimple({
+    gridSize = '40px',
+    gridIntensity = 'opacity-30',
+    gridVisible = true,
+}) {
   return (
     <div className="relative font-sans overflow-hidden">
-      {/* Animated Gradient Background */}
-      <div className="absolute inset-0 -z-10 animate-gradient bg-gradient-to-br from-purple-600 via-pink-400 to-blue-500 dark:from-purple-900 dark:via-indigo-900 dark:to-gray-900 opacity-30 blur-2xl" />
-      {/* Subtle floating circles */}
-      <div className="absolute top-10 left-1/4 w-32 h-32 bg-purple-400/30 dark:bg-purple-800/30 rounded-full blur-2xl animate-pulse" />
-      <div className="absolute bottom-10 right-1/4 w-24 h-24 bg-pink-400/30 dark:bg-pink-800/30 rounded-full blur-2xl animate-pulse" />
-      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-20 lg:py-28">
+      {/* Conditional rendering for the grid background */}
+      {gridVisible && (
+        <>
+          <div
+            className={cn(
+              "absolute inset-0",
+              `[background-size:${gridSize}_${gridSize}]`,
+              // More visible grid lines for both modes
+              "dark:[background-image:linear-gradient(to_right,rgba(60,60,60,0.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(60,60,60,0.35)_1px,transparent_1px)]",
+              `[background-image:linear-gradient(to_right,rgba(180,180,190,0.25)_1px,transparent_1px),linear-gradient(to_bottom,rgba(180,180,190,0.25)_1px,transparent_1px)]`,
+              "opacity-50" // Increased opacity for visibility
+            )}
+          ></div>
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black" />
+        </>
+      )}
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-20 lg:py-28">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           {/* Left Content Section */}
           <div className="w-full lg:w-1/2 text-center lg:text-left">
@@ -97,17 +114,6 @@ export default function CtaSectionSimple() {
           </div>
         </div>
       </div>
-      {/* Custom keyframes for gradient animation */}
-      <style jsx>{`
-        @keyframes gradient {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-        .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient 8s ease-in-out infinite;
-        }
-      `}</style>
     </div>
   );
 }

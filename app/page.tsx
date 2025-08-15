@@ -31,7 +31,9 @@ export default function Home() {
         />
       </div>
 
-      <CtaSectionSimple />
+      <CtaSectionSimple
+        gridIntensity="opacity-90"
+      />
 
       <ValuePropSection />
 
