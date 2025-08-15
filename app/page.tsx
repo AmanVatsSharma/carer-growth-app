@@ -11,6 +11,7 @@ import ValuePropSection from "@/components/home-page/value-prop-section";
 import { ModeToggle } from "@/components/theme/mode-toggle";
 import Beams from "@/components/ui/beams-bg";
 import { Button } from "@/components/ui/button";
+import { LampHero } from "@/components/ui/lamp-hero";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
 import { MobileNav, MobileNavHeader, MobileNavMenu, MobileNavToggle, Navbar, NavbarButton, NavbarLogo, NavBody, NavItems } from "@/components/ui/resizable-navbar";
 import Image from "next/image";
@@ -35,6 +36,8 @@ export default function Home() {
         gridIntensity="opacity-90"
       />
 
+      <LampHero />
+      
       <ValuePropSection />
 
       <div className="relative w-full h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-900 via-yellow-800 to-yellow-700">
