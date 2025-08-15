@@ -40,59 +40,74 @@ const ArrowRightIcon = () => (
     </svg>
 );
 
-
 export default function CtaSectionSimple() {
   return (
-    <div className="bg-white font-sans">
-      <div className="container mx-auto px-6 py-16 sm:py-24 lg:py-32">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          
+    <div className="relative font-sans overflow-hidden">
+      {/* Animated Gradient Background */}
+      <div className="absolute inset-0 -z-10 animate-gradient bg-gradient-to-br from-purple-600 via-pink-400 to-blue-500 dark:from-purple-900 dark:via-indigo-900 dark:to-gray-900 opacity-30 blur-2xl" />
+      {/* Subtle floating circles */}
+      <div className="absolute top-10 left-1/4 w-32 h-32 bg-purple-400/30 dark:bg-purple-800/30 rounded-full blur-2xl animate-pulse" />
+      <div className="absolute bottom-10 right-1/4 w-24 h-24 bg-pink-400/30 dark:bg-pink-800/30 rounded-full blur-2xl animate-pulse" />
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-20 lg:py-28">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           {/* Left Content Section */}
-          <div className="lg:w-1/2 text-center lg:text-left">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          <div className="w-full lg:w-1/2 text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-gray-900 dark:text-white">
               Find Your Dream <br />
-              <span className="text-purple-600">Career Abroad</span> Today.
+              <span className="text-purple-600 dark:text-purple-400">Career Abroad</span> Today.
             </h2>
-            <p className="mt-6 text-lg text-gray-600 max-w-xl mx-auto lg:mx-0">
+            <p className="mt-5 text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto lg:mx-0">
               Join the waitlist and be the first one to experience our platform at scale. Get an additional 50% discount on the first 100 people.
             </p>
-            
             {/* Trust/Social Proof Section */}
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+            <div className="mt-7 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5">
               <div className="flex items-center">
-                <div className="flex -space-x-4">
+                <div className="flex -space-x-3">
                   {avatarImages.map((src, index) => (
                     <img
                       key={index}
-                      className="inline-block h-12 w-12 rounded-full ring-2 ring-white object-cover"
+                      className="inline-block h-10 w-10 sm:h-12 sm:w-12 rounded-full ring-2 ring-white dark:ring-gray-800 object-cover shadow-md"
                       src={src}
                       alt={`Creator ${index + 1}`}
-                      onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/48x48/E0E0E0/000000?text=U'; }}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null;
+                        target.src = 'https://placehold.co/48x48/E0E0E0/000000?text=U';
+                      }}
                     />
                   ))}
                 </div>
-                <div className="flex items-center ml-4">
+                <div className="flex items-center ml-3">
                   {[...Array(5)].map((_, i) => (
                     <StarIcon key={i} />
                   ))}
                 </div>
               </div>
-              <p className="text-gray-600 font-medium">
-                Trusted by <span className="font-bold text-gray-800">27,000+</span> creators
+              <p className="text-gray-600 dark:text-gray-300 font-medium text-sm sm:text-base">
+                Trusted by <span className="font-bold text-gray-800 dark:text-white">27,000+</span> creators
               </p>
             </div>
           </div>
-
           {/* Right Button Section */}
-          <div className="flex-shrink-0 mt-8 lg:mt-0">
-            <button className="group flex items-center justify-center px-8 py-4 font-bold text-white bg-purple-600 rounded-full hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+          <div className="w-full sm:w-auto flex-shrink-0 mt-8 lg:mt-0 flex justify-center lg:justify-end">
+            <button className="group flex items-center justify-center px-7 py-3 sm:px-8 sm:py-4 font-bold text-white bg-purple-600 dark:bg-purple-500 rounded-full hover:bg-purple-700 dark:hover:bg-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 dark:focus:ring-purple-400 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base sm:text-lg">
               Book a call
               <ArrowRightIcon />
             </button>
           </div>
-
         </div>
       </div>
+      {/* Custom keyframes for gradient animation */}
+      <style jsx>{`
+        @keyframes gradient {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 8s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }
