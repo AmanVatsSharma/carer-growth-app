@@ -19,6 +19,7 @@ import { useState } from "react";
 import ReactPlayer from "react-player";
 import { StickyScrollReveal } from "@/components/home-page/sticky-scroll-reveal";
 import ScrollStackSection from "@/components/home-page/scroll-stack";
+import { WorldMapSection } from "@/components/home-page/world-map-section";
 
 export default function Home() {
   return (
@@ -38,11 +39,13 @@ export default function Home() {
         gridIntensity="opacity-90"
       />
 
-      <LampHero />
+      <WorldMapSection />
+
+      {/* <LampHero /> */}
 
       <ValuePropSection />
 
-      <ScrollStackSection />
+      {/* <ScrollStackSection /> */}
 
       {/* <StickyScrollReveal /> */}
 
@@ -140,9 +143,9 @@ export default function Home() {
         </div>
       </div> */}
 
-      <div className="relative w-full h-screen bg-black">
-        {/* 1. The beams component will render as the dynamic background */}
-        <Beams
+      {/* <div className="relative w-full h-screen bg-black"> */}
+      {/* 1. The beams component will render as the dynamic background */}
+      {/* <Beams
           beamWidth={1.5}
           beamHeight={25}
           beamNumber={20}
@@ -151,17 +154,18 @@ export default function Home() {
           noiseIntensity={0.8}
           scale={0.15}
           rotation={0}
-        />
+        /> */}
 
-        {/* Top Gradient */}
-        <div className="absolute top-0  w-full h-32 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
+      {/* Top Gradient */}
+      {/* <div className="absolute top-0  w-full h-32 bg-gradient-to-b from-black to-transparent pointer-events-none"></div> */}
 
-        {/* Bottom Gradient */}
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
+      {/* Bottom Gradient */}
+      {/* <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"></div> */}
 
-        {/* 2. The new CTA component renders on top */}
-        {/* <FuturisticCta /> */}
-      </div>
+      {/* 2. The new CTA component renders on top */}
+      {/* <FuturisticCta /> */}
+      {/* </div> */}
+
       <span className=" h-10 bg-grey-800 w-full" />
       <ThreeDMarqueeSection />
 
