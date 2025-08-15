@@ -29,22 +29,22 @@ const StarIcon = () => (
 
 // Arrow Icon Component
 const ArrowRightIcon = () => (
-    <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        fill="none" 
-        viewBox="0 0 24 24" 
-        strokeWidth={2.5} 
-        stroke="currentColor" 
-        className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
-    >
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-    </svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={2.5}
+    stroke="currentColor"
+    className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+  </svg>
 );
 
 export default function CtaSectionSimple({
-    gridSize = '40px',
-    gridIntensity = 'opacity-30',
-    gridVisible = true,
+  gridSize = '40px',
+  gridIntensity = 'opacity-30',
+  gridVisible = true,
 }) {
   return (
     <div className="relative font-sans overflow-hidden">
@@ -74,7 +74,7 @@ export default function CtaSectionSimple({
               <span className="text-purple-600 dark:text-purple-400">Career Abroad</span> Today.
             </h2>
             <p className="mt-5 text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto lg:mx-0">
-              Join the waitlist and be the first one to experience our platform at scale. Get an additional 50% discount on the first 100 people.
+              Empowering Students to acheive acardemicand career success.
             </p>
             {/* Trust/Social Proof Section */}
             <div className="mt-7 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5">
@@ -101,7 +101,7 @@ export default function CtaSectionSimple({
                 </div>
               </div>
               <p className="text-gray-600 dark:text-gray-300 font-medium text-sm sm:text-base">
-                Trusted by <span className="font-bold text-gray-800 dark:text-white">27,000+</span> creators
+                Trusted by <span className="font-bold text-gray-800 dark:text-white">27,000+</span> Students
               </p>
             </div>
           </div>
