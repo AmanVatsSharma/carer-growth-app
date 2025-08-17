@@ -65,10 +65,14 @@ export const BackgroundBeams = React.memo(
         )}
       >
         <svg
-          className="pointer-events-none absolute z-0 h-full w-full min-h-[400px] sm:min-h-[600px] md:min-h-[800px]"
+          className="pointer-events-none absolute z-0 h-full w-full min-h-[600px] sm:min-h-[900px] md:min-h-[800px] lg:min-h-[316px]"
           width="100%"
           height="100%"
-          viewBox="0 0 696 900"
+          viewBox="0 0 696 900" /* mobile default */
+          /* Responsive viewBox for desktop */
+          {...{
+            viewBox: typeof window !== 'undefined' && window.innerWidth >= 1024 ? '0 0 696 316' : '0 0 696 900'
+          }}
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -86,9 +90,9 @@ export const BackgroundBeams = React.memo(
               stroke={`url(#linearGradient-${index})`}
               strokeOpacity="0.7"
               strokeWidth="1.2"
-              initial={{ pathLength: 0 }}
+              initial={{ pathLength: 1 }}
               animate={{ pathLength: 1 }}
-              transition={{ duration: Math.random() * 10 + 10, ease: "easeInOut", repeat: Infinity, delay: 0 }}
+              transition={{ duration: 0, ease: "linear", repeat: 0, delay: 0 }}
             />
           ))}
           <defs>
