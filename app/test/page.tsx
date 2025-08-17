@@ -10,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Icon123 } from "@tabler/icons-react";
 import { Briefcase, GraduationCap, Icon, Lightbulb } from "lucide-react";
 import { ModeToggle } from "@/components/theme/mode-toggle";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default function test() {
     const gold = "#D4AF37";
@@ -26,8 +27,10 @@ export default function test() {
     };
 
     return (
-        <div className="relative w-full min-h-screen bg-[#070707] dark:bg-[#070707] text-white dark:text-white transition-colors duration-300">
-            <section className="w-full flex flex-col items-center">
+        <div className="relative w-full min-h-screen bg-[#070707] dark:bg-[#070707] text-white dark:text-white transition-colors duration-300 overflow-hidden">
+            {/* Animated background beams */}
+            <BackgroundBeams className="z-0" />
+            <section className="relative z-10 w-full flex flex-col items-center">
                 {/* HERO */}
                 <motion.div
                     variants={container}
@@ -56,8 +59,7 @@ export default function test() {
                     <motion.button
                         variants={itemUp}
                         whileTap={{ scale: 0.98 }}
-                        className="mt-6 mx-auto px-6 py-2 rounded text-black font-medium text-sm"
-                        style={{ background: gold }}
+                        className="mt-6 mx-auto px-6 py-2 rounded text-black font-medium text-sm bg-yellow-500 transition-colors duration-300 hover:bg-yellow-600"
                     >
                         Learn More
                     </motion.button>
@@ -83,19 +85,19 @@ export default function test() {
                     variants={container}
                     initial="hidden"
                     animate="show"
-                    className="w-full max-w-4xl px-4 mt-6 grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-6"
+                    className="w-full max-w-4xl px-4 mt-6 grid grid-cols-3 gap-2 sm:gap-5 md:gap-10 lg:gap-24"
                 >
                     {/* Card 1 */}
                     <motion.div
                         variants={itemUp}
                         whileHover="hover"
-                        className="border border-[rgba(212,175,55,0.9)] rounded-md p-5 bg-transparent min-h-[170px] flex flex-col items-center transition-colors duration-300"
+                        className="border border-[rgba(212,175,55,0.9)] rounded-md p-2 bg-transparent min-h-[170px] flex flex-col items-center transition-colors duration-300"
                     >
-                        <GraduationCap className="w-8 h-8 mb-2" color={gold} />
-                        <h3 className="text-[14px] font-semibold text-[rgba(212,175,55,0.95)] text-center">
+                        <GraduationCap className="w-10 h-10 mb-2 font-light" color={gold} />
+                        <h3 className="text-[14px] font-bold text-[rgba(212,175,55,0.95)] text-center">
                             Undergraduate Programs
                         </h3>
-                        <p className="text-[12px] text-[#dddddd] dark:text-[#dddddd] text-center mt-2">
+                        <p className="text-[12px] text-[#dddddd] dark:text-[#dddddd] text-center mt-3">
                             Explore our undergraduate courses designed to provide a solid foundation of knowledge
                         </p>
                     </motion.div>
@@ -106,11 +108,11 @@ export default function test() {
                         whileHover="hover"
                         className="border border-[rgba(212,175,55,0.9)] rounded-md p-5 bg-transparent min-h-[170px] flex flex-col items-center transition-colors duration-300"
                     >
-                        <Briefcase className="w-8 h-8 mb-2" color={gold} />
-                        <h3 className="text-[9px] font-semibold text-[rgba(212,175,55,0.95)] text-center">
+                        <Briefcase className="w-10 h-10 mb-2 font-light" color={gold} />
+                        <h3 className="text-[14px] font-bold text-[rgba(212,175,55,0.95)] text-center">
                             Graduate Programs
                         </h3>
-                        <p className="text-[12px] text-[#dddddd] dark:text-[#dddddd] text-center mt-2">
+                        <p className="text-[12px] text-[#dddddd] dark:text-[#dddddd] text-center mt-3">
                             Discover our graduate courses aimed at advancing your expertise
                         </p>
                     </motion.div>
@@ -121,11 +123,11 @@ export default function test() {
                         whileHover="hover"
                         className="border border-[rgba(212,175,55,0.9)] rounded-md p-5 bg-transparent min-h-[170px] flex flex-col items-center transition-colors duration-300"
                     >
-                        <Lightbulb className="w-8 h-8 mb-2" color={gold} />
-                        <h3 className="text-[14px] font-semibold text-[rgba(212,175,55,0.95)] text-center">
+                        <Lightbulb className="w-10 h-10 mb-2 font-light" color={gold} />
+                        <h3 className="text-[14px] font-bold text-[rgba(212,175,55,0.95)] text-center">
                             Professional Development
                         </h3>
-                        <p className="text-[12px] text-[#dddddd] dark:text-[#dddddd] text-center mt-2">
+                        <p className="text-[12px] text-[#dddddd] dark:text-[#dddddd] text-center mt-3">
                             Enhance your skills with our professional development courses
                         </p>
                     </motion.div>
@@ -136,8 +138,7 @@ export default function test() {
                     <motion.button
                         variants={itemUp}
                         whileTap={{ scale: 0.98 }}
-                        className="mx-auto px-5 py-2 rounded text-black font-medium text-sm"
-                        style={{ background: gold }}
+                        className="mx-auto px-5 py-2 rounded text-black font-medium text-sm bg-yellow-500 transition-colors duration-300 hover:bg-yellow-600"
                     >
                         View All Courses
                     </motion.button>
