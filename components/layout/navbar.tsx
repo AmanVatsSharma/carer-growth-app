@@ -6,8 +6,12 @@ import { ModeToggle } from "../theme/mode-toggle";
 const NavBar = () => {
     const navItems = [
         {
-            name: "About Us",
-            link: "/about-us",
+            name: "Universities",
+            link: "/universities",
+        },
+        {
+            name: "Study Abroad",
+            link: "/study-abroad",
         },
         {
             name: "Find Programs",
@@ -16,6 +20,10 @@ const NavBar = () => {
         {
             name: "Contact Us",
             link: "#contact",
+        },
+        {
+            name: "About Us",
+            link: "/about-us",
         },
     ];
 
