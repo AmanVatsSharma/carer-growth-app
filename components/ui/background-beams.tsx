@@ -90,9 +90,9 @@ export const BackgroundBeams = React.memo(
               stroke={`url(#linearGradient-${index})`}
               strokeOpacity="0.7"
               strokeWidth="1.2"
-              initial={{ pathLength: 1 }}
+              initial={{ pathLength: 0 }}
               animate={{ pathLength: 1 }}
-              transition={{ duration: 0, ease: "linear", repeat: 0, delay: 0 }}
+              transition={{ duration: Math.random() * 10 + 10, ease: "easeInOut", repeat: Infinity, delay: 0 }}
             />
           ))}
           <defs>
