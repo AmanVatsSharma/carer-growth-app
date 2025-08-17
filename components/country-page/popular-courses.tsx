@@ -1,14 +1,14 @@
-'use client';
+"use client"
 
-import { motion } from 'framer-motion';
-import { Country } from '@/lib/country-data';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Clock, DollarSign, BookOpen, ArrowRight } from 'lucide-react';
+import { motion } from "framer-motion"
+import type { Country } from "@/lib/country-data"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Clock, DollarSign, BookOpen, ArrowRight } from "lucide-react"
 
 interface PopularCoursesProps {
-  country: Country;
+  country: Country
 }
 
 export function PopularCourses({ country }: PopularCoursesProps) {
@@ -23,10 +23,7 @@ export function PopularCourses({ country }: PopularCoursesProps) {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Popular{' '}
-            <span className="gold-gradient bg-clip-text text-transparent">
-              Courses
-            </span>
+            Popular <span className="modern-gradient bg-clip-text text-transparent">Courses</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Discover the most sought-after programs that lead to successful careers
@@ -41,36 +38,49 @@ export function PopularCourses({ country }: PopularCoursesProps) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -10, scale: 1.02 }}
               className="group"
             >
-              <Card className="h-full bg-background/80 backdrop-blur-sm border-border hover:border-gold/50 transition-all duration-300 hover:shadow-2xl hover:shadow-gold/20 overflow-hidden">
+              <Card className="h-full glass-effect hover:shadow-2xl transition-all duration-500 premium-glow overflow-hidden">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <Badge className="bg-gold/20 text-gold border-gold/30">
+                    <Badge
+                      className="text-white border-0"
+                      style={{
+                        background: "oklch(0.65 0.25 260 / 0.2)",
+                        color: "oklch(0.65 0.25 260)",
+                      }}
+                    >
                       {course.category}
                     </Badge>
-                    <BookOpen className="w-5 h-5 text-gold" />
+                    <BookOpen className="w-5 h-5" style={{ color: "oklch(0.65 0.25 260)" }} />
                   </div>
 
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-gold transition-colors">
+                  <h3
+                    className="text-xl font-bold mb-4 transition-colors duration-300"
+                    style={{ color: "oklch(0.65 0.25 260)" }}
+                  >
                     {course.name}
                   </h3>
 
                   <div className="space-y-3 mb-6">
-                    <div className="flex items-center text-muted-foreground">
-                      <Clock className="w-4 h-4 mr-2 text-gold" />
+                    <div className="flex items-center text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                      <Clock className="w-4 h-4 mr-2" style={{ color: "oklch(0.65 0.25 260)" }} />
                       <span>{course.duration}</span>
                     </div>
-                    <div className="flex items-center text-muted-foreground">
-                      <DollarSign className="w-4 h-4 mr-2 text-gold" />
+                    <div className="flex items-center text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                      <DollarSign className="w-4 h-4 mr-2" style={{ color: "oklch(0.65 0.25 260)" }} />
                       <span>{course.tuition}</span>
                     </div>
                   </div>
 
                   <Button
                     variant="outline"
-                    className="w-full border-gold/30 text-gold hover:bg-gold hover:text-black group/btn"
+                    className="w-full bg-transparent hover:scale-105 transition-all duration-300 group/btn"
+                    style={{
+                      borderColor: "oklch(0.65 0.25 260 / 0.3)",
+                      color: "oklch(0.65 0.25 260)",
+                    }}
                   >
                     Learn More
                     <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -80,7 +90,7 @@ export function PopularCourses({ country }: PopularCoursesProps) {
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="mt-4 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full origin-left"
+                    className="mt-4 h-1 modern-gradient rounded-full origin-left"
                   />
                 </CardContent>
               </Card>
@@ -89,5 +99,5 @@ export function PopularCourses({ country }: PopularCoursesProps) {
         </div>
       </div>
     </section>
-  );
+  )
 }

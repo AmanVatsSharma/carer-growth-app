@@ -1,11 +1,11 @@
-'use client';
+"use client"
 
-import { motion } from 'framer-motion';
-import { Country } from '@/lib/country-data';
-import { Card, CardContent } from '@/components/ui/card';
+import { motion } from "framer-motion"
+import type { Country } from "@/lib/country-data"
+import { Card, CardContent } from "@/components/ui/card"
 
 interface WhyThisCountryProps {
-  country: Country;
+  country: Country
 }
 
 export function WhyThisCountry({ country }: WhyThisCountryProps) {
@@ -20,13 +20,9 @@ export function WhyThisCountry({ country }: WhyThisCountryProps) {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Why Choose{' '}
-            <span className="gold-gradient bg-clip-text text-transparent">
-              {country.name}
-            </span>
-            ?
+            Why Choose <span className="modern-gradient bg-clip-text text-transparent">{country.name}</span>?
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto rounded-full" />
+          <div className="w-24 h-1 modern-gradient mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -37,22 +33,27 @@ export function WhyThisCountry({ country }: WhyThisCountryProps) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -10, scale: 1.02 }}
               className="group"
             >
-              <Card className="h-full bg-card/50 backdrop-blur-sm border-border/50 hover:border-gold/50 transition-all duration-300 hover:shadow-2xl hover:shadow-gold/20">
+              <Card className="h-full glass-effect hover:shadow-2xl transition-all duration-500 premium-glow">
                 <CardContent className="p-6 text-center">
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 10 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="text-4xl mb-4 float"
+                    className="text-4xl mb-4 premium-pulse"
                   >
                     {benefit.icon}
                   </motion.div>
-                  <h3 className="text-xl font-bold mb-3 text-gold group-hover:text-gold-accent transition-colors">
+                  <h3
+                    className="text-xl font-bold mb-3 transition-colors duration-300"
+                    style={{
+                      color: "oklch(0.65 0.25 260)",
+                    }}
+                  >
                     {benefit.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
                     {benefit.description}
                   </p>
                 </CardContent>
@@ -62,5 +63,5 @@ export function WhyThisCountry({ country }: WhyThisCountryProps) {
         </div>
       </div>
     </section>
-  );
+  )
 }

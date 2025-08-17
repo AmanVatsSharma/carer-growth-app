@@ -1,12 +1,12 @@
-'use client';
+"use client"
 
-import { motion } from 'framer-motion';
-import { Country } from '@/lib/country-data';
-import { Button } from '@/components/ui/button';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { motion } from "framer-motion"
+import type { Country } from "@/lib/country-data"
+import { Button } from "@/components/ui/button"
+import { Sparkles, ArrowRight } from "lucide-react"
 
 interface HeroBannerProps {
-  country: Country;
+  country: Country
 }
 
 export function HeroBanner({ country }: HeroBannerProps) {
@@ -20,7 +20,7 @@ export function HeroBanner({ country }: HeroBannerProps) {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-purple-900/40 to-transparent" />
       </div>
 
       {/* Animated Background Elements */}
@@ -28,10 +28,11 @@ export function HeroBanner({ country }: HeroBannerProps) {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-yellow-400 rounded-full sparkle"
+            className="absolute w-2 h-2 rounded-full premium-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
+              background: `oklch(${0.65 + Math.random() * 0.2} 0.25 ${260 + Math.random() * 40})`,
             }}
             animate={{
               scale: [0, 1, 0],
@@ -39,7 +40,7 @@ export function HeroBanner({ country }: HeroBannerProps) {
             }}
             transition={{
               duration: 3,
-              repeat: Infinity,
+              repeat: Number.POSITIVE_INFINITY,
               delay: Math.random() * 3,
             }}
           />
@@ -62,8 +63,8 @@ export function HeroBanner({ country }: HeroBannerProps) {
             className="flex items-center justify-center gap-4 mb-6"
           >
             <span className="text-6xl">{country.flag}</span>
-            <div className="h-16 w-px bg-gradient-to-b from-transparent via-gold to-transparent" />
-            <h1 className="text-2xl font-bold text-gold">
+            <div className="h-16 w-px bg-gradient-to-b from-transparent via-[oklch(0.65_0.25_260)] to-transparent" />
+            <h1 className="text-2xl font-bold text-white" style={{ color: "oklch(0.65 0.25 260)" }}>
               {country.name}
             </h1>
           </motion.div>
@@ -75,10 +76,7 @@ export function HeroBanner({ country }: HeroBannerProps) {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
           >
-            Study in{' '}
-            <span className="gold-gradient bg-clip-text text-transparent">
-              {country.name}
-            </span>
+            Study in <span className="modern-gradient bg-clip-text text-transparent">{country.name}</span>
           </motion.h2>
 
           {/* Description */}
@@ -100,7 +98,7 @@ export function HeroBanner({ country }: HeroBannerProps) {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-bold px-8 py-4 text-lg golden-glow group"
+              className="modern-gradient text-white font-bold px-8 py-4 text-lg premium-glow group hover:scale-105 transition-all duration-300"
             >
               <Sparkles className="mr-2 h-5 w-5 group-hover:animate-spin" />
               Start Your Journey
@@ -109,7 +107,11 @@ export function HeroBanner({ country }: HeroBannerProps) {
             <Button
               variant="outline"
               size="lg"
-              className="border-gold text-gold hover:bg-gold hover:text-black px-8 py-4 text-lg"
+              className="border-2 px-8 py-4 text-lg bg-transparent glass-effect hover:scale-105 transition-all duration-300"
+              style={{
+                borderColor: "oklch(0.65 0.25 260)",
+                color: "oklch(0.65 0.25 260)",
+              }}
             >
               Explore Universities
             </Button>
@@ -125,17 +127,19 @@ export function HeroBanner({ country }: HeroBannerProps) {
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-gold rounded-full flex justify-center"
+            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+            className="w-6 h-10 border-2 rounded-full flex justify-center"
+            style={{ borderColor: "oklch(0.65 0.25 260)" }}
           >
             <motion.div
               animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-1 h-3 bg-gold rounded-full mt-2"
+              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+              className="w-1 h-3 rounded-full mt-2"
+              style={{ backgroundColor: "oklch(0.65 0.25 260)" }}
             />
           </motion.div>
         </motion.div>
       </div>
     </section>
-  );
+  )
 }

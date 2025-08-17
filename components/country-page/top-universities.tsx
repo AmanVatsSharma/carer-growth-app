@@ -1,13 +1,13 @@
-'use client';
+"use client"
 
-import { motion } from 'framer-motion';
-import { Country } from '@/lib/country-data';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { MapPin, Trophy } from 'lucide-react';
+import { motion } from "framer-motion"
+import type { Country } from "@/lib/country-data"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { MapPin, Trophy } from "lucide-react"
 
 interface TopUniversitiesProps {
-  country: Country;
+  country: Country
 }
 
 export function TopUniversities({ country }: TopUniversitiesProps) {
@@ -22,10 +22,7 @@ export function TopUniversities({ country }: TopUniversitiesProps) {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Top Universities in{' '}
-            <span className="gold-gradient bg-clip-text text-transparent">
-              {country.name}
-            </span>
+            Top Universities in <span className="modern-gradient bg-clip-text text-transparent">{country.name}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Study at world-renowned institutions that shape global leaders
@@ -40,16 +37,20 @@ export function TopUniversities({ country }: TopUniversitiesProps) {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -10, scale: 1.02 }}
               className="group"
             >
-              <Card className="h-full bg-background/80 backdrop-blur-sm border-border hover:border-gold/50 transition-all duration-300 hover:shadow-2xl hover:shadow-gold/20 overflow-hidden">
+              <Card className="h-full glass-effect hover:shadow-2xl transition-all duration-500 premium-glow overflow-hidden">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-center mb-6">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ type: "spring", stiffness: 300 }}
-                      className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center golden-glow"
+                      className="w-20 h-20 rounded-full flex items-center justify-center premium-pulse"
+                      style={{
+                        background: `oklch(0.65 0.25 260 / 0.1)`,
+                        border: `2px solid oklch(0.65 0.25 260 / 0.3)`,
+                      }}
                     >
                       <img
                         src={university.logo || "/placeholder.svg"}
@@ -59,19 +60,31 @@ export function TopUniversities({ country }: TopUniversitiesProps) {
                     </motion.div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-center mb-4 group-hover:text-gold transition-colors">
+                  <h3
+                    className="text-xl font-bold text-center mb-4 transition-colors duration-300"
+                    style={{
+                      color: "oklch(0.65 0.25 260)",
+                    }}
+                  >
                     {university.name}
                   </h3>
 
                   <div className="space-y-3">
                     <div className="flex items-center justify-center">
-                      <Badge className="bg-gold/20 text-gold border-gold/30 hover:bg-gold hover:text-black">
+                      <Badge
+                        className="text-white border-0 hover:scale-105 transition-all duration-300"
+                        style={{
+                          background: "oklch(0.65 0.25 260 / 0.2)",
+                          color: "oklch(0.65 0.25 260)",
+                          borderColor: "oklch(0.65 0.25 260 / 0.3)",
+                        }}
+                      >
                         <Trophy className="w-3 h-3 mr-1" />
                         {university.ranking}
                       </Badge>
                     </div>
 
-                    <div className="flex items-center justify-center text-muted-foreground">
+                    <div className="flex items-center justify-center text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                       <MapPin className="w-4 h-4 mr-2" />
                       {university.location}
                     </div>
@@ -81,7 +94,7 @@ export function TopUniversities({ country }: TopUniversitiesProps) {
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="mt-6 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full origin-left"
+                    className="mt-6 h-1 modern-gradient rounded-full origin-left"
                   />
                 </CardContent>
               </Card>
@@ -90,5 +103,5 @@ export function TopUniversities({ country }: TopUniversitiesProps) {
         </div>
       </div>
     </section>
-  );
+  )
 }
