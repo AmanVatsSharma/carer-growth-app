@@ -1,15 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-    BookOpen,
-} from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Icon123 } from "@tabler/icons-react";
-import { Briefcase, GraduationCap, Icon, Lightbulb } from "lucide-react";
-import { ModeToggle } from "@/components/theme/mode-toggle";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import CoursesSection from "@/components/study-abroad/courses-section";
 

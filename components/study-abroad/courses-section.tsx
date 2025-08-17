@@ -1,7 +1,10 @@
+'use client'
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap, Lightbulb } from "lucide-react";
 
 export default function CoursesSection({ gold = "#D4AF37" }) {
+
+
     // Framer-motion variants
     const container = {
         hidden: { opacity: 0 },

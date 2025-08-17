@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import NavBar from "@/components/layout/navbar";
 import { StickyBanner } from "@/components/ui/sticky-banner";
+import Footer from "@/components/layout/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,6 +47,7 @@ export default function RootLayout({
           </StickyBanner>
           <NavBar />
           {children}
+          <Footer/>
         </ThemeProvider>
       </body>
     </html>
