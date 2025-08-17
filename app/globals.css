@@ -120,3 +120,43 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+/*  Added golden glow and sparkle animations */
+@keyframes golden-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.3); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.golden-glow {
+  animation: golden-glow 3s ease-in-out infinite;
+}
+
+.sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}

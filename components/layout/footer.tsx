@@ -71,7 +71,7 @@ const Footer = () => {
     ]
 
     return (
-        <footer className="text-gray-300 bg-[#070707] dark:bg-[#070707] dark:text-gray-300 px-4 py-5 max-w-screen-xl mx-auto md:px-8 transition-colors duration-300">
+        <footer className="text-gray-300 bg-[#070707] dark:bg-[#070707] dark:text-gray-300 px-4 py-5 md:pt-18 w-full mx-auto md:mt-20 md:px-20 transition-colors duration-300">
             <div className="gap-6 justify-between md:flex">
                 <div className="flex-1">
                     <div className="max-w-xs">
