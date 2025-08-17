@@ -2,7 +2,7 @@ import { ThreeDMarqueeSection } from "@/components/home-page/hero-section";
 import BrandsLoveUs from "@/components/home-page/logo-cloud-marquee";
 import CoursesSection from "@/components/study-abroad/courses-section";
 import HeroSection from "@/components/study-abroad/hero-section";
-import HowItWorksSection from "@/components/study-abroad/how-it-works-section";
+import StudyAbroadSection from "@/components/study-abroad/study-abroad-section";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default function StudyAbroadPage() {
@@ -16,9 +16,10 @@ export default function StudyAbroadPage() {
             </div>
 
             <HeroSection />
-            <ThreeDMarqueeSection />
-            <HowItWorksSection />
+            {/* <ThreeDMarqueeSection /> */}
+            <StudyAbroadSection />
             <BrandsLoveUs />
         </div>
     )
 }
+
