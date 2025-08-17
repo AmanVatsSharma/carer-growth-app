@@ -1,5 +1,7 @@
 'use client';
 
+import { NavbarLogo } from "../ui/resizable-navbar";
+
 const Footer = () => {
 
     const footerNavs = [
@@ -73,19 +75,22 @@ const Footer = () => {
             <div className="gap-6 justify-between md:flex">
                 <div className="flex-1">
                     <div className="max-w-xs">
-                        <img src="https://www.floatui.com/logo.svg" className="w-32" />
+                        <div className="logo text-gray-800 font-bold ">
+                            <NavbarLogo />
+                            IDP Education
+                        </div>
                         <p className="leading-relaxed mt-2 text-[15px]">
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                         </p>
                     </div>
-                    <form 
+                    <form
                         onSubmit={(e) => e.preventDefault()}
                     >
                         <label className="block pt-4 pb-2">
                             Stay up to date
                         </label>
                         <div className="max-w-sm flex items-center border rounded-md p-1">
-                            <input 
+                            <input
                                 type="email"
                                 placeholder="Enter your email"
                                 className="w-full p-2.5 outline-none"
@@ -106,17 +111,17 @@ const Footer = () => {
                                 key={idx}
                             >
                                 <h4 className="text-gray-800 font-medium">
-                                    { item.label }
+                                    {item.label}
                                 </h4>
                                 {
                                     item.items.map(((el, idx) => (
                                         <li key={idx}>
-                                            <a 
+                                            <a
                                                 href={el.href}
                                                 className="hover:underline hover:text-indigo-600"
-                                            
+
                                             >
-                                                { el.name }
+                                                {el.name}
                                             </a>
                                         </li>
                                     )))
@@ -128,7 +133,7 @@ const Footer = () => {
             </div>
             <div className="mt-8 py-6 border-t items-center justify-between sm:flex">
                 <div className="mt-4 sm:mt-0">
-                    &copy; 2022 Float UI All rights reserved.
+                    &copy; 2025 IDP Education All rights reserved.
                 </div>
                 <div className="mt-6 sm:mt-0">
                     <ul className="flex items-center space-x-4">
