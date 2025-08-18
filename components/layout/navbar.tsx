@@ -10,6 +10,10 @@ const NavBar = () => {
             link: "/universities",
         },
         {
+            name: 'Exams',
+            link: '/exams',
+        },
+        {
             name: "Study Abroad",
             link: "/study-abroad",
         },
