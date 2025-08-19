@@ -20,6 +20,7 @@ import ReactPlayer from "react-player";
 import { StickyScrollReveal } from "@/components/home-page/sticky-scroll-reveal";
 import ScrollStackSection from "@/components/home-page/scroll-stack";
 import { WorldMapSection } from "@/components/home-page/world-map-section";
+import SectionsGroup from "@/components/home-page/sections-group";
 
 export default function Home() {
   return (
@@ -188,6 +189,7 @@ export default function Home() {
       {/* <HeroVariation3 /> */}
       {/* </div> */}
 
+      <SectionsGroup />
       <BrandsLoveUs />
       <FeaturesSection03 />
       <FeaturesSection02 />
