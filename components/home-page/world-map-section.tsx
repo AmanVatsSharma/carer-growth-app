@@ -4,7 +4,7 @@ import { WorldMap } from "../ui/world-map";
 
 export function WorldMapSection() {
     return (
-        <div className=" py-10 md:py-40 dark:bg-black bg-white w-full">
+        <div className="md:flex md:px-20 py-10 md:py-40 dark:bg-black bg-white w-full">
             <div className="max-w-7xl mx-auto text-center pb-5">
                 <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
                     Remote{" "}

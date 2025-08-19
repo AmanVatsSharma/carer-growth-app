@@ -27,7 +27,7 @@ export default function Home() {
     <div className="relative w-full bg-gradient-to-br from-[#f8fafc] via-[#e0e7ef] to-[#f1f5f9] dark:from-[#181c24] dark:via-[#232a36] dark:to-[#1a202c]">
       <div className="main-video w-full overflow-hidden">
         <ReactPlayer
-          src="https://www.formeeexpress.com/video/LandingPageVideo.mp4"
+          src="landing-page/LandingPageVideo.mp4"
           loop
           playing
           muted
