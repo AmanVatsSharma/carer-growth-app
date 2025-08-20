@@ -47,7 +47,7 @@ const countries = [
     programs: "Engineering & Tech",
     description: "Tuition-free public universities with world-class engineering programs",
     image:
-      "/pictuers/maheshkumar-painam-HF-lFqdOMF8-unsplash.jpg",
+      "/pictures/maheshkumar-painam-HF-lFqdOMF8-unsplash.jpg",
     students: "400K",
     topUni: "TU Munich",
   },
