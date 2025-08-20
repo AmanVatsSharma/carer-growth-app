@@ -14,7 +14,7 @@ const countries = [
     programs: "Top MBA & Engineering",
     description: "Home to world's leading universities like Harvard, MIT, and Stanford",
     image:
-      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/pictures/nik-shuliahin-L4JWn8HHJ30-unsplash.jpg",
     students: "1.1M",
     topUni: "Harvard University",
   },
@@ -25,7 +25,7 @@ const countries = [
     programs: "Research Excellence",
     description: "Historic academic tradition with Oxford, Cambridge, and Imperial College",
     image:
-      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/pictures/marcin-nowak-iXqTqC-f6jI-unsplash.jpg",
     students: "500K",
     topUni: "University of Oxford",
   },
@@ -36,7 +36,7 @@ const countries = [
     programs: "Immigration Friendly",
     description: "Quality education with work opportunities and pathway to PR",
     image:
-      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/pictures/conor-samuel-Onadzzr1yBU-unsplash.jpg",
     students: "800K",
     topUni: "University of Toronto",
   },
@@ -47,7 +47,7 @@ const countries = [
     programs: "Engineering & Tech",
     description: "Tuition-free public universities with world-class engineering programs",
     image:
-      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/pictuers/maheshkumar-painam-HF-lFqdOMF8-unsplash.jpg",
     students: "400K",
     topUni: "TU Munich",
   },
@@ -58,7 +58,7 @@ const countries = [
     programs: "Research & Innovation",
     description: "High quality of life with excellent research opportunities",
     image:
-      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/pictures/caleb-JmuyB_LibRo-unsplash.jpg",
     students: "700K",
     topUni: "University of Melbourne",
   },
@@ -69,7 +69,7 @@ const countries = [
     programs: "Adventure & Learning",
     description: "Safe and welcoming environment with stunning natural beauty",
     image:
-      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/pictures/dan-freeman-hIKVSVKH7No-unsplash.jpg",
     students: "50K",
     topUni: "University of Auckland",
   },
