@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { BookOpen, Clock, Users, Award, TrendingUp, Target } from "lucide-react"
+import Image from "next/image"
 
 const exams = [
   {
@@ -16,7 +17,8 @@ const exams = [
     description: "Most widely accepted English proficiency test worldwide",
     features: ["Speaking", "Listening", "Reading", "Writing"],
     color: "from-blue-500/20 to-cyan-500/20",
-    image: "/placeholder.svg?height=150&width=200",
+    image:
+      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     avgScore: "6.5",
     passRate: "78%",
   },
@@ -30,7 +32,8 @@ const exams = [
     description: "Preferred by US universities and institutions",
     features: ["Academic Focus", "Internet-based", "Integrated Tasks"],
     color: "from-green-500/20 to-emerald-500/20",
-    image: "/placeholder.svg?height=150&width=200",
+    image:
+      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     avgScore: "85",
     passRate: "72%",
   },
@@ -44,7 +47,8 @@ const exams = [
     description: "Gateway to graduate school admissions",
     features: ["Quantitative", "Verbal", "Analytical Writing"],
     color: "from-purple-500/20 to-violet-500/20",
-    image: "/placeholder.svg?height=150&width=200",
+    image:
+      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     avgScore: "310",
     passRate: "65%",
   },
@@ -58,7 +62,8 @@ const exams = [
     description: "Essential for MBA and business school applications",
     features: ["Data Insights", "Verbal", "Quantitative"],
     color: "from-orange-500/20 to-red-500/20",
-    image: "/placeholder.svg?height=150&width=200",
+    image:
+      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     avgScore: "650",
     passRate: "58%",
   },
@@ -66,7 +71,26 @@ const exams = [
 
 export function PopularExams() {
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-slate-50 via-background to-blue-50/30 dark:from-slate-900/50 dark:via-background dark:to-blue-900/10">
+    <section className="relative py-20 px-4 bg-gradient-to-br from-slate-50 via-background to-blue-50/30 dark:from-slate-900/50 dark:via-background dark:to-blue-900/10">
+      <Image
+        src={'/patterns/istockphoto-1294603953-1024x1024.jpg'}
+        alt="Background Image"
+        // width={1920}
+        // height={1080}
+        className="absolute inset-0 w-full h-full object-cover opacity-30 sm:hidden"
+        fill
+        quality={90}
+      />
+      <Image
+        src={'/patterns/ottr-dan-D4PohKKjNlM-unsplash.jpg'}
+        alt="Background Image"
+        // width={1920}
+        // height={1080}
+        className="absolute inset-0 h-full object-cover opacity-30 hidden sm:flex w-screen"
+        fill
+        quality={90}
+      />
+
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

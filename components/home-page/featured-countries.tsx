@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { MapPin, Users, GraduationCap } from "lucide-react"
+import Image from "next/image"
 
 const countries = [
   {
@@ -12,7 +13,8 @@ const countries = [
     universities: "4,000+",
     programs: "Top MBA & Engineering",
     description: "Home to world's leading universities like Harvard, MIT, and Stanford",
-    image: "/placeholder.svg?height=200&width=300",
+    image:
+      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     students: "1.1M",
     topUni: "Harvard University",
   },
@@ -22,7 +24,8 @@ const countries = [
     universities: "150+",
     programs: "Research Excellence",
     description: "Historic academic tradition with Oxford, Cambridge, and Imperial College",
-    image: "/placeholder.svg?height=200&width=300",
+    image:
+      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     students: "500K",
     topUni: "University of Oxford",
   },
@@ -32,7 +35,8 @@ const countries = [
     universities: "200+",
     programs: "Immigration Friendly",
     description: "Quality education with work opportunities and pathway to PR",
-    image: "/placeholder.svg?height=200&width=300",
+    image:
+      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     students: "800K",
     topUni: "University of Toronto",
   },
@@ -42,7 +46,8 @@ const countries = [
     universities: "400+",
     programs: "Engineering & Tech",
     description: "Tuition-free public universities with world-class engineering programs",
-    image: "/placeholder.svg?height=200&width=300",
+    image:
+      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     students: "400K",
     topUni: "TU Munich",
   },
@@ -52,7 +57,8 @@ const countries = [
     universities: "40+",
     programs: "Research & Innovation",
     description: "High quality of life with excellent research opportunities",
-    image: "/placeholder.svg?height=200&width=300",
+    image:
+      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     students: "700K",
     topUni: "University of Melbourne",
   },
@@ -62,7 +68,8 @@ const countries = [
     universities: "8+",
     programs: "Adventure & Learning",
     description: "Safe and welcoming environment with stunning natural beauty",
-    image: "/placeholder.svg?height=200&width=300",
+    image:
+      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     students: "50K",
     topUni: "University of Auckland",
   },
@@ -70,7 +77,26 @@ const countries = [
 
 export function FeaturedCountries() {
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-background via-background to-muted/20">
+    <section className=" relative py-20 px-4 bg-gradient-to-br from-background via-background to-muted/20">
+      <Image
+        src={'/patterns/anton-sobotyak-K_PfDu_z45M-unsplash.jpg'}
+        alt="Background Image"
+        // width={1920}
+        // height={1080}
+        className="absolute inset-0 w-full h-full object-cover opacity-30 sm:hidden"
+        fill
+        quality={90}
+      />
+            <Image
+        src={'/patterns/adrien-brunat-OJRNWoGWbLA-unsplash.jpg'}
+        alt="Background Image"
+        // width={1920}
+        // height={1080}
+        className="absolute inset-0 h-full object-cover opacity-30 hidden sm:flex w-screen"
+        fill
+        quality={90}
+      />
+
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

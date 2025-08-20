@@ -4,10 +4,10 @@ import { WorldMap } from "../ui/world-map";
 
 export function WorldMapSection() {
     return (
-        <div className="md:flex md:px-20 py-10 md:py-40 dark:bg-black bg-white w-full">
+        <div className="md:flex md:px-20 py-10 md:py-20 dark:bg-black bg-white w-full">
             <div className="max-w-7xl mx-auto text-center pb-5">
                 <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
-                    Remote{" "}
+                    Remote
                     <span className="text-neutral-400">
                         {"Connectivity".split("").map((word, idx) => (
                             <motion.span
@@ -23,9 +23,7 @@ export function WorldMapSection() {
                     </span>
                 </p>
                 <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4 px-5">
-                    Break free from traditional boundaries. Work from anywhere, at the
-                    comfort of your own studio apartment. Perfect for Nomads and
-                    Travellers.
+                    Join thousands of successful students who chose us as their trusted partner. With partnerships across 50+ countries and 900+ universities, your dream education awaits.
                 </p>
             </div>
             <WorldMap
@@ -41,9 +39,14 @@ export function WorldMapSection() {
                         }, // Los Angeles
                     },
                     {
-                        start: { lat: 64.2008, lng: -149.4937 }, // Alaska (Fairbanks)
+                        start: { lat: 28.6139, lng: 77.209 }, // New Delhi
                         end: { lat: -15.7975, lng: -47.8919 }, // Brazil (Brasília)
                     },
+                    {
+                        start: { lat: 64.2008, lng: -149.4937 }, // Alaska (Fairbanks)
+                        end: { lat: 28.6139, lng: 77.209 }, // New Delhi
+                    },
+
                     {
                         start: { lat: -15.7975, lng: -47.8919 }, // Brazil (Brasília)
                         end: { lat: 38.7223, lng: -9.1393 }, // Lisbon

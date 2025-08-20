@@ -7,6 +7,7 @@ import { FeaturedCountries } from "./featured-countries"
 import { PopularExams } from "./popular-exams"
 import { ScholarshipOpportunities } from "./scholarship-opportunities"
 import { StickyCTA } from "./sticky-cta"
+import Image from "next/image"
 
 export default function SectionsGroup() {
   return (
@@ -64,26 +65,26 @@ export default function SectionsGroup() {
             </div>
 
             {/* Stats Row */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-black text-blue-400 mb-2">50,000+</div>
-                <div className="text-sm opacity-80 flex items-center justify-center gap-1">
-                  <Users className="w-4 h-4" />
+                <div className="text-xl md:text-3xl font-black text-blue-400 mb-2">50,000+</div>
+                <div className="text-sm opacity-80 flex flex-col md:flex items-center justify-center gap-3 md:gap-1">
+                  <Users className="w-8 h-8" />
                   Students Placed
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-black text-purple-400 mb-2">25+</div>
-                <div className="text-sm opacity-80 flex items-center justify-center gap-1">
-                  <Globe className="w-4 h-4" />
-                  Countries
+                <div className="text-xl md:text-3xl font-black text-purple-400 mb-2">25+</div>
+                <div className="text-sm opacity-80 flex flex-col md:flex items-center justify-center gap-3 md:gap-1">
+                  <Globe className="w-8 h-8" />
+                  Countries Network
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-black text-yellow-400 mb-2">98%</div>
-                <div className="text-sm opacity-80 flex items-center justify-center gap-1">
-                  <Star className="w-4 h-4" />
-                  Success Rate
+                <div className="text-xl md:text-3xl font-black text-yellow-400 mb-2">98%</div>
+                <div className="text-sm opacity-80 flex flex-col md:flex items-center justify-center gap-3 md:gap-1">
+                  <Star className="w-8 h-8" />
+                  Success Rate Acheived
                 </div>
               </div>
             </div>

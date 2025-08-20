@@ -44,7 +44,7 @@ export function StickyCTA() {
                       <div className="relative">
                         <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-blue-500">
                           <img
-                            src="/placeholder.svg?height=48&width=48"
+                            src="https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="Education counselor"
                             className="w-full h-full object-cover"
                           />
@@ -73,8 +73,11 @@ export function StickyCTA() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => setIsExpanded(false)}
-                      className="text-muted-foreground hover:text-foreground"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setIsExpanded(false)
+                      }}
+                      className="text-muted-foreground hover:text-foreground hover:bg-red-100 dark:hover:bg-red-900/20"
                     >
                       <X className="w-4 h-4" />
                     </Button>
@@ -82,7 +85,7 @@ export function StickyCTA() {
 
                   <div className="flex items-center gap-3 mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                     <img
-                      src="/placeholder.svg?height=40&width=40"
+                      src="https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Your counselor"
                       className="w-10 h-10 rounded-full object-cover"
                     />

@@ -12,21 +12,24 @@ const scholarships = [
     amount: "Up to $50,000",
     icon: Star,
     description: "Awarded for academic excellence and outstanding achievements",
-    image: "/placeholder.svg?height=100&width=150",
+    image:
+      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Need-Based Financial Aid",
     amount: "Up to $30,000",
     icon: DollarSign,
     description: "Support for students with demonstrated financial need",
-    image: "/placeholder.svg?height=100&width=150",
+    image:
+      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Country-Specific Grants",
     amount: "Up to $25,000",
     icon: Globe,
     description: "Special funding opportunities based on your destination country",
-    image: "/placeholder.svg?height=100&width=150",
+    image:
+      "https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ]
 
@@ -107,7 +110,7 @@ export function ScholarshipOpportunities() {
           >
             <div className="relative h-64 rounded-2xl overflow-hidden mb-6">
               <img
-                src="/placeholder.svg?height=300&width=500"
+                src="https://plus.unsplash.com/premium_photo-1714265046278-51dc8ee55405?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Scholarship success stories"
                 className="w-full h-full object-cover"
               />
