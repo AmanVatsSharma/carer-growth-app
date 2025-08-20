@@ -2,11 +2,11 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 const brands = [
-  { src: "/logo-01.webp", alt: "Asteroid Kit Light", darkSrc: "/logo-01.webp" },
-  { src: "/logo-02.webp", alt: "Aceternity UI Light", darkSrc: "/logo-02.webp" },
-  { src: "/logo-03.webp", alt: "Gamity" },
-  { src: "/logo-04.webp", alt: "Host IT Light", darkSrc: "/logo-04.webp" },
-  { src: "/logo-01.webp", alt: "Asteroid Kit Light", darkSrc: "/logo-01.webp" },
+  { src: "/logo-01.webp", alt: "Asteroid Kit Light", darkSrc: "/logo-01_dark.webp" },
+  { src: "/logo-02.webp", alt: "Aceternity UI Light", darkSrc: "/logo-02_dark.webp" },
+  { src: "/logo-03.webp", alt: "Gamity", darkSrc: "/logo-03_dark.webp" },
+  { src: "/logo-04.webp", alt: "Host IT Light", darkSrc: "/logo-04_dark.webp" },
+  { src: "/logo-01.webp", alt: "Asteroid Kit Light", darkSrc: "/logo-01_dark.webp" },
 ];
 
 export default function BrandsLoveUs() {

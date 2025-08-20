@@ -120,10 +120,12 @@ export function PopularExams() {
             >
               <Card className="h-full bg-card/50 backdrop-blur-sm border-border/50 hover:border-blue-500/50 transition-all duration-300 group overflow-hidden">
                 <div className="relative h-40 overflow-hidden">
-                  <img
+                  <Image
                     src={exam.image || "/placeholder.svg"}
                     alt={`${exam.name} test preparation`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    width={800}
+                    height={300}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                   <div className="absolute top-4 right-4">
