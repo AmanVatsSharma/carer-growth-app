@@ -14,6 +14,15 @@ export default function SectionsGroup() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 overflow-hidden">
+        <Image
+          src={'/patterns/anton-sobotyak-K_PfDu_z45M-unsplash.jpg'}
+          alt="Background Image"
+          // width={1920}
+          // height={1080}
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          fill
+          quality={90}
+        />
         <div className="absolute inset-0">
           <img
             src="/placeholder.svg?height=1080&width=1920"
