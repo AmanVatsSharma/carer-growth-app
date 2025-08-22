@@ -22,6 +22,7 @@ import ScrollStackSection from "@/components/home-page/scroll-stack";
 import { WorldMapSection } from "@/components/home-page/world-map-section";
 import SectionsGroup from "@/components/home-page/sections-group";
 import GoldenCta from "@/components/home-page/golden-cta-section";
+import FAQSection from "@/components/home-page/faq-section";
 
 export default function Home() {
   return (
@@ -132,6 +133,7 @@ export default function Home() {
 
       <SectionsGroup />
       <BrandsLoveUs />
+      <FAQSection />
       {/* <FeaturesSection03 />
       <FeaturesSection02 /> */}
       {/* <div className="w-full overflow-hidden bg-white dark:bg-[#0B0B0F]"> */}
