@@ -20,7 +20,7 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, phone } = body
+    const { name, phone, email } = body
 
     if (!name || !phone) {
       return NextResponse.json({ error: "Name and phone are required" }, { status: 400 })
@@ -29,13 +29,20 @@ export async function POST(request: NextRequest) {
     const lead = await prisma.lead.create({
       data: {
         name,
+        email: email || null,
         phone,
         contacted: false,
         status: "NEW",
       },
     })
 
-    return NextResponse.json(lead, { status: 201 })
+    return NextResponse.json(
+      {
+        message: "Lead created successfully",
+        lead
+      },
+      { status: 201 }
+    )
   } catch (error) {
     console.error("Error creating lead:", error)
     return NextResponse.json({ error: "Failed to create lead" }, { status: 500 })
