@@ -1,190 +1,373 @@
-'use client';
+"use client"
 
-import { NavbarLogo } from "../ui/resizable-navbar";
-import SubFooter from "./subFooter";
+import type React from "react"
+
+import { motion } from "framer-motion"
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
+  ArrowRight,
+  Users,
+  GraduationCap,
+  Globe,
+  Award,
+} from "lucide-react"
+import { useState } from "react"
 
 const Footer = () => {
+  const [email, setEmail] = useState("")
 
-    const footerNavs = [
-        {
-            label: "Company",
-            items: [
-                {
-                    href: 'javascript:void()',
-                    name: 'Partners'
-                },
-                {
-                    href: 'javascript:void()',
-                    name: 'Blog'
-                },
-                {
-                    href: 'javascript:void()',
-                    name: 'Team'
-                },
-                {
-                    href: 'javascript:void()',
-                    name: 'Careers'
-                },
-            ],
-        },
-        {
-            label: "Resources",
-            items: [
-                {
-                    href: 'javascript:void()',
-                    name: 'contact'
-                },
-                {
-                    href: 'javascript:void()',
-                    name: 'Support'
-                },
-                {
-                    href: 'javascript:void()',
-                    name: 'Docs'
-                },
-                {
-                    href: 'javascript:void()',
-                    name: 'Pricing'
-                },
-            ],
-        },
-        {
-            label: "About",
-            items: [
-                {
-                    href: 'javascript:void()',
-                    name: 'Terms'
-                },
-                {
-                    href: 'javascript:void()',
-                    name: 'License'
-                },
-                {
-                    href: 'javascript:void()',
-                    name: 'Privacy'
-                },
-                {
-                    href: 'javascript:void()',
-                    name: 'About US'
-                },
-            ]
-        }
-    ]
+  const footerSections = [
+    {
+      title: "Programs",
+      links: [
+        { name: "Study Abroad", href: "/programs/study-abroad" },
+        { name: "English Courses", href: "/programs/english" },
+        { name: "University Pathways", href: "/programs/pathways" },
+        { name: "Test Preparation", href: "/programs/test-prep" },
+      ],
+    },
+    {
+      title: "Services",
+      links: [
+        { name: "Student Counseling", href: "/services/counseling" },
+        { name: "Visa Assistance", href: "/services/visa" },
+        { name: "Accommodation", href: "/services/accommodation" },
+        { name: "Career Support", href: "/services/career" },
+      ],
+    },
+    {
+      title: "Resources",
+      links: [
+        { name: "Study Destinations", href: "/resources/destinations" },
+        { name: "Scholarships", href: "/resources/scholarships" },
+        { name: "Blog & News", href: "/resources/blog" },
+        { name: "Success Stories", href: "/resources/stories" },
+      ],
+    },
+    {
+      title: "Support",
+      links: [
+        { name: "Contact Us", href: "/contact" },
+        { name: "Find an Office", href: "/offices" },
+        { name: "Help Center", href: "/help" },
+        { name: "Book Consultation", href: "/consultation" },
+      ],
+    },
+  ]
 
-    return (
-        <>
-            <footer className="text-gray-300 bg-[#070707] dark:bg-[#070707] dark:text-gray-300 px-4 py-5 md:pt-18 w-full mx-auto md:mt-20 md:px-20 transition-colors duration-300">
-                <div className="gap-6 justify-between md:flex">
-                    <div className="flex-1">
-                        <div className="max-w-xs">
-                            <div className="logo text-white dark:text-white font-bold ">
-                                <NavbarLogo />
-                                {/* IDP Education */}
-                            </div>
-                            <p className="leading-relaxed mt-2 text-[15px] text-gray-400 dark:text-gray-400">
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                            </p>
-                        </div>
-                        <form
-                            onSubmit={(e) => e.preventDefault()}
-                        >
-                            <label className="block pt-4 pb-2 text-gray-300 dark:text-gray-300">
-                                Stay up to date
-                            </label>
-                            <div className="max-w-sm flex items-center border rounded-md p-1 border-gray-700 dark:border-gray-700 bg-[#181818] dark:bg-[#181818]">
-                                <input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    className="w-full p-2.5 outline-none bg-transparent text-gray-200 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-400"
-                                />
-                                <button
-                                    className="p-2.5 rounded-md text-white bg-indigo-600 outline-none shadow-md focus:shadow-none sm:px-5"
-                                >
-                                    Subscribe
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    <div className="flex-1 mt-10 space-y-6 items-center justify-between sm:flex md:space-y-0 md:mt-0">
-                        {
-                            footerNavs.map((item, idx) => (
-                                <ul
-                                    className="space-y-4"
-                                    key={idx}
-                                >
-                                    <h4 className="text-white dark:text-white font-medium">
-                                        {item.label}
-                                    </h4>
-                                    {
-                                        item.items.map(((el, idx) => (
-                                            <li key={idx}>
-                                                <a
-                                                    href={el.href}
-                                                    className="hover:underline hover:text-indigo-400 dark:hover:text-indigo-400 text-gray-300 dark:text-gray-300"
-                                                >
-                                                    {el.name}
-                                                </a>
-                                            </li>
-                                        )))
-                                    }
-                                </ul>
-                            ))
-                        }
-                    </div>
+  const socialLinks = [
+    { icon: Facebook, href: "#", color: "hover:text-blue-400", label: "Facebook" },
+    { icon: Twitter, href: "#", color: "hover:text-sky-400", label: "Twitter" },
+    { icon: Instagram, href: "#", color: "hover:text-pink-400", label: "Instagram" },
+    { icon: Linkedin, href: "#", color: "hover:text-blue-500", label: "LinkedIn" },
+    { icon: Youtube, href: "#", color: "hover:text-red-400", label: "YouTube" },
+  ]
+
+  const stats = [
+    { icon: Users, number: "500K+", label: "Students Helped", color: "text-amber-400" },
+    { icon: GraduationCap, number: "1000+", label: "Partner Universities", color: "text-amber-400" },
+    { icon: Globe, number: "50+", label: "Countries", color: "text-amber-400" },
+    { icon: Award, number: "25+", label: "Years Experience", color: "text-amber-400" },
+  ]
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log("Newsletter subscription:", email)
+    setEmail("")
+  }
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  return (
+    <footer className="bg-gradient-to-b from-gray-900 to-black dark:from-gray-950 dark:to-black text-gray-300 dark:text-gray-400 transition-colors duration-300">
+      {/* Upper Footer - Stats & CTA Section */}
+      <motion.div
+        className="bg-gradient-to-r from-gray-800 via-gray-900 to-black dark:from-gray-900 dark:via-black dark:to-gray-950 border-b border-gray-700/50 dark:border-gray-800/50"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* CTA Section */}
+            <motion.div variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white dark:text-gray-100 mb-4">
+                Ready to Start Your
+                <span className="text-transparent bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text ml-2">
+                  Global Journey?
+                </span>
+              </h2>
+              <p className="text-gray-400 dark:text-gray-500 text-lg mb-6 leading-relaxed">
+                Join thousands of students who have achieved their dreams of studying abroad with our expert guidance.
+              </p>
+              <motion.button
+                className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-black font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-amber-500/25"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Get Free Consultation
+              </motion.button>
+            </motion.div>
+
+            {/* Stats Grid */}
+            <motion.div
+              className="grid grid-cols-2 gap-6"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  className="text-center p-6 bg-gray-800/50 dark:bg-gray-900/50 rounded-xl border border-gray-700/30 dark:border-gray-800/30 backdrop-blur-sm"
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, y: -4 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <stat.icon className={`w-8 h-8 mx-auto mb-3 ${stat.color}`} />
+                  <div className="text-2xl lg:text-3xl font-bold text-white dark:text-gray-100 mb-1">{stat.number}</div>
+                  <div className="text-sm text-gray-400 dark:text-gray-500 font-medium">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Main Footer Content */}
+      <motion.div
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          {/* Brand Section */}
+          <motion.div className="lg:col-span-4" variants={itemVariants}>
+            <div className="mb-6">
+              <motion.h2
+                className="text-3xl font-bold text-white dark:text-gray-100 mb-4"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <span className="text-transparent bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text">IDP</span>
+                <span className="ml-2">Education</span>
+              </motion.h2>
+              <p className="text-gray-300 dark:text-gray-400 leading-relaxed mb-6 text-base">
+                Your trusted partner in international education. We help students achieve their dreams of studying
+                abroad with personalized guidance and expert support.
+              </p>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-4 mb-8">
+              <motion.div
+                className="flex items-center gap-3 text-gray-200 dark:text-gray-300"
+                whileHover={{ x: 4 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-500/20 to-yellow-500/20 flex items-center justify-center">
+                  <Phone className="w-4 h-4 text-amber-400" />
                 </div>
-                <div className="mt-8 py-6 border-t border-gray-700 dark:border-gray-700 items-center justify-between sm:flex">
-                    <div className="mt-4 sm:mt-0 text-gray-400 dark:text-gray-400">
-                        &copy; 2025 IDP Education All rights reserved.
-                    </div>
-                    <div className="mt-6 sm:mt-0">
-                        <ul className="flex items-center space-x-4">
-                            <li className="w-10 h-10 border border-gray-700 dark:border-gray-700 rounded-full flex items-center justify-center">
-                                <a href="javascript:void()">
-                                    <svg className="svg-icon w-6 h-6 text-blue-400" viewBox="0 0 20 20">
-                                        <path fill="none" d="M18.258,3.266c-0.693,0.405-1.46,0.698-2.277,0.857c-0.653-0.686-1.586-1.115-2.618-1.115c-1.98,0-3.586,1.581-3.586,3.53c0,0.276,0.031,0.545,0.092,0.805C6.888,7.195,4.245,5.79,2.476,3.654C2.167,4.176,1.99,4.781,1.99,5.429c0,1.224,0.633,2.305,1.596,2.938C2.999,8.349,2.445,8.19,1.961,7.925C1.96,7.94,1.96,7.954,1.96,7.97c0,1.71,1.237,3.138,2.877,3.462c-0.301,0.08-0.617,0.123-0.945,0.123c-0.23,0-0.456-0.021-0.674-0.062c0.456,1.402,1.781,2.422,3.35,2.451c-1.228,0.947-2.773,1.512-4.454,1.512c-0.291,0-0.575-0.016-0.855-0.049c1.588,1,3.473,1.586,5.498,1.586c6.598,0,10.205-5.379,10.205-10.045c0-0.153-0.003-0.305-0.01-0.456c0.7-0.499,1.308-1.12,1.789-1.827c-0.644,0.28-1.334,0.469-2.06,0.555C17.422,4.782,17.99,4.091,18.258,3.266"></path>
-                                    </svg>
-                                </a>
-                            </li>
-
-                            <li className="w-10 h-10 border border-gray-700 dark:border-gray-700 rounded-full flex items-center justify-center">
-                                <a href="javascript:void()">
-                                    <svg className="svg-icon w-6 h-6 text-blue-700" viewBox="0 0 20 20">
-                                        <path fill="none" d="M11.344,5.71c0-0.73,0.074-1.122,1.199-1.122h1.502V1.871h-2.404c-2.886,0-3.903,1.36-3.903,3.646v1.765h-1.8V10h1.8v8.128h3.601V10h2.403l0.32-2.718h-2.724L11.344,5.71z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-
-                            <li className="w-10 h-10 border border-gray-700 dark:border-gray-700 rounded-full flex items-center justify-center">
-                                <a href="javascript:void()">
-                                    <svg className="svg-icon w-6 h-6 text-blue-500" viewBox="0 0 20 20">
-                                        <path fill="none" d="M10,2.531c-4.125,0-7.469,3.344-7.469,7.469c0,4.125,3.344,7.469,7.469,7.469c4.125,0,7.469-3.344,7.469-7.469C17.469,5.875,14.125,2.531,10,2.531 M10,3.776c1.48,0,2.84,0.519,3.908,1.384c-1.009,0.811-2.111,1.512-3.298,2.066C9.914,6.072,9.077,5.017,8.14,4.059C8.728,3.876,9.352,3.776,10,3.776 M6.903,4.606c0.962,0.93,1.82,1.969,2.53,3.112C7.707,8.364,5.849,8.734,3.902,8.75C4.264,6.976,5.382,5.481,6.903,4.606 M3.776,10c2.219,0,4.338-0.418,6.29-1.175c0.209,0.404,0.405,0.813,0.579,1.236c-2.147,0.805-3.953,2.294-5.177,4.195C4.421,13.143,3.776,11.648,3.776,10 M10,16.224c-1.337,0-2.572-0.426-3.586-1.143c1.079-1.748,2.709-3.119,4.659-3.853c0.483,1.488,0.755,3.071,0.784,4.714C11.271,16.125,10.646,16.224,10,16.224 M13.075,15.407c-0.072-1.577-0.342-3.103-0.806-4.542c0.673-0.154,1.369-0.243,2.087-0.243c0.621,0,1.22,0.085,1.807,0.203C15.902,12.791,14.728,14.465,13.075,15.407 M14.356,9.378c-0.868,0-1.708,0.116-2.515,0.313c-0.188-0.464-0.396-0.917-0.621-1.359c1.294-0.612,2.492-1.387,3.587-2.284c0.798,0.97,1.302,2.187,1.395,3.517C15.602,9.455,14.99,9.378,14.356,9.378"></path>
-                                    </svg>
-                                </a>
-                            </li>
-
-                            <li className="w-10 h-10 border border-gray-700 dark:border-gray-700 rounded-full flex items-center justify-center">
-                                <a href="javascript:void()">
-                                    <svg className="svg-icon w-6 h-6 text-red-600" viewBox="0 0 20 20">
-                                        <path fill="none" d="M9.797,2.214C9.466,2.256,9.134,2.297,8.802,2.338C8.178,2.493,7.498,2.64,6.993,2.935C5.646,3.723,4.712,4.643,4.087,6.139C3.985,6.381,3.982,6.615,3.909,6.884c-0.48,1.744,0.37,3.548,1.402,4.173c0.198,0.119,0.649,0.332,0.815,0.049c0.092-0.156,0.071-0.364,0.128-0.546c0.037-0.12,0.154-0.347,0.127-0.496c-0.046-0.255-0.319-0.416-0.434-0.62C5.715,9.027,5.703,8.658,5.59,8.101c0.009-0.075,0.017-0.149,0.026-0.224C5.65,7.254,5.755,6.805,5.948,6.362c0.564-1.301,1.47-2.025,2.931-2.458c0.327-0.097,1.25-0.252,1.734-0.149c0.289,0.05,0.577,0.099,0.866,0.149c1.048,0.33,1.811,0.938,2.218,1.888c0.256,0.591,0.33,1.725,0.154,2.483c-0.085,0.36-0.072,0.667-0.179,0.993c-0.397,1.206-0.979,2.323-2.295,2.633c-0.868,0.205-1.519-0.324-1.733-0.869c-0.06-0.151-0.161-0.418-0.101-0.671c0.229-0.978,0.56-1.854,0.815-2.831c0.243-0.931-0.218-1.665-0.943-1.837C8.513,5.478,7.816,6.312,7.579,6.858C7.39,7.292,7.276,8.093,7.426,8.672c0.047,0.183,0.269,0.674,0.23,0.844c-0.174,0.755-0.372,1.568-0.587,2.31c-0.223,0.771-0.344,1.562-0.56,2.311c-0.1,0.342-0.096,0.709-0.179,1.066v0.521c-0.075,0.33-0.019,0.916,0.051,1.242c0.045,0.209-0.027,0.467,0.076,0.621c0.002,0.111,0.017,0.135,0.052,0.199c0.319-0.01,0.758-0.848,0.917-1.094c0.304-0.467,0.584-0.967,0.816-1.514c0.208-0.494,0.241-1.039,0.408-1.566c0.12-0.379,0.292-0.824,0.331-1.24h0.025c0.066,0.229,0.306,0.395,0.485,0.52c0.56,0.4,1.525,0.77,2.573,0.523c1.188-0.281,2.133-0.838,2.755-1.664c0.457-0.609,0.804-1.313,1.07-2.112c0.131-0.392,0.158-0.826,0.256-1.241c0.241-1.043-0.082-2.298-0.384-2.981C14.847,3.35,12.902,2.17,9.797,2.214"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <span>+1 (555) 123-4567</span>
+              </motion.div>
+              <motion.div
+                className="flex items-center gap-3 text-gray-200 dark:text-gray-300"
+                whileHover={{ x: 4 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-500/20 to-yellow-500/20 flex items-center justify-center">
+                  <Mail className="w-4 h-4 text-amber-400" />
                 </div>
-                <style jsx>{`
-                .svg-icon path,
-                .svg-icon polygon,
-                .svg-icon rect {
-                    fill: currentColor;
-                }
-            `}</style>
-            </footer>
-            <SubFooter />
-        </>
+                <span>info@idpeducation.com</span>
+              </motion.div>
+              <motion.div
+                className="flex items-center gap-3 text-gray-200 dark:text-gray-300"
+                whileHover={{ x: 4 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-500/20 to-yellow-500/20 flex items-center justify-center">
+                  <MapPin className="w-4 h-4 text-amber-400" />
+                </div>
+                <span>Global Education Centers Worldwide</span>
+              </motion.div>
+            </div>
 
-    )
+            {/* Newsletter Signup */}
+            <div>
+              <h3 className="text-white dark:text-gray-100 font-semibold mb-3 text-lg">Stay Updated</h3>
+              <p className="text-gray-300 dark:text-gray-400 mb-4">
+                Get the latest updates on study opportunities and education news.
+              </p>
+              <form onSubmit={handleSubscribe} className="flex gap-2">
+                <motion.input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="flex-1 px-4 py-3 bg-gray-800 dark:bg-gray-900 border border-gray-600 dark:border-gray-700 rounded-lg text-white dark:text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200"
+                  whileFocus={{ scale: 1.02 }}
+                  required
+                />
+                <motion.button
+                  type="submit"
+                  className="px-6 py-3 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-black font-semibold rounded-lg transition-all duration-200 flex items-center gap-2 shadow-lg"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </motion.button>
+              </form>
+            </div>
+          </motion.div>
+
+          {/* Navigation Sections */}
+          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+            {footerSections.map((section, sectionIndex) => (
+              <motion.div key={section.title} variants={itemVariants}>
+                <h3 className="text-white dark:text-gray-100 font-semibold mb-6 text-lg">{section.title}</h3>
+                <ul className="space-y-4">
+                  {section.links.map((link, linkIndex) => (
+                    <motion.li key={link.name}>
+                      <motion.a
+                        href={link.href}
+                        className="text-gray-300 dark:text-gray-400 hover:text-amber-400 dark:hover:text-amber-400 transition-colors duration-200"
+                        whileHover={{ x: 4 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        {link.name}
+                      </motion.a>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Bottom Bar */}
+      <motion.div
+        className="border-t border-gray-700/50 dark:border-gray-800/50 bg-black/50 dark:bg-black/70"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Copyright */}
+            <motion.div
+              className="text-gray-400 dark:text-gray-500"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 0.4 }}
+            >
+              © 2025 IDP Education. All rights reserved.
+            </motion.div>
+
+            {/* Legal Links */}
+            <motion.div
+              className="flex items-center gap-6"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.7, duration: 0.4 }}
+            >
+              <motion.a
+                href="/privacy"
+                className="text-gray-400 dark:text-gray-500 hover:text-amber-400 dark:hover:text-amber-400 transition-colors duration-200"
+                whileHover={{ y: -2 }}
+              >
+                Privacy Policy
+              </motion.a>
+              <motion.a
+                href="/terms"
+                className="text-gray-400 dark:text-gray-500 hover:text-amber-400 dark:hover:text-amber-400 transition-colors duration-200"
+                whileHover={{ y: -2 }}
+              >
+                Terms of Service
+              </motion.a>
+              <motion.a
+                href="/cookies"
+                className="text-gray-400 dark:text-gray-500 hover:text-amber-400 dark:hover:text-amber-400 transition-colors duration-200"
+                whileHover={{ y: -2 }}
+              >
+                Cookie Policy
+              </motion.a>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              className="flex items-center gap-3"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8, duration: 0.4 }}
+            >
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  className={`w-11 h-11 rounded-xl bg-gray-800 dark:bg-gray-900 border border-gray-600 dark:border-gray-700 flex items-center justify-center text-gray-400 dark:text-gray-500 ${social.color} transition-all duration-200 hover:border-amber-500/50`}
+                  whileHover={{
+                    scale: 1.1,
+                    y: -3,
+                    backgroundColor: "rgba(245, 158, 11, 0.1)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay: 0.9 + index * 0.1,
+                    duration: 0.4,
+                    type: "spring",
+                    stiffness: 300,
+                  }}
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-5 h-5" />
+                </motion.a>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </motion.div>
+    </footer>
+  )
 }
 
-
-export default Footer;
+export default Footer

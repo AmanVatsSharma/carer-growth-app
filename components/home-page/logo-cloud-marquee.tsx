@@ -14,10 +14,10 @@ export default function BrandsLoveUs() {
     <section className="relative py-16 bg-white dark:bg-black ">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-center text-3xl md:text-5xl font-bold text-gray-800 dark:text-white">
-          Brands love us
+          Top Universities You Love
         </h2>
         <p className="text-center text-gray-600 dark:text-gray-400 mt-3 px-16">
-          Aman Sharma is loved by the best companies who are serious about what they do.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptatum cupiditate optio quas unde facilis!
         </p>
 
         <div className="mt-20 relative mx-2 md:mx-5">

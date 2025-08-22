@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { getAllCountries } from "@/lib/country-data"
 import Link from "next/link"
 import { ArrowRight, Globe, GraduationCap, Users, Award } from "lucide-react"
+import Image from "next/image"
 
 export default function HomePage() {
   const countries = getAllCountries()
@@ -14,6 +15,14 @@ export default function HomePage() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <Image
+          src={'/pictures/priscilla-du-preez-AOdELn6senM-unsplash.jpg'} 
+          alt="Hero Background" 
+          fill 
+          className="absolute inset-0 object-cover object-center opacity-30" 
+          quality={100} 
+          priority
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-background via-card/50 to-background" />
 
         {/* Animated Background Elements */}
