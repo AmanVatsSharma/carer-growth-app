@@ -65,7 +65,7 @@ export default function HomePage() {
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Your Gateway to <span className="gold-gradient bg-clip-text text-transparent">Global Education</span>
+              Your Gateway to <span className="gold-gradient bg-clip-text ">Global Education</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">

@@ -74,9 +74,7 @@ export function ThreeDMarqueeSection() {
         at a time.
       </h2>
       <p className="relative z-20 mx-auto max-w-2xl py-8 text-center text-sm text-neutral-200 md:text-base">
-        You are not your job, you&apos;re not how much money you have in the
-        bank. You are not the car you drive. You&apos;re not the contents of
-        your wallet.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eaque officia porro velit voluptatum ratione ipsa molestiae? Maxime tenetur voluptatibus veniam soluta quae nesciunt quas reiciendis voluptates deserunt dicta vero, ullam aliquid quod cum, esse quasi optio, aspernatur inventore repudiandae ea a nisi illo! Sit.
       </p>
 
       <div className="relative z-20 flex flex-wrap items-center justify-center gap-4 pt-4">

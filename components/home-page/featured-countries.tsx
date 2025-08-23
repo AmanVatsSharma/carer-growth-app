@@ -17,6 +17,7 @@ const countries = [
       "/pictures/nik-shuliahin-L4JWn8HHJ30-unsplash.jpg",
     students: "1.1M",
     topUni: "Harvard University",
+    link: "/country/usa"
   },
   {
     name: "United Kingdom",
@@ -28,6 +29,7 @@ const countries = [
       "/pictures/marcin-nowak-iXqTqC-f6jI-unsplash.jpg",
     students: "500K",
     topUni: "University of Oxford",
+    link: "/country/uk"
   },
   {
     name: "Canada",
@@ -39,6 +41,7 @@ const countries = [
       "/pictures/conor-samuel-Onadzzr1yBU-unsplash.jpg",
     students: "800K",
     topUni: "University of Toronto",
+    link: "/country/canada"
   },
   {
     name: "Germany",
@@ -50,6 +53,7 @@ const countries = [
       "/pictures/maheshkumar-painam-HF-lFqdOMF8-unsplash.jpg",
     students: "400K",
     topUni: "TU Munich",
+    link: "/country/germany"
   },
   {
     name: "Australia",
@@ -61,6 +65,7 @@ const countries = [
       "/pictures/caleb-JmuyB_LibRo-unsplash.jpg",
     students: "700K",
     topUni: "University of Melbourne",
+    link: "/country/australia"
   },
   {
     name: "New Zealand",
@@ -72,6 +77,7 @@ const countries = [
       "/pictures/dan-freeman-hIKVSVKH7No-unsplash.jpg",
     students: "50K",
     topUni: "University of Auckland",
+    link: "/country/new-zealand"
   },
 ]
 
@@ -87,7 +93,7 @@ export function FeaturedCountries() {
         fill
         quality={90}
       />
-            <Image
+      <Image
         src={'/patterns/adrien-brunat-OJRNWoGWbLA-unsplash.jpg'}
         alt="Background Image"
         // width={1920}
@@ -124,7 +130,9 @@ export function FeaturedCountries() {
               whileHover={{ y: -8, scale: 1.02 }}
               className="cursor-pointer"
             >
-              <Card className="h-full bg-card/50 backdrop-blur-sm border-border/50 hover:border-blue-500/50 transition-all duration-300 group overflow-hidden">
+              <Card className="h-full bg-card/50 backdrop-blur-sm border-border/50 hover:border-blue-500/50 transition-all duration-300 group overflow-hidden"
+                onClick={() => window.location.href = country.link}
+              >
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={country.image || "/placeholder.svg"}
