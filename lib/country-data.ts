@@ -46,7 +46,7 @@ export const countryData: Record<string, Country> = {
     code: 'CA',
     name: 'Canada',
     flag: '🇨🇦',
-    heroImage: '/placeholder.svg?height=600&width=1200',
+    heroImage: '/pictures/conor-samuel-Onadzzr1yBU-unsplash.jpg',
     description: 'Experience world-class education in one of the most welcoming countries globally.',
     benefits: [
       {
@@ -162,7 +162,7 @@ export const countryData: Record<string, Country> = {
     code: 'US',
     name: 'United States',
     flag: '🇺🇸',
-    heroImage: '/placeholder.svg?height=600&width=1200',
+    heroImage: '/pictures/nik-shuliahin-L4JWn8HHJ30-unsplash.jpg',
     description: 'Home to the world\'s top universities and endless opportunities.',
     benefits: [
       {
@@ -278,7 +278,7 @@ export const countryData: Record<string, Country> = {
     code: 'GB',
     name: 'United Kingdom',
     flag: '🇬🇧',
-    heroImage: '/placeholder.svg?height=600&width=1200',
+    heroImage: '/pictures/marcin-nowak-iXqTqC-f6jI-unsplash.jpg',
     description: 'Study at prestigious institutions with centuries of academic excellence.',
     benefits: [
       {
@@ -394,7 +394,7 @@ export const countryData: Record<string, Country> = {
     code: 'AU',
     name: 'Australia',
     flag: '🇦🇺',
-    heroImage: '/placeholder.svg?height=600&width=1200',
+    heroImage: '/pictures/caleb-JmuyB_LibRo-unsplash.jpg',
     description: 'Experience high-quality education in a vibrant, multicultural environment.',
     benefits: [
       {
@@ -510,7 +510,7 @@ export const countryData: Record<string, Country> = {
     code: 'DE',
     name: 'Germany',
     flag: '🇩🇪',
-    heroImage: '/placeholder.svg?height=600&width=1200',
+    heroImage: '/pictures/dan-freeman-hIKVSVKH7No-unsplash.jpg',
     description: 'Study at world-class universities with minimal tuition fees.',
     benefits: [
       {

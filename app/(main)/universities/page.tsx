@@ -65,7 +65,7 @@ export default function HomePage() {
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Your Gateway to <span className="gold-gradient bg-clip-text ">Global Education</span>
+              Your Gateway to <span className="gold-gradient bg-clip-text text-yellow-600">Global Education</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -82,6 +82,7 @@ export default function HomePage() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-bold px-8 py-4 text-lg golden-glow group"
+               onClick={() => window.location.href = '/country'}
               >
                 <GraduationCap className="mr-2 h-5 w-5" />
                 Explore Countries
@@ -131,7 +132,7 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Choose Your <span className="gold-gradient bg-clip-text text-transparent">Destination</span>
+              Choose Your <span className="gold-gradient bg-clip-text text-yellow-600">Destination</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Explore top study destinations and find the perfect match for your academic goals
@@ -193,7 +194,7 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why Choose <span className="gold-gradient bg-clip-text text-transparent">IPD Education</span>?
+              Why Choose <span className="gold-gradient bg-clip-text text-yellow-600">IPD Education</span>?
             </h2>
           </motion.div>
 

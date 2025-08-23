@@ -24,14 +24,14 @@ model User {
 }
 
 model Lead {
-  id        String   @id @default(cuid())
+  id        String     @id @default(cuid())
   name      String
   phone     String
-  email     String?  
-  contacted Boolean  @default(false)
+  email     String?
+  contacted Boolean    @default(false)
   status    LeadStatus @default(NEW)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
 
   @@map("leads")
 }
@@ -54,4 +54,40 @@ model announcement {
   updatedAt DateTime @updatedAt
 
   @@map("announcements")
+}
+
+model HeavyLead {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Personal Information
+  name          String
+  email         String?
+  phone         String?
+  currentCity   String
+  aboutYourself String?
+
+  // Study Preferences
+  preferredCountry String
+  intakeTimeline   String
+  studyLevel       String
+  currentEducation String
+  passportStatus   String
+
+  // Status tracking
+  status     HeavyLeadStatus @default(NEW)
+  assignedTo String?
+  notes      String?
+
+  @@map("Heavyleads")
+}
+
+enum HeavyLeadStatus {
+  NEW
+  CONTACTED
+  IN_PROGRESS
+  QUALIFIED
+  CONVERTED
+  CLOSED
 }

@@ -266,7 +266,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-gradient-to-b from-gray-900 to-black dark:from-gray-950 dark:to-black text-gray-300 dark:text-gray-400 transition-colors duration-300">
+      <footer className="footer bg-gradient-to-b from-gray-900 to-black dark:from-gray-950 dark:to-black text-gray-300 dark:text-gray-400 transition-colors duration-300">
         {/* Upper Footer - Stats & CTA Section */}
         <motion.div
           className="bg-gradient-to-r from-gray-800 via-gray-900 to-black dark:from-gray-900 dark:via-black dark:to-gray-950 border-b border-gray-700/50 dark:border-gray-800/50"

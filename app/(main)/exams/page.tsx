@@ -45,6 +45,8 @@ import {
   Linkedin,
   Youtube,
 } from "lucide-react"
+import Image from "next/image"
+import JourneyModal from "@/components/journey-modal/journey-modal"
 
 const examTypes = [
   {
@@ -192,7 +194,7 @@ const testimonials = [
     score: "IELTS 8.5",
     previousScore: "6.5",
     text: "The personalized approach and expert guidance helped me achieve my dream score in just 2 months! The mock tests were incredibly realistic.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "/portraits/premium_photo-1661434380261-ca9305950dd3.avif",
     country: "🇨🇦 Canada",
     university: "University of Toronto",
     improvement: "+2.0 bands",
@@ -202,7 +204,7 @@ const testimonials = [
     score: "TOEFL 118",
     previousScore: "95",
     text: "Excellent teaching methodology and comprehensive study materials. The speaking practice sessions were game-changers for me.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "/portraits/jurica-koletic-7YVZYZeITc8-unsplash.jpg",
     country: "🇺🇸 USA",
     university: "Stanford University",
     improvement: "+23 points",
@@ -212,7 +214,7 @@ const testimonials = [
     score: "GRE 330",
     previousScore: "310",
     text: "The mock tests were exactly like the real exam. The quantitative section strategies helped me score perfect 170. Highly recommended!",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "/portraits/premium_photo-1732196163366-d855fd3ceadd.avif",
     country: "🇬🇧 UK",
     university: "Oxford University",
     improvement: "+20 points",
@@ -222,7 +224,7 @@ const testimonials = [
     score: "GMAT 750",
     previousScore: "650",
     text: "The integrated reasoning section was my weakness, but their targeted approach helped me master it. Now I'm at Wharton!",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "/portraits/mohamad-azaam-mleb6dRcduQ-unsplash.jpg",
     country: "🇺🇸 USA",
     university: "Wharton Business School",
     improvement: "+100 points",
@@ -232,7 +234,7 @@ const testimonials = [
     score: "SAT 1580",
     previousScore: "1350",
     text: "From 1350 to 1580! The math strategies and reading comprehension techniques were incredibly effective.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "/portraits/premium_photo-1676399365288-46bb3286425a.avif",
     country: "🇺🇸 USA",
     university: "Harvard University",
     improvement: "+230 points",
@@ -242,7 +244,7 @@ const testimonials = [
     score: "PTE 89",
     previousScore: "72",
     text: "The computer-based practice environment was perfect preparation. Achieved my target score on the first attempt!",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "/portraits/rubaitul-azad-QeXsrpjsVPM-unsplash.jpg",
     country: "🇦🇺 Australia",
     university: "University of Melbourne",
     improvement: "+17 points",
@@ -867,10 +869,12 @@ export default function ExamPrepLanding() {
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <CardHeader className="relative text-center pb-4">
-                    <img
+                    <Image
                       src={testimonial.image || "/placeholder.svg"}
                       alt={testimonial.name}
-                      className="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-accent/20 group-hover:border-accent/50 transition-colors"
+                      width={60}
+                      height={60}
+                      className="w-20 h-20 rounded-full fill mx-auto mb-4 border-4 border-accent/20 group-hover:border-accent/50 transition-colors"
                     />
                     <CardTitle className="text-xl font-bold text-foreground mb-2">{testimonial.name}</CardTitle>
                     <div className="flex items-center justify-center gap-2 mb-2">
@@ -947,9 +951,8 @@ export default function ExamPrepLanding() {
                 )}
 
                 <Card
-                  className={`h-full transition-all duration-300 hover:shadow-2xl bg-gradient-to-br from-card to-background overflow-hidden ${
-                    plan.popular ? "border-2 border-primary shadow-lg scale-105" : "border-2 hover:border-primary/50"
-                  }`}
+                  className={`h-full transition-all duration-300 hover:shadow-2xl bg-gradient-to-br from-card to-background overflow-hidden ${plan.popular ? "border-2 border-primary shadow-lg scale-105" : "border-2 hover:border-primary/50"
+                    }`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -970,11 +973,10 @@ export default function ExamPrepLanding() {
                     </ul>
 
                     <Button
-                      className={`w-full transition-all duration-300 ${
-                        plan.popular
+                      className={`w-full transition-all duration-300 ${plan.popular
                           ? "bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg"
                           : "bg-gradient-to-r from-primary/10 to-accent/10 hover:from-primary hover:to-accent hover:text-primary-foreground border border-primary/20 hover:border-transparent"
-                      }`}
+                        }`}
                     >
                       Get Started
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -1064,6 +1066,12 @@ export default function ExamPrepLanding() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+              <JourneyModal>
+                <Calendar className="mr-3 h-6 w-6" />
+                Book Free Demo Class
+                <ArrowRight className="ml-3 h-6 w-6" />
+
+              </JourneyModal>
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground px-12 py-6 text-xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
