@@ -53,7 +53,7 @@ const testimonials = [
     university: "University of Melbourne",
     course: "Master's in Data Science",
     rating: 5,
-    text: "IDP made my dream of studying in Australia a reality. Their counselors were incredibly supportive throughout the entire process.",
+    text: "IPD made my dream of studying in Australia a reality. Their counselors were incredibly supportive throughout the entire process.",
     image: "/placeholder.svg?height=60&width=60",
   },
   {
@@ -71,7 +71,7 @@ const testimonials = [
     university: "University of Edinburgh",
     course: "Master's in International Relations",
     rating: 5,
-    text: "From test prep to departure, IDP was with me every step. Now I'm living my dream in Scotland!",
+    text: "From test prep to departure, IPD was with me every step. Now I'm living my dream in Scotland!",
     image: "/placeholder.svg?height=60&width=60",
   },
 ]
@@ -236,7 +236,7 @@ export default function StudyAbroadSection() {
               Success Stories from Around the World
             </h3>
             <p className="text-muted-foreground text-lg">
-              Hear from students who achieved their dreams with IDP Education
+              Hear from students who achieved their dreams with IPD Education
             </p>
           </motion.div>
 
@@ -304,7 +304,7 @@ export default function StudyAbroadSection() {
             <CardContent className="p-0">
               <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Ready to Start Your Journey?</h3>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Join thousands of students who have achieved their international education dreams with IDP Education.
+                Join thousands of students who have achieved their international education dreams with IPD Education.
                 Your future starts with a single step.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

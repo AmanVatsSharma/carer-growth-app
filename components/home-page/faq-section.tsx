@@ -2,16 +2,16 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDownIcon } from "@heroicons/react/24/outline"
+import { ChevronDownIcon } from "lucide-react"
 
 const faqs = [
   {
-    question: "What services does IDP Education provide?",
+    question: "What services does IPD Education provide?",
     answer:
-      "IDP Education offers comprehensive study abroad services including university selection, application assistance, visa guidance, test preparation (IELTS, TOEFL, PTE), scholarship guidance, and pre-departure support to help students achieve their international education goals.",
+      "IPD Education offers comprehensive study abroad services including university selection, application assistance, visa guidance, test preparation (IELTS, TOEFL, PTE), scholarship guidance, and pre-departure support to help students achieve their international education goals.",
   },
   {
-    question: "Which countries can I study in through IDP Education?",
+    question: "Which countries can I study in through IPD Education?",
     answer:
       "We facilitate admissions to top universities in Australia, Canada, UK, USA, New Zealand, and Ireland. Our extensive network includes partnerships with over 800+ institutions across these destinations, ensuring you find the perfect match for your academic aspirations.",
   },
@@ -62,7 +62,7 @@ export default function FAQSection() {
             </span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Get answers to the most common questions about studying abroad with IDP Education
+            Get answers to the most common questions about studying abroad with IPD Education
           </p>
         </motion.div>
 

@@ -6,8 +6,8 @@ import { Toaster } from "@/components/ui/sonner";
 
 
 export const metadata: Metadata = {
-    title: "IDP Dashboard",
-    description: "Admin Dashboard for IDP Education",
+    title: "IPD Dashboard",
+    description: "Admin Dashboard for IPD Education",
 };
 
 export default function RootLayout({

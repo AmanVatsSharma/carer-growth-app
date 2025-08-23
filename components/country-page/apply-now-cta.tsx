@@ -164,7 +164,7 @@ export function ApplyNowCTA({ country }: ApplyNowCTAProps) {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-gold" />
-                    <span>info@idpeducation.com</span>
+                    <span>info@ipdeducation.com</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <MapPin className="w-5 h-5 text-gold" />

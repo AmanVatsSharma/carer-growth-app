@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IDP Education",
+  title: "IPD Education",
   description: "Abroad Career Growth",
 };
 

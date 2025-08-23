@@ -344,7 +344,7 @@ const Footer = () => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <span className="text-transparent bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text">
-                    IDP
+                    IPD
                   </span>
                   <span className="ml-2">Education</span>
                 </motion.h2>
@@ -374,7 +374,7 @@ const Footer = () => {
                   <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-500/20 to-yellow-500/20 flex items-center justify-center">
                     <Mail className="w-4 h-4 text-amber-400" />
                   </div>
-                  <span>info@idpeducation.com</span>
+                  <span>info@ipdeducation.com</span>
                 </motion.div>
                 <motion.div
                   className="flex items-center gap-3 text-gray-200 dark:text-gray-300"
@@ -459,7 +459,7 @@ const Footer = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, duration: 0.4 }}
               >
-                © 2025 IDP Education. All rights reserved.
+                © 2025 IPD Education. All rights reserved.
               </motion.div>
 
               {/* Legal Links */}

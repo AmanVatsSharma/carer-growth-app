@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
   }
 
   return {
-    title: `Study in ${country.name} - IDP Education`,
+    title: `Study in ${country.name} - IPD Education`,
     description: `Discover world-class education opportunities in ${country.name}. ${country.description}`,
     keywords: `study in ${country.name}, ${country.name} universities, international education, study abroad`,
     openGraph: {
-      title: `Study in ${country.name} - IDP Education`,
+      title: `Study in ${country.name} - IPD Education`,
       description: country.description,
       images: [country.heroImage],
     },

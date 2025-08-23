@@ -193,7 +193,7 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why Choose <span className="gold-gradient bg-clip-text text-transparent">IDP Education</span>?
+              Why Choose <span className="gold-gradient bg-clip-text text-transparent">IPD Education</span>?
             </h2>
           </motion.div>
 
