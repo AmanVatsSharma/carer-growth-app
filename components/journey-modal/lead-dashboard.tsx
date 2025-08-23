@@ -75,7 +75,7 @@ export function LeadDashboard() {
 
   const fetchLeads = async () => {
     try {
-      const response = await fetch("/api/leads")
+      const response = await fetch("/api/heavyleads")
       const data = await response.json()
       setLeads(data)
       setFilteredLeads(data)

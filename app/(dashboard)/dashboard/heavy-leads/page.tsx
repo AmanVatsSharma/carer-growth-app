@@ -27,7 +27,6 @@ export default function DashboardPage() {
             <Button variant="ghost" asChild className="hidden sm:inline-flex">
               <a href="/">Home</a>
             </Button>
-            <ModeToggle />
           </div>
         </div>
       </header>
