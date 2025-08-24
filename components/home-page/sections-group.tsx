@@ -8,6 +8,7 @@ import { PopularExams } from "./popular-exams"
 import { ScholarshipOpportunities } from "./scholarship-opportunities"
 import { StickyCTA } from "./sticky-cta"
 import Image from "next/image"
+import JourneyModal from "../journey-modal/journey-modal"
 
 export default function SectionsGroup() {
   return (
@@ -56,13 +57,15 @@ export default function SectionsGroup() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-bold group"
-              >
-                Start Your Journey
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <JourneyModal className="p-0">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-bold group"
+                >
+                  Start Your Journey
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </JourneyModal>
               <Button
                 variant="outline"
                 size="lg"

@@ -1066,7 +1066,7 @@ export default function ExamPrepLanding() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-              <JourneyModal>
+              <JourneyModal className="px-6 sm:px-8 py-4 sm:py-6 rounded-xl shadow-lg hover:shadow-xl w-full sm:w-auto min-h-[56px]">
                 <Calendar className="mr-3 h-6 w-6" />
                 Book Free Demo Class
                 <ArrowRight className="ml-3 h-6 w-6" />

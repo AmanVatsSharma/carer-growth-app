@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import JourneyModal from '../journey-modal/journey-modal';
 
 // Main component
 export default function ValuePropSection() {
@@ -64,7 +65,7 @@ export default function ValuePropSection() {
     animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
     exit: { opacity: 0, y: -20, transition: { duration: 0.3, ease: 'easeInOut' } },
   };
-  
+
   const imageVariants = {
     initial: { opacity: 0, scale: 1.05 },
     animate: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] } },
@@ -78,7 +79,7 @@ export default function ValuePropSection() {
         <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-gray-900 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
         <div className="absolute -z-10 top-0 right-0 h-64 w-64 bg-blue-200/20 dark:bg-blue-900/30 rounded-full blur-3xl"></div>
         <div className="absolute -z-10 bottom-0 left-0 h-64 w-64 bg-purple-200/20 dark:bg-purple-900/30 rounded-full blur-3xl"></div>
-        
+
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
             Your Global Future Starts <span className="text-blue-600 dark:text-blue-400">Here</span>.
@@ -112,7 +113,7 @@ export default function ValuePropSection() {
                       animate={activeTab === tab.id ? "animate" : "initial"}
                       exit="exit"
                       className="absolute inset-0 w-full h-full object-cover"
-                      onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/600x600/E0E0E0/000000?text=Image'; }}
+                      onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x600/E0E0E0/000000?text=Image'; }}
                     />
                   </AnimatePresence>
                 </div>
@@ -141,10 +142,10 @@ export default function ValuePropSection() {
                         ))}
                       </ul>
                       <div className="mt-10">
-                        <button className="group flex items-center justify-center px-8 py-4 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-1 dark:ring-offset-gray-900">
+                        <JourneyModal className='text-base sm:text-lg group flex items-center justify-center px-8 py-4 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-1 dark:ring-offset-gray-900'>
                           {content[tab.id].cta}
                           <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                        </button>
+                        </JourneyModal>
                       </div>
                     </motion.div>
                   </AnimatePresence>

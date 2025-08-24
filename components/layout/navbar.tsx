@@ -2,6 +2,7 @@
 import { MobileNav, MobileNavHeader, MobileNavMenu, MobileNavToggle, Navbar, NavbarButton, NavbarLogo, NavBody, NavItems } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
 import { ModeToggle } from "../theme/mode-toggle";
+import JourneyModal from "../journey-modal/journey-modal";
 
 const NavBar = () => {
     const navItems = [
@@ -17,10 +18,10 @@ const NavBar = () => {
             name: "Study Abroad",
             link: "/study-abroad",
         },
-        {
-            name: "Find Programs",
-            link: "#programs",
-        },
+        // {
+        //     name: "Find Programs",
+        //     link: "#programs",
+        // },
         {
             name: "Contact Us",
             link: "#contact",
@@ -44,7 +45,11 @@ const NavBar = () => {
                 <div className="flex items-center gap-4">
                     {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
                     <ModeToggle />
-                    <NavbarButton variant="primary">Book a call</NavbarButton>
+                    <JourneyModal className="p-0">
+                        <NavbarButton variant="primary">
+                            Book a call
+                        </NavbarButton>
+                    </JourneyModal>
                 </div>
             </NavBody>
 

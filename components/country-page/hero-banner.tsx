@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import type { Country } from "@/lib/country-data"
 import { Button } from "@/components/ui/button"
 import { Sparkles, ArrowRight } from "lucide-react"
+import JourneyModal from "../journey-modal/journey-modal"
 
 interface HeroBannerProps {
   country: Country
@@ -96,14 +97,17 @@ export function HeroBanner({ country }: HeroBannerProps) {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button
-              size="lg"
-              className="modern-gradient text-white font-bold px-8 py-4 text-lg premium-glow group hover:scale-105 transition-all duration-300"
-            >
-              <Sparkles className="mr-2 h-5 w-5 group-hover:animate-spin" />
-              Start Your Journey
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <JourneyModal>
+
+              <Button
+                size="lg"
+                className="modern-gradient text-white font-bold px-8 py-4 text-lg premium-glow group hover:scale-105 transition-all duration-300"
+              >
+                <Sparkles className="mr-2 h-5 w-5 group-hover:animate-spin" />
+                Start Your Journey
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </JourneyModal>
             <Button
               variant="outline"
               size="lg"
