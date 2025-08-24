@@ -32,7 +32,7 @@ export default function Home() {
           src="landing-page/mnuted-hero-video.mp4"
           loop
           playing
-          // muted
+          muted
           width={"100%"}
           height={"100%"}
           
