@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Doe;John;;;
+FN:John Doe
+ORG:IPD Education
+TITLE:Consultant
+TEL;TYPE=CELL:+91XXXXXXXXXX
+EMAIL:example@email.com
+URL:https://yourwebsite.com
+END:VCARD
