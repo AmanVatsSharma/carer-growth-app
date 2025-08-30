@@ -20,6 +20,7 @@ import {
   X,
 } from "lucide-react"
 import { useState } from "react"
+import { NavbarLogo } from "../ui/resizable-navbar"
 
 const LeadFormDialog = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [formData, setFormData] = useState({
@@ -343,10 +344,11 @@ const Footer = () => {
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <span className="text-transparent bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text">
+                  <NavbarLogo/>
+                  {/* <span className="text-transparent bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text">
                     IPD
                   </span>
-                  <span className="ml-2">Education</span>
+                  <span className="ml-2">Education</span> */}
                 </motion.h2>
                 <p className="text-gray-300 dark:text-gray-400 leading-relaxed mb-6 text-base">
                   Your trusted partner in international education. We help students achieve their dreams of studying
@@ -374,7 +376,7 @@ const Footer = () => {
                   <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-500/20 to-yellow-500/20 flex items-center justify-center">
                     <Mail className="w-4 h-4 text-amber-400" />
                   </div>
-                  <span>info@ipdeducation.com</span>
+                  <span>info@ipdeducation.in</span>
                 </motion.div>
                 <motion.div
                   className="flex items-center gap-3 text-gray-200 dark:text-gray-300"
