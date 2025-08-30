@@ -77,7 +77,7 @@ const testimonials = [
 ]
 
 const stats = [
-  { number: "50+", label: "Years of Experience", icon: Clock },
+  { number: "14+", label: "Years of Experience", icon: Clock },
   { number: "960+", label: "Partner Universities", icon: Globe },
   { number: "4500+", label: "Students Placed", icon: GraduationCap },
   { number: "30+", label: "Countries", icon: Award },

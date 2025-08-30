@@ -130,7 +130,7 @@ const examTypes = [
 ]
 
 const stats = [
-  { number: "25,000+", label: "Students Trained", icon: Users, description: "Successful candidates across all exams" },
+  { number: "5000+", label: "Students Trained", icon: Users, description: "Successful candidates across all exams" },
   { number: "98%", label: "Success Rate", icon: Trophy, description: "Students achieving target scores" },
   { number: "8.7+", label: "Average Score", icon: Star, description: "Across IELTS & TOEFL exams" },
   {
@@ -435,7 +435,7 @@ export default function ExamPrepLanding() {
               className="mb-8"
             >
               <Badge className="mb-6 bg-gradient-to-r from-primary to-accent text-primary-foreground px-6 py-3 text-base font-semibold shadow-lg">
-                <Trophy className="mr-2 h-5 w-5" />🎯 98% Success Rate • 25,000+ Students Trained
+                <Trophy className="mr-2 h-5 w-5" />🎯 98% Success Rate • 5000+ Students Trained
               </Badge>
             </motion.div>
 
@@ -728,7 +728,7 @@ export default function ExamPrepLanding() {
               Advanced Features
             </Badge>
             <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground to-accent bg-clip-text text-transparent">
-              Why 25,000+ Students Choose Us
+              Why 5000+ Students Choose Us
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Experience the difference with our cutting-edge technology, proven methodology, and personalized approach

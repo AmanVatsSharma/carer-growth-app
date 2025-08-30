@@ -366,7 +366,10 @@ const Footer = () => {
                   <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-500/20 to-yellow-500/20 flex items-center justify-center">
                     <Phone className="w-4 h-4 text-amber-400" />
                   </div>
-                  <span>+1 (555) 123-4567</span>
+                  <a>
+{                    // todo: add clicable link to call
+}                  </a>
+                  <span>+91 81235 92381, +91 86600 96538</span>
                 </motion.div>
                 <motion.div
                   className="flex items-center gap-3 text-gray-200 dark:text-gray-300"
@@ -377,7 +380,7 @@ const Footer = () => {
                     <Mail className="w-4 h-4 text-amber-400" />
                   </div>
                   <span>info@ipdeducation.in</span>
-                </motion.div>
+                </motion.div> 
                 <motion.div
                   className="flex items-center gap-3 text-gray-200 dark:text-gray-300"
                   whileHover={{ x: 4 }}

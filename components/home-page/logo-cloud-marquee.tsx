@@ -9,6 +9,8 @@ const brands = [
   { src: "/logo-01.webp", alt: "Asteroid Kit Light", darkSrc: "/logo-01_dark.webp" },
 ];
 
+
+
 export default function BrandsLoveUs() {
   return (
     <section className="relative py-16 bg-white dark:bg-black ">
