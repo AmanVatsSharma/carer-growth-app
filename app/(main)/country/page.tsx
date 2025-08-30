@@ -105,7 +105,7 @@ export default function CountryPage() {
               className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto"
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-gold mb-2">50,000+</div>
+                <div className="text-3xl font-bold text-gold mb-2">5000+</div>
                 <div className="text-muted-foreground">Students Placed</div>
               </div>
               <div className="text-center">
@@ -213,7 +213,7 @@ export default function CountryPage() {
               {
                 icon: <Users className="w-8 h-8" />,
                 title: "Success Stories",
-                description: "50,000+ students successfully placed abroad",
+                description: "5000+ students successfully placed abroad",
               },
               {
                 icon: <Award className="w-8 h-8" />,

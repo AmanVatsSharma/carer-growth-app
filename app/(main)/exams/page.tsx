@@ -260,9 +260,9 @@ const studyResources = [
   },
   {
     title: "Practice Questions Bank",
-    description: "50,000+ questions with detailed explanations",
+    description: "5000+ questions with detailed explanations",
     icon: FileText,
-    count: "50,000+",
+    count: "5000+",
   },
   {
     title: "Mock Test Series",

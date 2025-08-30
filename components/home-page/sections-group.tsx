@@ -41,7 +41,7 @@ export default function SectionsGroup() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <div className="flex items-center justify-center gap-2 mb-6">
               <Star className="w-6 h-6 text-yellow-400" />
-              <span className="text-yellow-400 font-semibold">Trusted by 50,000+ Students</span>
+              <span className="text-yellow-400 font-semibold">Trusted by 5000+ Students</span>
               <Star className="w-6 h-6 text-yellow-400" />
             </div>
 
@@ -79,7 +79,7 @@ export default function SectionsGroup() {
             {/* Stats Row */}
             <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-xl md:text-3xl font-black text-blue-400 mb-2">50,000+</div>
+                <div className="text-xl md:text-3xl font-black text-blue-400 mb-2">5000+</div>
                 <div className="text-sm opacity-80 flex flex-col md:flex items-center justify-center gap-3 md:gap-1">
                   <Users className="w-8 h-8" />
                   Students Placed
