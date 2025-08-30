@@ -47,8 +47,8 @@ const universities: University[] = [
     name: "University of Melbourne",
     country: "Australia",
     city: "Melbourne",
-    logoUrl: "/university-of-melbourne-logo.png",
-    heroImageUrl: "/unimelb-campus.png",
+    logoUrl: "/universities/university-of-melbourne-logo.png",
+    heroImageUrl: "/universities/unimelb-campus.png",
     shortDescription: "A global leader in research and teaching located in Melbourne, Australia.",
     website: "https://www.unimelb.edu.au",
     contact: {
@@ -89,8 +89,8 @@ const universities: University[] = [
     name: "University of Toronto",
     country: "Canada",
     city: "Toronto",
-    logoUrl: "/university-of-toronto-logo.png",
-    heroImageUrl: "/university-of-toronto-campus.png",
+    logoUrl: "/universities/university-of-toronto-logo.png",
+    heroImageUrl: "/universities/university-of-toronto-campus.png",
     shortDescription: "Top-ranked Canadian university with world-class programs and research.",
     website: "https://www.utoronto.ca",
     contact: {
@@ -131,8 +131,8 @@ const universities: University[] = [
     name: "Harvard University",
     country: "United States",
     city: "Cambridge, MA",
-    logoUrl: "/harvard-logo.png",
-    heroImageUrl: "/harvard-yard.png",
+    logoUrl: "/universities/harvard-logo.png",
+    heroImageUrl: "/universities/harvard-yard.png",
     shortDescription: "Ivy League institution known for academic excellence and global impact.",
     website: "https://www.harvard.edu",
     contact: {

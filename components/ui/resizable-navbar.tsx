@@ -243,8 +243,9 @@ export const NavbarLogo = () => {
         alt="logo"
         width={90}
         height={90}
+        className="h-16 w-auto"
       />
-      <span className="font-normal text-2xl text-black dark:text-white">Education</span>
+      <span className="font-normal text-xl text-black dark:text-white">Education</span>
     </a>
   );
 };
