@@ -1,3 +1,4 @@
+// app/universities/page.tsx
 import { getUniversities, getAllCountries, getAllExams } from "@/lib/universities-data"
 import { SearchBar } from "@/components/universities/search-bar"
 import { Filters } from "@/components/universities/filters"

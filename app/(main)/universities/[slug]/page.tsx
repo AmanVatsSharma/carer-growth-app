@@ -1,3 +1,4 @@
+// app/universities/[slug]/page.tsx
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getUniversityBySlug } from "@/lib/universities-data"

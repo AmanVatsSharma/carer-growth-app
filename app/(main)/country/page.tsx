@@ -109,7 +109,7 @@ export default function CountryPage() {
                 <div className="text-muted-foreground">Students Placed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gold mb-2">500+</div>
+                <div className="text-3xl font-bold text-gold mb-2">960+</div>
                 <div className="text-muted-foreground">Partner Universities</div>
               </div>
               <div className="text-center">

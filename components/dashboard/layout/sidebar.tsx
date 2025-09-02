@@ -36,6 +36,13 @@ export function SidebarDashboard() {
         <IconMoneybag className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
+        {
+      label: "University Settings",
+      href: "/dashboard/universities",
+      icon: (
+        <IconBrandWebflow className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+      ),
+    },
     {
       label: "Website Settings",
       href: "/site-edit",

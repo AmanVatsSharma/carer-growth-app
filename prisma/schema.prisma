@@ -91,3 +91,36 @@ enum HeavyLeadStatus {
   CONVERTED
   CLOSED
 }
+
+model University {
+  id                 String    @id @default(cuid())
+  slug               String    @unique
+  name               String
+  country            String
+  city               String?
+  logoUrl            String?
+  heroImageUrl       String?
+  shortDescription   String?
+  description        String?   @db.Text
+  website            String?
+  contact            Json?     // Stores contact details like { email, phone, address }
+
+  exams              String[]  // List of accepted exams like ["IELTS", "TOEFL"]
+
+  // Services are now individual boolean fields for easier filtering
+  visaSupport        Boolean   @default(false)
+  accommodation      Boolean   @default(false)
+  forex              Boolean   @default(false)
+  counselling        Boolean   @default(false)
+  applicationFeeWaiver Boolean @default(false)
+  scholarshipsHelp   Boolean   @default(false)
+
+  courses            Json[]    // Stores a list of course objects
+
+  tags               String[]
+
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  @@map("universities")
+}

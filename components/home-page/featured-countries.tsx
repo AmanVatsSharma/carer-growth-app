@@ -27,7 +27,7 @@ const countries = [
     description: "Historic academic tradition with Oxford, Cambridge, and Imperial College",
     image:
       "/pictures/marcin-nowak-iXqTqC-f6jI-unsplash.jpg",
-    students: "500K",
+    students: "5000+",
     topUni: "University of Oxford",
     link: "/country/uk"
   },
