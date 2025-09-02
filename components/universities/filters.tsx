@@ -2,11 +2,11 @@
 
 import { useRouter, useSearchParams } from "next/navigation"
 import { useMemo } from "react"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 type FiltersProps = {
   countries: string[]
@@ -26,29 +26,24 @@ export function Filters({ countries, exams }: FiltersProps) {
   const router = useRouter()
   const params = useSearchParams()
 
-  const current = useMemo(() => {
-    return {
-      country: params.get("country") || undefined,
-      exam: params.get("exam") || undefined,
-      service: params.get("service") || undefined,
-    }
+  const currentServices = useMemo(() => {
+    return params.get("services")?.split(",") || []
   }, [params])
 
-  function update(
-    next: Partial<{ country: string | undefined; exam: string | undefined; service: string | undefined }>,
-  ) {
+
+  function updateServices(key: string, checked: boolean) {
     const sp = new URLSearchParams(params.toString())
-    if ("country" in next) {
-      if (next.country) sp.set("country", next.country)
-      else sp.delete("country")
+    const services = new Set(currentServices)
+    if (checked) {
+      services.add(key)
+    } else {
+      services.delete(key)
     }
-    if ("exam" in next) {
-      if (next.exam) sp.set("exam", next.exam)
-      else sp.delete("exam")
-    }
-    if ("service" in next) {
-      if (next.service) sp.set("service", next.service)
-      else sp.delete("service")
+
+    if (services.size > 0) {
+      sp.set("services", Array.from(services).join(","))
+    } else {
+      sp.delete("services")
     }
     router.push(`/universities?${sp.toString()}`)
   }
@@ -63,11 +58,15 @@ export function Filters({ countries, exams }: FiltersProps) {
 
   return (
     <Card className="bg-card">
+      <CardHeader>
+        <CardTitle>Filter & Refine</CardTitle>
+      </CardHeader>
+
       <CardContent className="p-4 md:p-6">
         <div className="space-y-6">
           <div className="space-y-2">
             <Label htmlFor="country">Country</Label>
-            <Select value={current.country} onValueChange={(v) => update({ country: v })}>
+            <Select value={currentServices.country} onValueChange={(v) => update({ country: v })}>
               <SelectTrigger id="country">
                 <SelectValue placeholder="All countries" />
               </SelectTrigger>
@@ -86,7 +85,7 @@ export function Filters({ countries, exams }: FiltersProps) {
 
           <div className="space-y-2">
             <Label htmlFor="exam">Exam</Label>
-            <Select value={current.exam} onValueChange={(v) => update({ exam: v })}>
+            <Select value={currentServices.exam} onValueChange={(v) => update({ exam: v })}>
               <SelectTrigger id="exam">
                 <SelectValue placeholder="Any exam" />
               </SelectTrigger>
@@ -107,15 +106,15 @@ export function Filters({ countries, exams }: FiltersProps) {
             <Label>IPD Services</Label>
             <div className="grid grid-cols-1 gap-2">
               {services.map((s) => {
-                const checked = current.service === s.key
+                const checked = currentServices.includes(s.key)
                 return (
-                  <label key={s.key} className="flex items-center gap-2">
+                  <label key={s.key} className="flex items-center gap-2 cursor-pointer">
                     <Checkbox
                       checked={checked}
-                      onCheckedChange={(v) => update({ service: v ? s.key : undefined })}
+                      onCheckedChange={(v) => updateServices(s.key, !!v)}
                       aria-label={s.label}
                     />
-                    <span className="text-sm">{s.label}</span>
+                    <span className="text-sm font-medium">{s.label}</span>
                   </label>
                 )
               })}
