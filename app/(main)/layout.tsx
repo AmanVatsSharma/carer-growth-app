@@ -39,9 +39,9 @@ export default function RootLayout({
         >
           <StickyBanner hideOnScroll className="bg-gradient-to-b from-blue-500 to-blue-600">
             <p className="mx-0 max-w-[90%] text-white drop-shadow-md">
-              Announcing Golden Colors to our site.
-              <a href="#" className="transition duration-200 hover:underline">
-                Read announcement
+              IELTS coaching at just ₹3499.
+              <a href="#footer" className="transition duration-200 hover:underline">
+                Get Now!
               </a>
             </p>
           </StickyBanner>
