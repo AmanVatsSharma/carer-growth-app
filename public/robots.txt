@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ipdeducation.in
+
+# Sitemaps
+Sitemap: https://ipdeducation.in/sitemap.xml
