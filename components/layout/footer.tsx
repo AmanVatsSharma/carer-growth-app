@@ -226,10 +226,10 @@ const Footer = () => {
   ]
 
   const stats = [
-    { icon: Users, number: "500K+", label: "Students Helped", color: "text-amber-400" },
+    { icon: Users, number: "5000", label: "Students Helped", color: "text-amber-400" },
     { icon: GraduationCap, number: "1000+", label: "Partner Universities", color: "text-amber-400" },
     { icon: Globe, number: "50+", label: "Countries", color: "text-amber-400" },
-    { icon: Award, number: "25+", label: "Years Experience", color: "text-amber-400" },
+    { icon: Award, number: "13+", label: "Years Experience", color: "text-amber-400" },
   ]
 
   const handleSubscribe = (e: React.FormEvent) => {
