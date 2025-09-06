@@ -40,7 +40,7 @@ export default function Home() {
         />
       </div> */}
 
-      <div className="main-video w-full h-[70vh] overflow-hidden">
+      <div className="main-video w-full h-[30vh] md:h-[70vh] overflow-hidden">
         <Video
           src="https://firebasestorage.googleapis.com/v0/b/theaweshop.appspot.com/o/IPD-Education%2Foutput.mp4?alt=media&token=d14f69bc-4def-48df-9fa6-aa52802bdc76"
           poster="/pictures/priscilla-du-preez-AOdELn6senM-unsplash.jpg"

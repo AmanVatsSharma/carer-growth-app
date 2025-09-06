@@ -2,6 +2,7 @@ import React from 'react';
 import { cn } from "@/lib/utils";
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "../ui/select";
 import { Input } from "../ui/input";
+import { Button } from '../ui/button';
 
 // You can replace these with your actual image URLs
 const avatarImages = [
@@ -48,6 +49,11 @@ export default function CtaSectionSimple({
   gridIntensity = 'opacity-30',
   gridVisible = true,
 }) {
+
+  function handleClick(e) {
+console.log("handle clicked button submitted", e )
+  }
+
   return (
     <div className="relative font-sans overflow-hidden">
       {/* Conditional rendering for the grid background */}
@@ -133,10 +139,13 @@ export default function CtaSectionSimple({
                   type="tel"
                 />
               </div>
-              <button className="group w-full flex items-center justify-center px-7 py-3 sm:px-8 sm:py-4 font-bold text-white bg-purple-600 dark:bg-purple-500 rounded-full hover:bg-purple-700 dark:hover:bg-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 dark:focus:ring-purple-400 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base sm:text-lg mt-2">
+              <Button
+                className="group w-full flex items-center justify-center px-7 py-3 sm:px-8 sm:py-4 font-bold text-white bg-purple-600 dark:bg-purple-500 rounded-full hover:bg-purple-700 dark:hover:bg-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 dark:focus:ring-purple-400 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base sm:text-lg mt-2"
+                onSubmit={(e) => { handleClick(e) }}
+              >
                 Book a call
                 <ArrowRightIcon />
-              </button>
+              </Button>
             </form>
           </div>
         </div>
