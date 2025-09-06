@@ -29,7 +29,7 @@ export default function Home() {
     <div className="relative w-full bg-gradient-to-br from-[#f8fafc] via-[#e0e7ef] to-[#f1f5f9] dark:from-[#181c24] dark:via-[#232a36] dark:to-[#1a202c]">
       <div className="main-video w-full overflow-hidden h-50vh">
         <ReactPlayer
-          src="https://firebasestorage.googleapis.com/v0/b/theaweshop.appspot.com/o/IPD-Education%2Fmnuted-hero-video.mp4?alt=media&token=4a2874b0-ee16-46ba-a432-ea79f01b7db5"
+          src="https://firebasestorage.googleapis.com/v0/b/theaweshop.appspot.com/o/IPD-Education%2Foutput.mp4?alt=media&token=d14f69bc-4def-48df-9fa6-aa52802bdc76"
           loop
           playing
           muted
@@ -38,6 +38,13 @@ export default function Home() {
           
         />
       </div>
+
+      {/* <div className="main-video w-full h-[50vh] overflow-hidden">
+        <Video
+          src="https://firebasestorage.googleapis.com/v0/b/theaweshop.appspot.com/o/IPD-Education%2Fmnuted-hero-video.mp4?alt=media&token=4a2874b0-ee16-46ba-a432-ea79f01b7db5"
+          poster="/pictures/priscilla-du-preez-AOdELn6senM-unsplash.jpg"
+        />
+      </div> */}
 
       <CtaSectionSimple
         gridIntensity="opacity-90"
