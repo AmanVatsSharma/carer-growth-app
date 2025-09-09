@@ -51,6 +51,7 @@ export default function CtaSectionSimple({
 }) {
 
   function handleClick(e) {
+    
 console.log("handle clicked button submitted", e )
   }
 

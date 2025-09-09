@@ -22,10 +22,10 @@ const NavBar = () => {
         //     name: "Find Programs",
         //     link: "#programs",
         // },
-        {
-            name: "Contact Us",
-            link: "#contact",
-        },
+        // {
+        //     name: "Contact Us",
+        //     link: "#contact",
+        // },
         {
             name: "About Us",
             link: "/about-us",
