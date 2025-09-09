@@ -182,37 +182,37 @@ const Footer = () => {
     {
       title: "Programs",
       links: [
-        { name: "Study Abroad", href: "/programs/study-abroad" },
-        { name: "English Courses", href: "/programs/english" },
-        { name: "University Pathways", href: "/programs/pathways" },
-        { name: "Test Preparation", href: "/programs/test-prep" },
+        { name: "Study Abroad", href: "/study-abroad" },
+        // { name: "English Courses", href: "/programs/english" },
+        { name: "University Pathways", href: "/universities" },
+        { name: "Test Preparation", href: "/exams" },
       ],
     },
     {
       title: "Services",
       links: [
-        { name: "Student Counseling", href: "/services/counseling" },
-        { name: "Visa Assistance", href: "/services/visa" },
-        { name: "Accommodation", href: "/services/accommodation" },
-        { name: "Career Support", href: "/services/career" },
+        { name: "Student Counseling", href: "/about-us" },
+        { name: "Visa Assistance", href: "/about-us" },
+        { name: "Accommodation", href: "/about-us" },
+        // { name: "Career Support", href: "/about-us" },
       ],
     },
     {
       title: "Resources",
       links: [
-        { name: "Study Destinations", href: "/resources/destinations" },
-        { name: "Scholarships", href: "/resources/scholarships" },
-        { name: "Blog & News", href: "/resources/blog" },
-        { name: "Success Stories", href: "/resources/stories" },
+        { name: "Study Destinations", href: "/country" },
+        { name: "Study in USA", href: "/country/usa" },
+        { name: "Study in UK", href: "/country/uk" },
+        // { name: "Success Stories", href: "/resources/stories" },
       ],
     },
     {
       title: "Support",
       links: [
-        { name: "Contact Us", href: "/contact" },
-        { name: "Find an Office", href: "/offices" },
-        { name: "Help Center", href: "/help" },
-        { name: "Book Consultation", href: "/consultation" },
+        { name: "Contact Us", href: "/about-us" },
+        // { name: "Find an Office", href: "/offices" },
+        { name: "Help Center", href: "/about-us" },
+        { name: "Book Consultation", href: "/about-us" },
       ],
     },
   ]
