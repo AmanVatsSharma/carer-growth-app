@@ -1,3 +1,4 @@
+//components/admin/universities/university-table.tsx
 "use client"
 
 import {

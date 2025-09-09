@@ -1,3 +1,4 @@
+//components/universities/ipd-support-banner.tsx
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 

@@ -1,9 +1,10 @@
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
 import { cn } from "@/lib/utils";
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "../ui/select";
 import { Input } from "../ui/input";
 import { Button } from '../ui/button';
-
+import axios from 'axios'
 // You can replace these with your actual image URLs
 const avatarImages = [
   'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80',
@@ -49,11 +50,31 @@ export default function CtaSectionSimple({
   gridIntensity = 'opacity-30',
   gridVisible = true,
 }) {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [code, setCode] = useState("+91");
+  const [loading, setLoading] = useState(false);
 
-  function handleClick(e) {
-    
-console.log("handle clicked button submitted", e )
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await axios.post("/api/leads", {
+        name,
+        phone: code + phone,
+      });
+      console.log("Lead created:", res.data);
+      alert("✅ Lead saved successfully!");
+      setName("");
+      setPhone("");
+    } catch (error: any) {
+      console.error("Error creating lead:", error);
+      alert("❌ Failed to save lead");
+    } finally {
+      setLoading(false);
+    }
   }
+
 
   return (
     <div className="relative font-sans overflow-hidden">
@@ -116,13 +137,15 @@ console.log("handle clicked button submitted", e )
           </div>
           {/* Right Button Section */}
           <div className="w-full sm:w-auto flex-shrink-0 mt-8 lg:mt-0 flex flex-col gap-6 justify-center lg:justify-end items-center">
-            <form className="w-full max-w-md flex flex-col gap-4 items-center">
+            <form className="w-full max-w-md flex flex-col gap-4 items-center" onSubmit={handleSubmit} >
               <Input
                 placeholder="Your Name"
                 className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-neutral-900 shadow-sm px-4 py-2 text-base"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
               <div className="flex w-full gap-0 items-center rounded-lg overflow-hidden border border-gray-300 dark:border-gray-700 bg-white dark:bg-neutral-900 shadow-sm">
-                <Select defaultValue="+91">
+                <Select defaultValue="+91" value={code} onValueChange={setCode}>
                   <SelectTrigger className="rounded-none border-none bg-transparent px-4 py-2 text-base min-w-[70px] focus:ring-0 focus:outline-none">
                     <SelectValue />
                   </SelectTrigger>
@@ -138,14 +161,17 @@ console.log("handle clicked button submitted", e )
                   placeholder="Phone Number"
                   className="rounded-none border-none bg-transparent px-4 py-2 text-base flex-1 focus:ring-0 focus:outline-none"
                   type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                 />
               </div>
               <Button
                 className="group w-full flex items-center justify-center px-7 py-3 sm:px-8 sm:py-4 font-bold text-white bg-purple-600 dark:bg-purple-500 rounded-full hover:bg-purple-700 dark:hover:bg-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 dark:focus:ring-purple-400 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base sm:text-lg mt-2"
-                onSubmit={(e) => { handleClick(e) }}
+                type="submit"
+                disabled={loading}
               >
-                Book a call
-                <ArrowRightIcon />
+                {loading ? "Saving..." : "Book a call"}
+                {!loading && <ArrowRightIcon />}
               </Button>
             </form>
           </div>
