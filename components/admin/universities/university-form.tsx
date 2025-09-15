@@ -32,10 +32,26 @@ export function UniversityForm({ university, onFinished }: UniversityFormProps) 
       slug: university?.slug || "",
       country: university?.country || "",
       city: university?.city || "",
+      logoUrl: university?.logoUrl || "",
+      heroImageUrl: university?.heroImageUrl || "",
+      shortDescription: university?.shortDescription || "",
+      description: university?.description || "",
       website: university?.website || "",
+      contact: university?.contact || {},
+      exams: university?.exams || [],
       visaSupport: university?.visaSupport || false,
       accommodation: university?.accommodation || false,
-      // ... set defaults for other fields
+      forex: university?.forex || false,
+      counselling: university?.counselling || false,
+      applicationFeeWaiver: university?.applicationFeeWaiver || false,
+      scholarshipsHelp: university?.scholarshipsHelp || false,
+      courses: university?.courses || [],
+      tags: university?.tags || [],
+      tuitionFeeFrom: university?.tuitionFeeFrom || undefined,
+      tuitionFeeTo: university?.tuitionFeeTo || undefined,
+      qsRanking: university?.qsRanking || undefined,
+      intakeSeasons: university?.intakeSeasons || [],
+      galleryImageUrls: university?.galleryImageUrls || [],
     },
   })
 
@@ -101,6 +117,63 @@ export function UniversityForm({ university, onFinished }: UniversityFormProps) 
         />
         <FormField
           control={form.control}
+          name="logoUrl"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Logo URL</FormLabel>
+              <FormControl>
+                <Input placeholder="e.g., /universities/university-logo.png" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="heroImageUrl"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Hero Image URL</FormLabel>
+              <FormControl>
+                <Input placeholder="e.g., /universities/campus-image.png" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="shortDescription"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Short Description</FormLabel>
+              <FormControl>
+                <Input placeholder="Brief description of the university" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="description"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Description</FormLabel>
+              <FormControl>
+                <textarea 
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                  placeholder="Detailed description of the university"
+                  rows={4}
+                  {...field} 
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
           name="visaSupport"
           render={({ field }) => (
             <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
@@ -113,7 +186,76 @@ export function UniversityForm({ university, onFinished }: UniversityFormProps) 
             </FormItem>
           )}
         />
-        {/* ... Add FormFields for all other properties ... */}
+        <FormField
+          control={form.control}
+          name="accommodation"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+               <FormControl>
+                <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel>Accommodation Support</FormLabel>
+              </div>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="forex"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+               <FormControl>
+                <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel>Forex Support</FormLabel>
+              </div>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="counselling"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+               <FormControl>
+                <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel>Counselling Support</FormLabel>
+              </div>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="applicationFeeWaiver"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+               <FormControl>
+                <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel>Application Fee Waiver</FormLabel>
+              </div>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="scholarshipsHelp"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+               <FormControl>
+                <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel>Scholarships Help</FormLabel>
+              </div>
+            </FormItem>
+          )}
+        />
         <Button type="submit" disabled={form.formState.isSubmitting}>
           {university ? "Update University" : "Create University"}
         </Button>
