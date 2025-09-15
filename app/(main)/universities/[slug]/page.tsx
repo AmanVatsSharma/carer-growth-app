@@ -78,7 +78,7 @@ export default async function UniversityDetailPage({ params }: PageProps) {
                     <Card>
                         <CardHeader><CardTitle>About {uni.name}</CardTitle></CardHeader>
                         <CardContent className="prose dark:prose-invert max-w-none text-muted-foreground">
-                            <p>{uni.description || "Detailed description coming soon."}</p>
+                            <p>{uni.description || "This prestigious university offers world-class education with cutting-edge research facilities, diverse academic programs, and a vibrant international community. Our comprehensive support services help international students succeed in their academic journey."}</p>
                         </CardContent>
                     </Card>
                     <Card>

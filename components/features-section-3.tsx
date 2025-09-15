@@ -43,11 +43,11 @@ export default function FeaturesSection03() {
     <div className="relative z-20 py-10 lg:py-20 max-w-7xl mx-auto">
       <div className="px-8">
         <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
-          Lorem ipsum dolor sit amet.
+          Your Gateway to Global Education Success
         </h4>
 
         <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed sint nihil tempore vitae, odio velit, voluptas mollitia eligendi ullam suscipit saepe, culpa atque illo laboriosam?
+          Discover world-class universities, streamline your applications, and unlock your potential with our comprehensive study abroad platform designed for ambitious students.
         </p>
       </div>
 

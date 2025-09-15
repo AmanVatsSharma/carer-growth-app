@@ -52,7 +52,7 @@ export default function AboutPage() {
       >
         <div className="absolute inset-0">
           <img
-            src="/placeholder.svg?height=800&width=1200"
+            src="/landing-page/premium_photo-1683749805319-2c481ae54bc1.avif"
             alt="International education campus"
             className="w-full h-full object-cover opacity-20"
           />
@@ -125,7 +125,7 @@ export default function AboutPage() {
             <motion.div variants={fadeInUp} className="relative">
               <div className="relative mb-6">
                 <img
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/universities/unimelb-campus.png"
                   alt="IPD Education office"
                   className="w-full h-64 object-cover rounded-lg shadow-lg"
                 />
@@ -259,7 +259,7 @@ export default function AboutPage() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/placeholder.svg?height=400&width=1200"
+                src="/universities/university-of-toronto-campus.png"
                 alt="IPD Education services"
                 className="w-full h-64 md:h-80 object-cover"
               />
@@ -283,37 +283,37 @@ export default function AboutPage() {
                 icon: Users,
                 title: "Career Counselling & Profile Assessment",
                 description: "Identifying the best-fit course and country for each student",
-                image: "/placeholder.svg?height=200&width=300",
+                image: "/landing-page/premium_photo-1683749805319-2c481ae54bc1.avif",
               },
               {
                 icon: GraduationCap,
                 title: "University & Course Selection",
                 description: "Guidance on choosing globally recognized institutions",
-                image: "/placeholder.svg?height=200&width=300",
+                image: "/landing-page/premium_photo-1683749805319-2c481ae54bc1.avif",
               },
               {
                 icon: CheckCircle,
                 title: "Application & Documentation Support",
                 description: "Streamlined process to maximize admissions success",
-                image: "/placeholder.svg?height=200&width=300",
+                image: "/landing-page/premium_photo-1683749805319-2c481ae54bc1.avif",
               },
               {
                 icon: Award,
                 title: "Scholarship & Financial Guidance",
                 description: "Helping students access funding opportunities",
-                image: "/placeholder.svg?height=200&width=300",
+                image: "/landing-page/premium_photo-1683749805319-2c481ae54bc1.avif",
               },
               {
                 icon: Shield,
                 title: "Visa Counselling & Interview Preparation",
                 description: "Ensuring hassle-free approvals",
-                image: "/placeholder.svg?height=200&width=300",
+                image: "/landing-page/premium_photo-1683749805319-2c481ae54bc1.avif",
               },
               {
                 icon: Globe,
                 title: "Pre-Departure & Post-Arrival Support",
                 description: "From travel guidance to settling abroad",
-                image: "/placeholder.svg?height=200&width=300",
+                image: "/landing-page/premium_photo-1683749805319-2c481ae54bc1.avif",
               },
             ].map((service, index) => (
               <motion.div key={index} variants={fadeInUp}>
@@ -475,7 +475,7 @@ export default function AboutPage() {
       >
         <div className="absolute inset-0">
           <img
-            src="/placeholder.svg?height=600&width=1200"
+            src="/universities/harvard-yard.png"
             alt="Alumni network"
             className="w-full h-full object-cover opacity-20"
           />
@@ -552,17 +552,17 @@ export default function AboutPage() {
               {
                 name: "Senior Education Counselors",
                 role: "Expert Guidance Team",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/portraits/premium_photo-1661434380261-ca9305950dd3.avif",
               },
               {
                 name: "Visa & Documentation Specialists",
                 role: "Application Support Team",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/portraits/premium_photo-1661434380261-ca9305950dd3.avif",
               },
               {
                 name: "Student Success Coordinators",
                 role: "Support & Follow-up Team",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/portraits/premium_photo-1661434380261-ca9305950dd3.avif",
               },
             ].map((member, index) => (
               <motion.div key={index} variants={fadeInUp}>

@@ -73,19 +73,19 @@ export const countryData: Record<string, Country> = {
     universities: [
       {
         name: 'University of Toronto',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: '/universities/university-of-toronto-logo.png',
         ranking: '#1 in Canada',
         location: 'Toronto, ON'
       },
       {
         name: 'McGill University',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: '/logo-02.webp',
         ranking: '#2 in Canada',
         location: 'Montreal, QC'
       },
       {
         name: 'University of British Columbia',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: '/logo-04.webp',
         ranking: '#3 in Canada',
         location: 'Vancouver, BC'
       }
@@ -147,14 +147,14 @@ export const countryData: Record<string, Country> = {
         course: 'Computer Science',
         university: 'University of Toronto',
         story: 'Landed a job at Google Toronto right after graduation with a starting salary of CAD 120,000.',
-        image: '/placeholder.svg?height=300&width=300'
+        image: '/portraits/jurica-koletic-7YVZYZeITc8-unsplash.jpg'
       },
       {
         name: 'Ahmed Hassan',
         course: 'Business Administration',
         university: 'McGill University',
         story: 'Started my own fintech company and received CAD 2M in Series A funding.',
-        image: '/placeholder.svg?height=300&width=300'
+        image: '/portraits/jurica-koletic-7YVZYZeITc8-unsplash.jpg'
       }
     ]
   },
@@ -189,19 +189,19 @@ export const countryData: Record<string, Country> = {
     universities: [
       {
         name: 'Harvard University',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: '/universities/harvard-logo.png',
         ranking: '#1 Globally',
         location: 'Cambridge, MA'
       },
       {
         name: 'Stanford University',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: '/logo-01.webp',
         ranking: '#2 Globally',
         location: 'Stanford, CA'
       },
       {
         name: 'MIT',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: '/logo-03.webp',
         ranking: '#3 Globally',
         location: 'Cambridge, MA'
       }
@@ -263,14 +263,14 @@ export const countryData: Record<string, Country> = {
         course: 'Computer Science',
         university: 'Stanford University',
         story: 'Co-founded a unicorn startup valued at $1.2 billion after graduating.',
-        image: '/placeholder.svg?height=300&width=300'
+        image: '/portraits/jurica-koletic-7YVZYZeITc8-unsplash.jpg'
       },
       {
         name: 'Maria Rodriguez',
         course: 'Medicine',
         university: 'Harvard Medical School',
         story: 'Leading groundbreaking cancer research at Johns Hopkins Hospital.',
-        image: '/placeholder.svg?height=300&width=300'
+        image: '/portraits/jurica-koletic-7YVZYZeITc8-unsplash.jpg'
       }
     ]
   },
@@ -379,14 +379,14 @@ export const countryData: Record<string, Country> = {
         course: 'Finance',
         university: 'London School of Economics',
         story: 'Now working as an Investment Director at Goldman Sachs London.',
-        image: '/placeholder.svg?height=300&width=300'
+        image: '/portraits/jurica-koletic-7YVZYZeITc8-unsplash.jpg'
       },
       {
         name: 'Sarah Johnson',
         course: 'Law',
         university: 'University of Oxford',
         story: 'Became the youngest partner at a top London law firm at age 28.',
-        image: '/placeholder.svg?height=300&width=300'
+        image: '/portraits/jurica-koletic-7YVZYZeITc8-unsplash.jpg'
       }
     ]
   },
@@ -421,19 +421,19 @@ export const countryData: Record<string, Country> = {
     universities: [
       {
         name: 'Australian National University',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: '/logo-01.webp',
         ranking: '#1 in Australia',
         location: 'Canberra, ACT'
       },
       {
         name: 'University of Melbourne',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: '/universities/university-of-melbourne-logo.png',
         ranking: '#2 in Australia',
         location: 'Melbourne, VIC'
       },
       {
         name: 'University of Sydney',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: '/logo-03.webp',
         ranking: '#3 in Australia',
         location: 'Sydney, NSW'
       }
@@ -495,14 +495,14 @@ export const countryData: Record<string, Country> = {
         course: 'Engineering',
         university: 'University of Melbourne',
         story: 'Leading renewable energy projects across Asia-Pacific region.',
-        image: '/placeholder.svg?height=300&width=300'
+        image: '/portraits/jurica-koletic-7YVZYZeITc8-unsplash.jpg'
       },
       {
         name: 'David Kim',
         course: 'Information Technology',
         university: 'University of Sydney',
         story: 'Founded Australia\'s fastest-growing cybersecurity startup.',
-        image: '/placeholder.svg?height=300&width=300'
+        image: '/portraits/jurica-koletic-7YVZYZeITc8-unsplash.jpg'
       }
     ]
   },
@@ -611,14 +611,14 @@ export const countryData: Record<string, Country> = {
         course: 'Mechanical Engineering',
         university: 'Technical University of Munich',
         story: 'Leading automotive innovation at BMW headquarters in Munich.',
-        image: '/placeholder.svg?height=300&width=300'
+        image: '/portraits/jurica-koletic-7YVZYZeITc8-unsplash.jpg'
       },
       {
         name: 'Carlos Silva',
         course: 'Computer Science',
         university: 'Humboldt University',
         story: 'Senior Software Architect at SAP, pioneering AI solutions.',
-        image: '/placeholder.svg?height=300&width=300'
+        image: '/portraits/jurica-koletic-7YVZYZeITc8-unsplash.jpg'
       }
     ]
   }

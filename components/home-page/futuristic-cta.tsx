@@ -61,9 +61,9 @@ export const FuturisticCta = () => {
                     </div>
                     {/* Navigation Links */}
                     <div className="hidden md:flex items-center gap-8">
-                        <a href="#" className="text-neutral-300 hover:text-white transition-colors">Home</a>
-                        <a href="#" className="text-neutral-300 hover:text-white transition-colors">Services</a>
-                        <a href="#" className="text-neutral-300 hover:text-white transition-colors">About</a>
+                        <a href="/" className="text-neutral-300 hover:text-white transition-colors">Home</a>
+                        <a href="/study-abroad" className="text-neutral-300 hover:text-white transition-colors">Study Abroad</a>
+                        <a href="/about-us" className="text-neutral-300 hover:text-white transition-colors">About Us</a>
                     </div>
                 </nav>
             </header>

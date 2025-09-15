@@ -366,10 +366,9 @@ const Footer = () => {
                   <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-500/20 to-yellow-500/20 flex items-center justify-center">
                     <Phone className="w-4 h-4 text-amber-400" />
                   </div>
-                  <a>
-{                    // todo: add clicable link to call
-}                  </a>
-                  <span>+91 81235 92381, +91 86600 96538</span>
+                  <a href="tel:+918123592381" className="hover:text-amber-400 transition-colors">
+                    +91 81235 92381, +91 86600 96538
+                  </a>
                 </motion.div>
                 <motion.div
                   className="flex items-center gap-3 text-gray-200 dark:text-gray-300"
@@ -379,7 +378,9 @@ const Footer = () => {
                   <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-500/20 to-yellow-500/20 flex items-center justify-center">
                     <Mail className="w-4 h-4 text-amber-400" />
                   </div>
-                  <span>info@ipdeducation.in</span>
+                  <a href="mailto:info@ipdeducation.in" className="hover:text-amber-400 transition-colors">
+                    info@ipdeducation.in
+                  </a>
                 </motion.div> 
                 <motion.div
                   className="flex items-center gap-3 text-gray-200 dark:text-gray-300"
