@@ -17,7 +17,7 @@ export function SidebarDashboard() {
   const links = [
     {
       label: "Dashboard",
-      href: "#",
+      href: "/dashboard",
       icon: (
         <IconBrandTabler className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
@@ -52,14 +52,14 @@ export function SidebarDashboard() {
     },
     {
       label: "Settings",
-      href: "#",
+      href: "/dashboard/settings",
       icon: (
         <IconSettings className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
     {
       label: "Logout",
-      href: "#",
+      href: "/logout",
       icon: (
         <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
@@ -91,7 +91,7 @@ export function SidebarDashboard() {
           <SidebarLink
             link={{
               label: "Admin ",
-              href: "#",
+              href: "/dashboard/profile",
               icon: (
                 <img
                   src="/dashboard/admin-avatar.avif"
@@ -112,7 +112,7 @@ export function SidebarDashboard() {
 export const Logo = () => {
   return (
     <a
-      href="#"
+      href="/dashboard"
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
     >
       <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black dark:bg-white" />
@@ -129,7 +129,7 @@ export const Logo = () => {
 export const LogoIcon = () => {
   return (
     <a
-      href="#"
+      href="/dashboard"
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
     >
       <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black dark:bg-white" />

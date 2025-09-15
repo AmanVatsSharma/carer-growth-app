@@ -15,21 +15,32 @@ export async function createOrUpdateUniversity(data: unknown) {
   
   const { id, ...universityData } = result.data
 
+  // Convert JSON fields to strings for SQLite compatibility
+  const processedData = {
+    ...universityData,
+    contact: universityData.contact ? JSON.stringify(universityData.contact) : null,
+    exams: universityData.exams ? JSON.stringify(universityData.exams) : null,
+    courses: universityData.courses ? JSON.stringify(universityData.courses) : null,
+    tags: universityData.tags ? JSON.stringify(universityData.tags) : null,
+    intakeSeasons: universityData.intakeSeasons ? JSON.stringify(universityData.intakeSeasons) : null,
+    galleryImageUrls: universityData.galleryImageUrls ? JSON.stringify(universityData.galleryImageUrls) : null,
+  }
+
   try {
     if (id) {
       // Update existing university
       await prisma.university.update({
         where: { id },
-        data: universityData,
+        data: processedData,
       })
     } else {
       // Create new university
       await prisma.university.create({
-        data: universityData,
+        data: processedData,
       })
     }
 
-    revalidatePath("/admin/universities") // Refresh the admin page
+    revalidatePath("/dashboard/universities") // Refresh the admin page
     revalidatePath("/universities")      // Refresh the public page
     return { success: true }
   } catch (error) {

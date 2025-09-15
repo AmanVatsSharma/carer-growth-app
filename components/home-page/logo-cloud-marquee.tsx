@@ -2,11 +2,11 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 const brands = [
-  { src: "/logo-01.webp", alt: "Asteroid Kit Light", darkSrc: "/logo-01_dark.webp" },
-  { src: "/logo-02.webp", alt: "Aceternity UI Light", darkSrc: "/logo-02_dark.webp" },
-  { src: "/logo-03.webp", alt: "Gamity", darkSrc: "/logo-03_dark.webp" },
-  { src: "/logo-04.webp", alt: "Host IT Light", darkSrc: "/logo-04_dark.webp" },
-  { src: "/logo-01.webp", alt: "Asteroid Kit Light", darkSrc: "/logo-01_dark.webp" },
+  { src: "/logo-01.webp", alt: "University of Melbourne", darkSrc: "/logo-01_dark.webp" },
+  { src: "/logo-02.webp", alt: "University of Toronto", darkSrc: "/logo-02_dark.webp" },
+  { src: "/logo-03.webp", alt: "University of Sydney", darkSrc: "/logo-03_dark.webp" },
+  { src: "/logo-04.webp", alt: "University of British Columbia", darkSrc: "/logo-04_dark.webp" },
+  { src: "/logo-01.webp", alt: "University of Melbourne", darkSrc: "/logo-01_dark.webp" },
 ];
 
 
@@ -19,7 +19,7 @@ export default function BrandsLoveUs() {
           Top Universities You Love
         </h2>
         <p className="text-center text-gray-600 dark:text-gray-400 mt-3 px-16">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptatum cupiditate optio quas unde facilis!
+          Partnered with top universities worldwide to provide you with the best study abroad opportunities and career guidance.
         </p>
 
         <div className="mt-20 relative mx-2 md:mx-5">

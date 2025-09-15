@@ -5,12 +5,12 @@ const HeroSection = () => {
 
     const [state, setState] = useState(false)
 
-    // Replace javascript:void(0) paths with your paths
+    // Navigation links for IPD Education
     const navigation = [
-        { title: "Features", path: "javascript:void(0)" },
-        { title: "Integrations", path: "javascript:void(0)" },
-        { title: "Customers", path: "javascript:void(0)" },
-        { title: "Pricing", path: "javascript:void(0)" }
+        { title: "Universities", path: "/universities" },
+        { title: "Countries", path: "/country" },
+        { title: "Exams", path: "/exams" },
+        { title: "Jobs Abroad", path: "/jobs-abroad" }
     ]
 
     useEffect(() => {
@@ -23,12 +23,12 @@ const HeroSection = () => {
 
     const Brand = () => (
         <div className="flex items-center justify-between py-5 md:block">
-            <a href="javascript:void(0)">
+            <a href="/">
                 <img
-                    src="https://www.floatui.com/logo-dark.svg"
+                    src="/logo-01.webp"
                     width={120}
                     height={50}
-                    alt="Float UI logo"
+                    alt="IPD Education logo"
                 />
             </a>
             <div className="md:hidden">
@@ -74,7 +74,7 @@ const HeroSection = () => {
                                     })
                                 }
                                 <li>
-                                    <a href="javascript:void(0)" className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-sky-500 hover:bg-sky-400 active:bg-sky-600 duration-150 rounded-full md:inline-flex">
+                                    <a href="/study-abroad" className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-sky-500 hover:bg-sky-400 active:bg-sky-600 duration-150 rounded-full md:inline-flex">
                                         Get started
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                                             <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
@@ -93,7 +93,7 @@ const HeroSection = () => {
                             Study Abroad Made Simple
                         </h2>
                         <p className="max-w-2xl mx-auto text-gray-400">
-                            Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
+                            Connect with top universities worldwide, get expert guidance on applications, and turn your study abroad dreams into reality with our comprehensive platform.
                         </p>
                         <form
                             onSubmit={(e) => e.preventDefault()}
