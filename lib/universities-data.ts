@@ -24,13 +24,13 @@ export async function getUniversities(filter: UniversityFilter = {}) {
       { country: { contains: q, mode: 'insensitive' } },
       { city: { contains: q, mode: 'insensitive' } },
       { shortDescription: { contains: q, mode: 'insensitive' } },
-      { tags: { contains: q } },
+      { tags: { path: '$', string_contains: q } },
     ]
   }
 
   // Filters
   if (country) where.country = country
-  if (exam) where.exams = { contains: exam }
+  if (exam) where.exams = { path: '$', string_contains: exam }
   if (service) {
     where[service] = true
   }

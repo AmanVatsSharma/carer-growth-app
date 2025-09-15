@@ -27,13 +27,13 @@ import { Input } from "@/components/ui/input"
 import { PlusCircle } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { UniversityForm } from "./university-form"
-import type { UniversityWithCourses } from "@/lib/universities-data" // Create this type
+import type { University } from "@/lib/universities-data"
 
-export function UniversityDataTable({ columns, data }: { columns: ColumnDef<UniversityWithCourses>[], data: UniversityWithCourses[] }) {
+export function UniversityDataTable({ columns, data }: { columns: ColumnDef<University>[], data: University[] }) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
   const [isModalOpen, setIsModalOpen] = React.useState(false)
-  const [selectedUniversity, setSelectedUniversity] = React.useState<UniversityWithCourses | null>(null)
+  const [selectedUniversity, setSelectedUniversity] = React.useState<University | null>(null)
 
   const table = useReactTable({
     data,
