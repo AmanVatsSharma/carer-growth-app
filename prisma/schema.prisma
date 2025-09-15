@@ -10,7 +10,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -103,9 +103,9 @@ model University {
   shortDescription   String?
   description        String?
   website            String?
-  contact            String?   // JSON string for SQLite compatibility
+  contact            Json?     // JSON field for PostgreSQL
 
-  exams              String?   // JSON string for SQLite compatibility
+  exams              Json?     // JSON field for PostgreSQL
 
   // Services are now individual boolean fields for easier filtering
   visaSupport        Boolean   @default(false)
@@ -115,16 +115,16 @@ model University {
   applicationFeeWaiver Boolean @default(false)
   scholarshipsHelp   Boolean   @default(false)
 
-  courses            String?   // JSON string for SQLite compatibility
+  courses            Json?     // JSON field for PostgreSQL
 
-  tags               String?   // JSON string for SQLite compatibility
+  tags               Json?     // JSON field for PostgreSQL
 
   // Additional fields for better university information
   tuitionFeeFrom     Int?      // Tuition fee range start in USD
   tuitionFeeTo       Int?      // Tuition fee range end in USD
   qsRanking          Int?      // QS World University Ranking
-  intakeSeasons      String?   // JSON string for intake seasons
-  galleryImageUrls   String?   // JSON string for gallery images
+  intakeSeasons      Json?     // JSON field for intake seasons
+  galleryImageUrls   Json?     // JSON field for gallery images
 
   createdAt          DateTime  @default(now())
   updatedAt          DateTime  @updatedAt

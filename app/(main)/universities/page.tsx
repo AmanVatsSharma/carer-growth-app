@@ -4,6 +4,8 @@ import { SearchBar } from "@/components/universities/search-bar"
 import { Filters } from "@/components/universities/filters"
 import { UniversityCard } from "@/components/universities/university-card"
 import { IPDSupportBanner } from "@/components/universities/ipd-support-banner"
+import { DatabaseWarning } from "@/components/ui/database-warning"
+import { prisma } from "@/lib/prisma"
 
 export const metadata = {
   title: "Universities | IPD Education",
@@ -11,11 +13,23 @@ export const metadata = {
     "Explore universities worldwide. Filter by country, exams, and services. Get visa, accommodation, forex, and counselling support from IPD Education.",
 }
 
+// Force dynamic rendering to avoid build-time database calls
+export const dynamic = 'force-dynamic'
+
 export default async function UniversitiesPage({
   searchParams,
 }: {
   searchParams: { q?: string; country?: string; exam?: string; service?: string }
 }) {
+  // Check database connection
+  let isDatabaseConnected = true
+  try {
+    await prisma.$queryRaw`SELECT 1`
+  } catch (error) {
+    isDatabaseConnected = false
+    console.error("Database connection error:", error)
+  }
+
   const [countries, exams] = await Promise.all([getAllCountries(), getAllExams()])
   const universities = await getUniversities({
     q: searchParams.q,
@@ -33,6 +47,8 @@ export default async function UniversitiesPage({
           counselling, scholarships, and more.
         </p>
       </header>
+
+      {!isDatabaseConnected && <DatabaseWarning />}
 
       <section aria-label="Search" className="mb-6">
         <SearchBar />

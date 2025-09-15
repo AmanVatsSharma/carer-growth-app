@@ -28,8 +28,11 @@ export function Filters({ countries, exams }: FiltersProps) {
   const params = useSearchParams()
 
   const currentServices = useMemo(() => {
-    return params.get("services")?.split(",") || []
+    return params.get("service")?.split(",") || []
   }, [params])
+
+  const currentCountry = params.get("country") || ""
+  const currentExam = params.get("exam") || ""
 
 
   function updateServices(key: string, checked: boolean) {
@@ -42,9 +45,28 @@ export function Filters({ countries, exams }: FiltersProps) {
     }
 
     if (services.size > 0) {
-      sp.set("services", Array.from(services).join(","))
+      sp.set("service", Array.from(services).join(","))
     } else {
-      sp.delete("services")
+      sp.delete("service")
+    }
+    router.push(`/universities?${sp.toString()}`)
+  }
+
+  function update(filters: { country?: string; exam?: string }) {
+    const sp = new URLSearchParams(params.toString())
+    if (filters.country) {
+      if (filters.country === "__all") {
+        sp.delete("country")
+      } else {
+        sp.set("country", filters.country)
+      }
+    }
+    if (filters.exam) {
+      if (filters.exam === "__any") {
+        sp.delete("exam")
+      } else {
+        sp.set("exam", filters.exam)
+      }
     }
     router.push(`/universities?${sp.toString()}`)
   }
@@ -67,7 +89,7 @@ export function Filters({ countries, exams }: FiltersProps) {
         <div className="space-y-6">
           <div className="space-y-2">
             <Label htmlFor="country">Country</Label>
-            <Select value={currentServices.country} onValueChange={(v) => update({ country: v })}>
+            <Select value={currentCountry} onValueChange={(v) => update({ country: v })}>
               <SelectTrigger id="country">
                 <SelectValue placeholder="All countries" />
               </SelectTrigger>
@@ -86,7 +108,7 @@ export function Filters({ countries, exams }: FiltersProps) {
 
           <div className="space-y-2">
             <Label htmlFor="exam">Exam</Label>
-            <Select value={currentServices.exam} onValueChange={(v) => update({ exam: v })}>
+            <Select value={currentExam} onValueChange={(v) => update({ exam: v })}>
               <SelectTrigger id="exam">
                 <SelectValue placeholder="Any exam" />
               </SelectTrigger>

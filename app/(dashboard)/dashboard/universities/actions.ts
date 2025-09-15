@@ -15,18 +15,21 @@ export async function createOrUpdateUniversity(data: unknown) {
   
   const { id, ...universityData } = result.data
 
-  // Convert JSON fields to strings for SQLite compatibility
+  // For PostgreSQL, JSON fields are handled directly (no string conversion needed)
   const processedData = {
     ...universityData,
-    contact: universityData.contact ? JSON.stringify(universityData.contact) : null,
-    exams: universityData.exams ? JSON.stringify(universityData.exams) : null,
-    courses: universityData.courses ? JSON.stringify(universityData.courses) : null,
-    tags: universityData.tags ? JSON.stringify(universityData.tags) : null,
-    intakeSeasons: universityData.intakeSeasons ? JSON.stringify(universityData.intakeSeasons) : null,
-    galleryImageUrls: universityData.galleryImageUrls ? JSON.stringify(universityData.galleryImageUrls) : null,
+    contact: universityData.contact || null,
+    exams: universityData.exams || null,
+    courses: universityData.courses || null,
+    tags: universityData.tags || null,
+    intakeSeasons: universityData.intakeSeasons || null,
+    galleryImageUrls: universityData.galleryImageUrls || null,
   }
 
   try {
+    // Check database connection first
+    await prisma.$queryRaw`SELECT 1`
+    
     if (id) {
       // Update existing university
       await prisma.university.update({
@@ -44,20 +47,30 @@ export async function createOrUpdateUniversity(data: unknown) {
     revalidatePath("/universities")      // Refresh the public page
     return { success: true }
   } catch (error) {
-    console.error(error)
+    console.error("Database error:", error)
+    if (error instanceof Error && error.message.includes("Can't reach database server")) {
+      return { success: false, error: "Database server is currently unavailable. Please try again later." }
+    }
     return { success: false, error: "An unexpected error occurred." }
   }
 }
 
 export async function deleteUniversity(id: string) {
   try {
+    // Check database connection first
+    await prisma.$queryRaw`SELECT 1`
+    
     await prisma.university.delete({
       where: { id },
     })
-    revalidatePath("/admin/universities")
+    revalidatePath("/dashboard/universities")
     revalidatePath("/universities")
   } catch (error) {
-    console.error(error)
+    console.error("Database error:", error)
+    if (error instanceof Error && error.message.includes("Can't reach database server")) {
+      throw new Error("Database server is currently unavailable. Please try again later.")
+    }
     // Handle specific errors like record not found if necessary
+    throw error
   }
 }
