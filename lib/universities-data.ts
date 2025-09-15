@@ -40,15 +40,15 @@ export async function getUniversities(filter: UniversityFilter = {}) {
     orderBy: { name: 'asc' },
   })
 
-  // Parse JSON fields for SQLite compatibility
+  // JSON fields are already parsed by Prisma for PostgreSQL
   return universities.map(university => ({
     ...university,
-    contact: university.contact ? JSON.parse(university.contact) : null,
-    exams: university.exams ? JSON.parse(university.exams) : [],
-    courses: university.courses ? JSON.parse(university.courses) : [],
-    tags: university.tags ? JSON.parse(university.tags) : [],
-    intakeSeasons: university.intakeSeasons ? JSON.parse(university.intakeSeasons) : [],
-    galleryImageUrls: university.galleryImageUrls ? JSON.parse(university.galleryImageUrls) : [],
+    contact: university.contact || null,
+    exams: university.exams || [],
+    courses: university.courses || [],
+    tags: university.tags || [],
+    intakeSeasons: university.intakeSeasons || [],
+    galleryImageUrls: university.galleryImageUrls || [],
   }))
 }
 
@@ -59,15 +59,15 @@ export async function getUniversityBySlug(slug: string) {
   
   if (!university) return null
   
-  // Parse JSON fields for SQLite compatibility
+  // JSON fields are already parsed by Prisma for PostgreSQL
   return {
     ...university,
-    contact: university.contact ? JSON.parse(university.contact) : null,
-    exams: university.exams ? JSON.parse(university.exams) : [],
-    courses: university.courses ? JSON.parse(university.courses) : [],
-    tags: university.tags ? JSON.parse(university.tags) : [],
-    intakeSeasons: university.intakeSeasons ? JSON.parse(university.intakeSeasons) : [],
-    galleryImageUrls: university.galleryImageUrls ? JSON.parse(university.galleryImageUrls) : [],
+    contact: university.contact || null,
+    exams: university.exams || [],
+    courses: university.courses || [],
+    tags: university.tags || [],
+    intakeSeasons: university.intakeSeasons || [],
+    galleryImageUrls: university.galleryImageUrls || [],
   }
 }
 
@@ -85,9 +85,8 @@ export async function getAllExams(): Promise<string[]> {
   })
   const set = new Set<string>()
   universities.forEach((u) => {
-    if (u.exams) {
-      const exams = JSON.parse(u.exams)
-      exams.forEach((e: string) => set.add(e))
+    if (u.exams && Array.isArray(u.exams)) {
+      u.exams.forEach((e: string) => set.add(e))
     }
   })
   return Array.from(set).sort()

@@ -11,6 +11,9 @@ export const metadata = {
     "Explore universities worldwide. Filter by country, exams, and services. Get visa, accommodation, forex, and counselling support from IPD Education.",
 }
 
+// Force dynamic rendering to avoid build-time database calls
+export const dynamic = 'force-dynamic'
+
 export default async function UniversitiesPage({
   searchParams,
 }: {

@@ -14,7 +14,6 @@ import { useRouter } from "next/navigation"
 import { University } from "@/prisma/generated"
 import { createOrUpdateUniversity } from "@/app/(dashboard)/dashboard/universities/actions"
 import { Toaster } from "@/components/ui/sonner"
-import { error } from "console"
 
 type UniversityFormProps = {
   university?: University | null
@@ -68,8 +67,8 @@ export function UniversityForm({ university, onFinished }: UniversityFormProps) 
     //     title: "An error occurred.",
     //     description: typeof result.error === 'string' ? result.error : "Please check the form for errors.",
     //     variant: "destructive",
-    console.log(error, "error")
     //   })
+    console.log(result.error, "error")
     }
   }
 

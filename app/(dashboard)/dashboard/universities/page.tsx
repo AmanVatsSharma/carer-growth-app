@@ -3,20 +3,23 @@ import { prisma } from "@/lib/prisma"
 import { UniversityDataTable } from "@/components/admin/universities/university-data-table"
 import { columns } from "@/components/admin/universities/columns"
 
+// Force dynamic rendering to avoid build-time database calls
+export const dynamic = 'force-dynamic'
+
 export default async function AdminUniversitiesPage() {
   const universities = await prisma.university.findMany({
     orderBy: { name: 'asc' },
   })
 
-  // Parse JSON fields for display
+  // JSON fields are already parsed by Prisma for PostgreSQL
   const parsedUniversities = universities.map(university => ({
     ...university,
-    contact: university.contact ? JSON.parse(university.contact) : null,
-    exams: university.exams ? JSON.parse(university.exams) : [],
-    courses: university.courses ? JSON.parse(university.courses) : [],
-    tags: university.tags ? JSON.parse(university.tags) : [],
-    intakeSeasons: university.intakeSeasons ? JSON.parse(university.intakeSeasons) : [],
-    galleryImageUrls: university.galleryImageUrls ? JSON.parse(university.galleryImageUrls) : [],
+    contact: university.contact || null,
+    exams: university.exams || [],
+    courses: university.courses || [],
+    tags: university.tags || [],
+    intakeSeasons: university.intakeSeasons || [],
+    galleryImageUrls: university.galleryImageUrls || [],
   }))
 
   return (
