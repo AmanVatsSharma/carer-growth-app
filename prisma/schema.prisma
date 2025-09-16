@@ -131,3 +131,58 @@ model University {
 
   @@map("universities")
 }
+
+model WebsiteSettings {
+  id                String   @id @default(cuid())
+  
+  // Announcement settings
+  announcementTitle String?
+  announcementContent String?
+  announcementActive Boolean  @default(false)
+  
+  // Marquee universities settings
+  marqueeUniversities Json?   // JSON array of university objects with light/dark URLs
+  
+  // Homepage sections settings
+  heroTitle         String?
+  heroSubtitle      String?
+  heroDescription   String?
+  heroVideoUrl       String?
+  heroVideoPoster    String?
+  
+  ctaTitle          String?
+  ctaDescription     String?
+  ctaButtonText      String?
+  
+  valuePropTitle     String?
+  valuePropDescription String?
+  
+  sectionsGroupTitle String?
+  sectionsGroupDescription String?
+  
+  faqTitle          String?
+  faqDescription     String?
+  faqItems          Json?    // JSON array of FAQ items
+  
+  // General website settings
+  siteTitle         String?
+  siteDescription   String?
+  contactEmail      String?
+  contactPhone      String?
+  
+  // Social media links
+  facebookUrl       String?
+  twitterUrl        String?
+  instagramUrl      String?
+  linkedinUrl       String?
+  
+  // SEO settings
+  metaTitle         String?
+  metaDescription   String?
+  metaKeywords      String?
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("website_settings")
+}

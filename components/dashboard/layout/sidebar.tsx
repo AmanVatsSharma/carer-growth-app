@@ -45,7 +45,7 @@ export function SidebarDashboard() {
     },
     {
       label: "Website Settings",
-      href: "/site-edit",
+      href: "/dashboard/website-settings",
       icon: (
         <IconBrandWebflow className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),

@@ -88,7 +88,7 @@ export function LeadDashboard() {
 
   const updateLeadStatus = async (leadId: string, status: string) => {
     try {
-      const response = await fetch(`/api/leads/${leadId}`, {
+      const response = await fetch(`/api/heavyleads/${leadId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status }),
@@ -104,7 +104,7 @@ export function LeadDashboard() {
 
   const updateLeadNotes = async (leadId: string, notes: string) => {
     try {
-      const response = await fetch(`/api/leads/${leadId}`, {
+      const response = await fetch(`/api/heavyleads/${leadId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ notes }),
@@ -123,7 +123,7 @@ export function LeadDashboard() {
     if (!confirm("Are you sure you want to delete this lead?")) return
 
     try {
-      const response = await fetch(`/api/leads/${leadId}`, {
+      const response = await fetch(`/api/heavyleads/${leadId}`, {
         method: "DELETE",
       })
 

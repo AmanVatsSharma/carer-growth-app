@@ -1,7 +1,15 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 
-const brands = [
+interface MarqueeUniversity {
+  src: string;
+  alt: string;
+  darkSrc: string;
+}
+
+        const brands = [
   { 
     src: "/universities/university-of-melbourne-logo.png", 
     alt: "University of Melbourne", 
@@ -53,9 +61,27 @@ const brands = [
   },
 ];
 
-
-
 export default function BrandsLoveUs() {
+  const [brands, setBrands] = useState<MarqueeUniversity[]>(defaultBrands);
+
+  useEffect(() => {
+    const fetchMarqueeUniversities = async () => {
+      try {
+        const response = await fetch("/api/website-settings");
+        if (response.ok) {
+          const data = await response.json();
+          if (data.marqueeUniversities && data.marqueeUniversities.length > 0) {
+            setBrands(data.marqueeUniversities);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching marquee universities:", error);
+        // Keep default brands if fetch fails
+      }
+    };
+
+    fetchMarqueeUniversities();
+  }, []);
   return (
     <section className="relative py-16 bg-white dark:bg-black ">
       <div className="max-w-7xl mx-auto px-4">
