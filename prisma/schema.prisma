@@ -10,8 +10,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model User {
@@ -130,4 +130,38 @@ model University {
   updatedAt          DateTime  @updatedAt
 
   @@map("universities")
+}
+
+model WebsiteSettings {
+  id                String   @id @default(cuid())
+  
+  // Announcement settings
+  announcementTitle String?
+  announcementContent String?
+  announcementActive Boolean  @default(false)
+  
+  // Marquee universities settings
+  marqueeUniversities Json?   // JSON array of university objects with light/dark URLs
+  
+  // General website settings
+  siteTitle         String?
+  siteDescription   String?
+  contactEmail      String?
+  contactPhone      String?
+  
+  // Social media links
+  facebookUrl       String?
+  twitterUrl        String?
+  instagramUrl      String?
+  linkedinUrl       String?
+  
+  // SEO settings
+  metaTitle         String?
+  metaDescription   String?
+  metaKeywords      String?
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("website_settings")
 }

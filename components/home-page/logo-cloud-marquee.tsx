@@ -1,17 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 
-const brands = [
+interface MarqueeUniversity {
+  src: string;
+  alt: string;
+  darkSrc: string;
+}
+
+const defaultBrands = [
   { src: "/logo-01.webp", alt: "University of Melbourne", darkSrc: "/logo-01_dark.webp" },
   { src: "/logo-02.webp", alt: "University of Toronto", darkSrc: "/logo-02_dark.webp" },
   { src: "/logo-03.webp", alt: "University of Sydney", darkSrc: "/logo-03_dark.webp" },
   { src: "/logo-04.webp", alt: "University of British Columbia", darkSrc: "/logo-04_dark.webp" },
-  { src: "/logo-01.webp", alt: "University of Melbourne", darkSrc: "/logo-01_dark.webp" },
 ];
 
-
-
 export default function BrandsLoveUs() {
+  const [brands, setBrands] = useState<MarqueeUniversity[]>(defaultBrands);
+
+  useEffect(() => {
+    const fetchMarqueeUniversities = async () => {
+      try {
+        const response = await fetch("/api/website-settings");
+        if (response.ok) {
+          const data = await response.json();
+          if (data.marqueeUniversities && data.marqueeUniversities.length > 0) {
+            setBrands(data.marqueeUniversities);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching marquee universities:", error);
+        // Keep default brands if fetch fails
+      }
+    };
+
+    fetchMarqueeUniversities();
+  }, []);
   return (
     <section className="relative py-16 bg-white dark:bg-black ">
       <div className="max-w-7xl mx-auto px-4">

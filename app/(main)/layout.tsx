@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import NavBar from "@/components/layout/navbar";
 import { StickyBanner } from "@/components/ui/sticky-banner";
+import { AnnouncementBar } from "@/components/ui/announcement-bar";
 import Footer from "@/components/layout/footer";
 
 const geistSans = Geist({
@@ -37,6 +38,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <AnnouncementBar />
           <StickyBanner hideOnScroll className="bg-gradient-to-b from-blue-500 to-blue-600">
             <p className="mx-0 max-w-[90%] text-white drop-shadow-md">
               IELTS coaching at just ₹3499.
