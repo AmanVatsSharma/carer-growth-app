@@ -10,8 +10,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -142,6 +142,27 @@ model WebsiteSettings {
   
   // Marquee universities settings
   marqueeUniversities Json?   // JSON array of university objects with light/dark URLs
+  
+  // Homepage sections settings
+  heroTitle         String?
+  heroSubtitle      String?
+  heroDescription   String?
+  heroVideoUrl       String?
+  heroVideoPoster    String?
+  
+  ctaTitle          String?
+  ctaDescription     String?
+  ctaButtonText      String?
+  
+  valuePropTitle     String?
+  valuePropDescription String?
+  
+  sectionsGroupTitle String?
+  sectionsGroupDescription String?
+  
+  faqTitle          String?
+  faqDescription     String?
+  faqItems          Json?    // JSON array of FAQ items
   
   // General website settings
   siteTitle         String?
