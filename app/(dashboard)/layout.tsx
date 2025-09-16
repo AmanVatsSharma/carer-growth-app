@@ -8,6 +8,13 @@ import { Toaster } from "@/components/ui/sonner";
 export const metadata: Metadata = {
     title: "IPD Dashboard",
     description: "Admin Dashboard for IPD Education",
+    robots: {
+        index: false,
+        follow: false,
+        noarchive: true,
+        nosnippet: true,
+        noimageindex: true,
+    },
 };
 
 export default function RootLayout({

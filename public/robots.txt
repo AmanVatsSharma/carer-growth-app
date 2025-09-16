@@ -1,6 +1,8 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /dashboard/
+Disallow: /dashboard/login
 
 # Host
 Host: https://ipdeducation.in
