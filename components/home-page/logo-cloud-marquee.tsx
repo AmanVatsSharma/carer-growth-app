@@ -9,7 +9,7 @@ interface MarqueeUniversity {
   darkSrc: string;
 }
 
-        const brands = [
+const defaultBrands = [
   { 
     src: "/universities/university-of-melbourne-logo.png", 
     alt: "University of Melbourne", 
