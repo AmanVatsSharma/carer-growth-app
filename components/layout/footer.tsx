@@ -180,49 +180,53 @@ const Footer = () => {
 
   const footerSections = [
     {
-      title: "Programs",
+      title: "Study Programs",
       links: [
         { name: "Study Abroad", href: "/study-abroad" },
-        // { name: "English Courses", href: "/programs/english" },
-        { name: "University Pathways", href: "/universities" },
+        { name: "University Search", href: "/universities" },
+        { name: "Country Guide", href: "/country" },
         { name: "Test Preparation", href: "/exams" },
+        { name: "Jobs Abroad", href: "/jobs-abroad" },
       ],
     },
     {
-      title: "Services",
+      title: "Our Services",
       links: [
-        { name: "Student Counseling", href: "/about-us" },
+        { name: "Career Counseling", href: "/about-us" },
         { name: "Visa Assistance", href: "/about-us" },
-        { name: "Accommodation", href: "/about-us" },
-        // { name: "Career Support", href: "/about-us" },
+        { name: "Accommodation Support", href: "/about-us" },
+        { name: "Scholarship Guidance", href: "/about-us" },
+        { name: "Pre-Departure Briefing", href: "/about-us" },
       ],
     },
     {
-      title: "Resources",
+      title: "Popular Destinations",
       links: [
-        { name: "Study Destinations", href: "/country" },
         { name: "Study in USA", href: "/country/usa" },
         { name: "Study in UK", href: "/country/uk" },
-        // { name: "Success Stories", href: "/resources/stories" },
+        { name: "Study in Canada", href: "/country/canada" },
+        { name: "Study in Australia", href: "/country/australia" },
+        { name: "Study in Germany", href: "/country/germany" },
       ],
     },
     {
-      title: "Support",
+      title: "Company",
       links: [
+        { name: "About IPD Education", href: "/about-us" },
+        { name: "Our Team", href: "/about-us" },
+        { name: "Success Stories", href: "/about-us" },
         { name: "Contact Us", href: "/about-us" },
-        // { name: "Find an Office", href: "/offices" },
-        { name: "Help Center", href: "/about-us" },
-        { name: "Book Consultation", href: "/about-us" },
+        { name: "Book Free Consultation", href: "/about-us" },
       ],
     },
   ]
 
   const socialLinks = [
-    { icon: Facebook, href: "#", color: "hover:text-blue-400", label: "Facebook" },
-    { icon: Twitter, href: "#", color: "hover:text-sky-400", label: "Twitter" },
-    { icon: Instagram, href: "#", color: "hover:text-pink-400", label: "Instagram" },
-    { icon: Linkedin, href: "#", color: "hover:text-blue-500", label: "LinkedIn" },
-    { icon: Youtube, href: "#", color: "hover:text-red-400", label: "YouTube" },
+    { icon: Facebook, href: "https://facebook.com/ipdeducation", color: "hover:text-blue-400", label: "Facebook" },
+    { icon: Twitter, href: "https://twitter.com/ipdeducation", color: "hover:text-sky-400", label: "Twitter" },
+    { icon: Instagram, href: "https://instagram.com/ipdeducation", color: "hover:text-pink-400", label: "Instagram" },
+    { icon: Linkedin, href: "https://linkedin.com/company/ipd-education", color: "hover:text-blue-500", label: "LinkedIn" },
+    { icon: Youtube, href: "https://youtube.com/@ipdeducation", color: "hover:text-red-400", label: "YouTube" },
   ]
 
   const stats = [
@@ -351,8 +355,9 @@ const Footer = () => {
                   <span className="ml-2">Education</span> */}
                 </motion.h2>
                 <p className="text-gray-300 dark:text-gray-400 leading-relaxed mb-6 text-base">
-                  Your trusted partner in international education. We help students achieve their dreams of studying
-                  abroad with personalized guidance and expert support.
+                  IPD Education is India's leading study abroad consultancy, empowering students to achieve their global education dreams. 
+                  With 13+ years of expertise, we provide end-to-end support including university selection, visa assistance, 
+                  scholarship guidance, and post-arrival support across 50+ countries.
                 </p>
               </div>
 
@@ -396,9 +401,9 @@ const Footer = () => {
 
               {/* Newsletter Signup */}
               <div>
-                <h3 className="text-white dark:text-gray-100 font-semibold mb-3 text-lg">Stay Updated</h3>
+                <h3 className="text-white dark:text-gray-100 font-semibold mb-3 text-lg">Stay Connected</h3>
                 <p className="text-gray-300 dark:text-gray-400 mb-4">
-                  Get the latest updates on study opportunities and education news.
+                  Get exclusive study abroad insights, scholarship alerts, and university updates delivered to your inbox.
                 </p>
                 <form onSubmit={handleSubscribe} className="flex gap-2">
                   <motion.input
