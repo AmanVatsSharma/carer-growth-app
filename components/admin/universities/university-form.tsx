@@ -9,12 +9,11 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-// import { useToast } from "@/components/ui/use-toast"
 import { useRouter } from "next/navigation"
 import { University } from "@/prisma/generated"
 import { createOrUpdateUniversity } from "@/app/(dashboard)/dashboard/universities/actions"
 import { Toaster } from "@/components/ui/sonner"
-import { error } from "console"
+import { toast } from "sonner"
 
 type UniversityFormProps = {
   university?: University | null
@@ -22,7 +21,7 @@ type UniversityFormProps = {
 }
 
 export function UniversityForm({ university, onFinished }: UniversityFormProps) {
-//   const { toast } = useToast()
+  //   const { toast } = useToast()
   const router = useRouter()
   const form = useForm<UniversityFormData>({
     resolver: zodResolver(universitySchema),
@@ -42,18 +41,16 @@ export function UniversityForm({ university, onFinished }: UniversityFormProps) 
   async function onSubmit(data: UniversityFormData) {
     const result = await createOrUpdateUniversity(data)
     if (result.success) {
-    //   Toaster({
-    //     title: `University ${data.id ? "updated" : "created"} successfully.`,
-    //   })
+      toast.success(`University ${data.id ? "updated" : "created"} successfully.`)
+
       onFinished()
       router.refresh()
     } else {
-    //   toast({
-    //     title: "An error occurred.",
-    //     description: typeof result.error === 'string' ? result.error : "Please check the form for errors.",
-    //     variant: "destructive",
-    console.log(error, "error")
-    //   })
+      toast.error(
+        typeof result.error === "string"
+          ? result.error
+          : "Please check the form for errors."
+      )
     }
   }
 
@@ -104,7 +101,7 @@ export function UniversityForm({ university, onFinished }: UniversityFormProps) 
           name="visaSupport"
           render={({ field }) => (
             <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
-               <FormControl>
+              <FormControl>
                 <Checkbox checked={field.value} onCheckedChange={field.onChange} />
               </FormControl>
               <div className="space-y-1 leading-none">
