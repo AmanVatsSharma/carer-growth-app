@@ -2,11 +2,56 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 const brands = [
-  { src: "/logo-01.webp", alt: "Asteroid Kit Light", darkSrc: "/logo-01_dark.webp" },
-  { src: "/logo-02.webp", alt: "Aceternity UI Light", darkSrc: "/logo-02_dark.webp" },
-  { src: "/logo-03.webp", alt: "Gamity", darkSrc: "/logo-03_dark.webp" },
-  { src: "/logo-04.webp", alt: "Host IT Light", darkSrc: "/logo-04_dark.webp" },
-  { src: "/logo-01.webp", alt: "Asteroid Kit Light", darkSrc: "/logo-01_dark.webp" },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/en/5/56/University_of_Connecticut_seal.svg",
+    alt: "Asteroid Kit Light",
+    darkSrc: "https://upload.wikimedia.org/wikipedia/en/5/56/University_of_Connecticut_seal.svg"
+  },
+  {
+    src: "https://www.mollerinstitute.com/wp-content/uploads/2024/04/University-of-New-South-Wales-Logo.png",
+    alt: "Aceternity UI Light",
+    darkSrc: "https://www.mollerinstitute.com/wp-content/uploads/2024/04/University-of-New-South-Wales-Logo.png"
+  },
+
+  {
+    src: "https://student-public.s3.ap-southeast-1.amazonaws.com/prod/schools/eS8HcwzyzNwy87V3ND8qnrUOTOKNXYzTu7dyhBFv.png",
+    alt: "Gamity",
+    darkSrc: "https://student-public.s3.ap-southeast-1.amazonaws.com/prod/schools/eS8HcwzyzNwy87V3ND8qnrUOTOKNXYzTu7dyhBFv.png"
+  },
+
+  {
+    src: "https://ocsc.com.au/wp-content/uploads/2021/10/deakin-uni-feature-new.jpg",
+    alt: "Host IT Light",
+    darkSrc: "https://ocsc.com.au/wp-content/uploads/2021/10/deakin-uni-feature-new.jpg"
+  },
+
+  {
+    src: "/universities/monash-university-logo-light.png",
+    alt: "Asteroid Kit Light",
+    darkSrc: "/universities/monash-university-dark.png"
+  },
+
+  {
+    src: "https://www.adelaide.edu.au/brand/sites/default/files/media/editor-images/2021-07/uoa-logo-dk-blue-vert.gif",
+    alt: "Host IT Light",
+    darkSrc: "https://www.adelaide.edu.au/brand/sites/default/files/media/editor-images/2021-07/uoa-logo-dk-blue-vert.gif"
+  },
+
+  {
+    src: "/universities/kingston-university.png",
+    alt: "Asteroid Kit Light",
+    darkSrc: "/universities/kingston-university.png"
+  },
+    {
+    src: "/universities/University_of_Bristol_logo-light.png",
+    alt: "Asteroid Kit Light",
+    darkSrc: "/universities/University_of_Bristol_logo-dark.png"
+  },
+    {
+    src: "/universities/queen-university-belfast.png",
+    alt: "Asteroid Kit Light",
+    darkSrc: "/universities/queen-university-belfast.png"
+  },
 ];
 
 
