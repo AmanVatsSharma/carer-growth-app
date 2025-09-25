@@ -404,12 +404,12 @@ const faqs = [
 ]
 
 const locations = [
-  { city: "New York", country: "USA", students: "5,000+", flag: "🇺🇸" },
-  { city: "London", country: "UK", students: "3,500+", flag: "🇬🇧" },
-  { city: "Toronto", country: "Canada", students: "2,800+", flag: "🇨🇦" },
-  { city: "Sydney", country: "Australia", students: "2,200+", flag: "🇦🇺" },
-  { city: "Mumbai", country: "India", students: "4,500+", flag: "🇮🇳" },
-  { city: "Dubai", country: "UAE", students: "1,800+", flag: "🇦🇪" },
+  { city: "New York", country: "USA", students: "500+", flag: "🇺🇸" },
+  { city: "London", country: "UK", students: "350+", flag: "🇬🇧" },
+  { city: "Toronto", country: "Canada", students: "280+", flag: "🇨🇦" },
+  { city: "Sydney", country: "Australia", students: "220+", flag: "🇦🇺" },
+  { city: "Auckland", country: "New Zealand", students: "450+", flag: "🇳🇿" },
+  { city: "Dubai", country: "UAE", students: "180+", flag: "🇦🇪" },
 ]
 
 export default function ExamPrepLanding() {
@@ -467,22 +467,19 @@ export default function ExamPrepLanding() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
             >
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground px-10 py-6 text-xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
-              >
+              <JourneyModal className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground px-10 py-6 text-xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
                 <Calendar className="mr-3 h-6 w-6" />
                 Book Free Demo Class
                 <ArrowRight className="ml-3 h-6 w-6" />
-              </Button>
-              <Button
+              </JourneyModal>
+              {/* <Button
                 variant="outline"
                 size="lg"
                 className="px-10 py-6 text-xl border-2 hover:bg-accent/10 bg-transparent backdrop-blur-sm"
               >
                 <Play className="mr-3 h-6 w-6" />
                 Watch Success Stories
-              </Button>
+              </Button> */}
             </motion.div>
 
             <motion.div
@@ -642,10 +639,11 @@ export default function ExamPrepLanding() {
                       </div>
                     </div>
 
-                    <Button className="w-full bg-gradient-to-r from-primary/10 to-accent/10 hover:from-primary hover:to-accent hover:text-primary-foreground border border-primary/20 hover:border-transparent transition-all duration-300 group-hover:shadow-lg">
+                    <JourneyModal className="w-full bg-gradient-to-r from-primary/10 to-accent/10 hover:from-primary hover:to-accent hover:text-primary-foreground border border-primary/20 hover:border-transparent transition-all duration-300 group-hover:shadow-lg">
+
                       Start {exam.name} Preparation
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    </JourneyModal>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -910,7 +908,7 @@ export default function ExamPrepLanding() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-gradient-to-br from-muted/20 to-card/50">
+      {/* <section className="py-24 bg-gradient-to-br from-muted/20 to-card/50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -987,7 +985,7 @@ export default function ExamPrepLanding() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Global Reach Section */}
       <section className="py-24 bg-background">
@@ -1066,24 +1064,46 @@ export default function ExamPrepLanding() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-              <JourneyModal className="px-6 sm:px-8 py-4 sm:py-6 rounded-xl shadow-lg hover:shadow-xl w-full sm:w-auto min-h-[56px]">
-                <Calendar className="mr-3 h-6 w-6" />
-                Book Free Demo Class
-                <ArrowRight className="ml-3 h-6 w-6" />
-
-              </JourneyModal>
-              <Button
-                size="lg"
+              <JourneyModal
                 className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground px-12 py-6 text-xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
               >
+                {/* <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground px-12 py-6 text-xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+                > */}
+
                 <Calendar className="mr-3 h-6 w-6" />
                 Book Free Demo Class
                 <ArrowRight className="ml-3 h-6 w-6" />
-              </Button>
+                {/* </Button> */}
+              </JourneyModal>
+              {/* 
+                Button opens WhatsApp chat with +91 79755 42154.
+                Robust error handling and console logs for debugging.
+                See docs in this module for flow and error handling.
+                WhatsApp link format: https://wa.me/919975542154
+                Flow:
+                  1. On click, open WhatsApp chat in new tab.
+                  2. Log click event for debugging.
+                  3. If window.open fails, alert user.
+              */}
               <Button
                 variant="outline"
                 size="lg"
                 className="px-12 py-6 text-xl border-2 hover:bg-accent/10 bg-transparent backdrop-blur-sm"
+                onClick={() => {
+                  try {
+                    const whatsappUrl = "https://wa.me/918123592381";
+                    console.log("[CTA] WhatsApp Chat button clicked. Opening:", whatsappUrl);
+                    const win = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+                    if (!win) {
+                      throw new Error("window.open returned null (popup blocked?)");
+                    }
+                  } catch (error) {
+                    console.error("[CTA] Failed to open WhatsApp chat:", error);
+                    alert("Sorry, we couldn't open WhatsApp. Please message us at +91 81235 92381.");
+                  }
+                }}
               >
                 <MessageCircle className="mr-3 h-6 w-6" />
                 Chat with Expert
