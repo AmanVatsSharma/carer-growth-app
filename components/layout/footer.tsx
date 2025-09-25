@@ -192,7 +192,7 @@ const Footer = () => {
       title: "Services",
       links: [
         { name: "Student Counseling", href: "/about-us" },
-        { name: "Visa Assistance", href: "/about-us" },
+        { name: "Visa Assistance", href: "/services/visa-assistance" },
         { name: "Accommodation", href: "/about-us" },
         // { name: "Career Support", href: "/about-us" },
       ],
