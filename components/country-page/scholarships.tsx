@@ -12,8 +12,13 @@ interface ScholarshipsProps {
 }
 
 export function Scholarships({ country }: ScholarshipsProps) {
+  if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.debug('[Scholarships]', { country: country.name, count: country.scholarships?.length });
+  }
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-card/50">
+    <section className="relative py-24 bg-gradient-to-b from-background via-card/40 to-background overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_20%_80%,oklch(0.85_0.19_85/.4),transparent_40%)]" />
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -23,7 +28,7 @@ export function Scholarships({ country }: ScholarshipsProps) {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gold-gradient bg-clip-text text-transparent">
+            <span className="gold-gradient bg-clip-text  text-foreground ">
               Scholarships
             </span>{' '}
             Available
@@ -33,7 +38,7 @@ export function Scholarships({ country }: ScholarshipsProps) {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {country.scholarships.map((scholarship, index) => (
             <motion.div
               key={index}

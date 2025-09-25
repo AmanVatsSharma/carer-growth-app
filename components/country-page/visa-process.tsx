@@ -11,8 +11,13 @@ interface VisaProcessProps {
 }
 
 export function VisaProcess({ country }: VisaProcessProps) {
+  if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.debug('[VisaProcess]', { country: country.name, steps: country.visaProcess?.length });
+  }
   return (
-    <section className="py-20 bg-card/30">
+    <section className="relative py-24 bg-gradient-to-b from-background via-card/40 to-background overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_50%_0%,oklch(0.85_0.19_85/.4),transparent_40%)]" />
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -61,7 +66,7 @@ export function VisaProcess({ country }: VisaProcessProps) {
 
                 {/* Content Card */}
                 <div className="ml-20">
-                  <Card className="bg-background/80 backdrop-blur-sm border-border hover:border-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-gold/10">
+                  <Card className="bg-background/80 backdrop-blur-sm border-border hover:border-gold/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-gold/20">
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between mb-4">
                         <h3 className="text-xl font-bold text-gold">

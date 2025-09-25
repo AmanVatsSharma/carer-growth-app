@@ -14,8 +14,12 @@ interface ApplyNowCTAProps {
 }
 
 export function ApplyNowCTA({ country }: ApplyNowCTAProps) {
+  if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.debug('[ApplyNowCTA]', { country: country.name });
+  }
   return (
-    <section className="py-20 bg-gradient-to-b from-background via-card/50 to-background relative overflow-hidden">
+    <section className="relative py-24 bg-gradient-to-b from-background via-card/40 to-background overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         {[...Array(15)].map((_, i) => (
@@ -67,7 +71,7 @@ export function ApplyNowCTA({ country }: ApplyNowCTAProps) {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-background/80 backdrop-blur-sm border-gold/20 hover:border-gold/40 transition-all duration-300 hover:shadow-2xl hover:shadow-gold/20">
+            <Card className="bg-background/80 backdrop-blur-sm border-gold/20 hover:border-gold/40 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-gold/20">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center">

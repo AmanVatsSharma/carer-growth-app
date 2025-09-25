@@ -5,12 +5,17 @@ import { Country } from '@/lib/country-data';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Quote, Star, GraduationCap, Building } from 'lucide-react';
+import Image from 'next/image';
 
 interface SuccessStoriesProps {
   country: Country;
 }
 
 export function SuccessStories({ country }: SuccessStoriesProps) {
+  if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.debug('[SuccessStories]', { country: country.name, count: country.successStories?.length });
+  }
   return (
     <section className="py-20 bg-card/30">
       <div className="container mx-auto px-4">
@@ -66,11 +71,15 @@ export function SuccessStories({ country }: SuccessStoriesProps) {
                       whileHover={{ scale: 1.1 }}
                       className="relative"
                     >
-                      <img
-                        src={story.image || "/placeholder.svg"}
-                        alt={story.name}
-                        className="w-16 h-16 rounded-full object-cover border-2 border-gold/30"
-                      />
+                      <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-gold/30">
+                        <Image
+                          src={story.image || "/placeholder.svg"}
+                          alt={story.name}
+                          fill
+                          sizes="64px"
+                          className="object-cover"
+                        />
+                      </div>
                       <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gold rounded-full flex items-center justify-center">
                         <GraduationCap className="w-3 h-3 text-black" />
                       </div>

@@ -73,19 +73,19 @@ export const countryData: Record<string, Country> = {
     universities: [
       {
         name: 'University of Toronto',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: '/universities/university-of-toronto-logo.png',
         ranking: '#1 in Canada',
         location: 'Toronto, ON'
       },
       {
         name: 'McGill University',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/3/33/McGill_University_CoA.svg',
         ranking: '#2 in Canada',
         location: 'Montreal, QC'
       },
       {
         name: 'University of British Columbia',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/7/74/UBC_logo.png',
         ranking: '#3 in Canada',
         location: 'Vancouver, BC'
       }
@@ -189,19 +189,19 @@ export const countryData: Record<string, Country> = {
     universities: [
       {
         name: 'Harvard University',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: '/universities/harvard-logo.png',
         ranking: '#1 Globally',
         location: 'Cambridge, MA'
       },
       {
         name: 'Stanford University',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/b/b7/Stanford_University_seal_2003.svg',
         ranking: '#2 Globally',
         location: 'Stanford, CA'
       },
       {
         name: 'MIT',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg',
         ranking: '#3 Globally',
         location: 'Cambridge, MA'
       }
@@ -305,19 +305,19 @@ export const countryData: Record<string, Country> = {
     universities: [
       {
         name: 'University of Oxford',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Oxford_University_Circlet.svg',
         ranking: '#1 in UK',
         location: 'Oxford, England'
       },
       {
         name: 'University of Cambridge',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/0/06/University_of_Cambridge_coat_of_arms.svg',
         ranking: '#2 in UK',
         location: 'Cambridge, England'
       },
       {
         name: 'Imperial College London',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/6/63/Imperial_College_London.svg',
         ranking: '#3 in UK',
         location: 'London, England'
       }
@@ -421,19 +421,19 @@ export const countryData: Record<string, Country> = {
     universities: [
       {
         name: 'Australian National University',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/3/35/Australian_National_University_coat_of_arms.svg',
         ranking: '#1 in Australia',
         location: 'Canberra, ACT'
       },
       {
         name: 'University of Melbourne',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: '/universities/university-of-melbourne-logo.png',
         ranking: '#2 in Australia',
         location: 'Melbourne, VIC'
       },
       {
         name: 'University of Sydney',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/9/98/University_of_Sydney_coat_of_arms.svg',
         ranking: '#3 in Australia',
         location: 'Sydney, NSW'
       }
@@ -537,19 +537,19 @@ export const countryData: Record<string, Country> = {
     universities: [
       {
         name: 'Technical University of Munich',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Technical_University_of_Munich_Logo.svg',
         ranking: '#1 in Germany',
         location: 'Munich, Bavaria'
       },
       {
         name: 'Heidelberg University',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Uni_Heidelberg_Logo.svg',
         ranking: '#2 in Germany',
         location: 'Heidelberg, Baden-Württemberg'
       },
       {
         name: 'Humboldt University',
-        logo: '/placeholder.svg?height=80&width=80',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Logo_Humboldt-Universit%C3%A4t_zu_Berlin.svg',
         ranking: '#3 in Germany',
         location: 'Berlin'
       }

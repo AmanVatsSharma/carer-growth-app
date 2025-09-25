@@ -5,23 +5,34 @@ import type { Country } from "@/lib/country-data"
 import { Button } from "@/components/ui/button"
 import { Sparkles, ArrowRight } from "lucide-react"
 import JourneyModal from "../journey-modal/journey-modal"
+import Image from "next/image"
 
 interface HeroBannerProps {
   country: Country
 }
 
 export function HeroBanner({ country }: HeroBannerProps) {
+  if (typeof window !== "undefined" && process.env.NODE_ENV !== "production") {
+    // eslint-disable-next-line no-console
+    console.debug("[HeroBanner]", { country: country.name, heroImage: country.heroImage })
+  }
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src={country.heroImage || "/placeholder.svg"}
           alt={`Study in ${country.name}`}
-          className="w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-purple-900/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/10 via-black/40 to-transparent" />
+        {/* Decorative blurred shapes */}
+        <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full blur-3xl opacity-40" style={{ background: "oklch(0.65 0.25 260)" }} />
+        <div className="absolute -bottom-24 -right-24 w-72 h-72 rounded-full blur-3xl opacity-40" style={{ background: "oklch(0.8 0.18 200)" }} />
       </div>
 
       {/* Animated Background Elements */}
@@ -77,7 +88,7 @@ export function HeroBanner({ country }: HeroBannerProps) {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
           >
-            Study in <span className="modern-gradient bg-clip-text text-transparent">{country.name}</span>
+            Study in <span className="modern-gradient bg-clip-text text-transparent text-white/90 md:text-transparent">{country.name}</span>
           </motion.h2>
 
           {/* Description */}

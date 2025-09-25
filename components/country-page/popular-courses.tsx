@@ -12,8 +12,14 @@ interface PopularCoursesProps {
 }
 
 export function PopularCourses({ country }: PopularCoursesProps) {
+  if (typeof window !== "undefined" && process.env.NODE_ENV !== "production") {
+    // eslint-disable-next-line no-console
+    console.debug("[PopularCourses]", { country: country.name, courses: country.popularCourses?.length })
+  }
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-card/50">
+    <section className="relative py-24 bg-gradient-to-b from-background via-card/40 to-background overflow-hidden">
+      {/* Decorative grid */}
+      <div className="pointer-events-none absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_30%_20%,oklch(0.75_0.22_280/.5),transparent_30%),radial-gradient(circle_at_70%_80%,oklch(0.8_0.18_200/.5),transparent_30%)]" />
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -23,7 +29,7 @@ export function PopularCourses({ country }: PopularCoursesProps) {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Popular <span className="modern-gradient bg-clip-text text-transparent">Courses</span>
+            Popular <span className="modern-gradient bg-clip-text text-transparent text-foreground md:text-transparent">Courses</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Discover the most sought-after programs that lead to successful careers
@@ -41,8 +47,8 @@ export function PopularCourses({ country }: PopularCoursesProps) {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group"
             >
-              <Card className="h-full glass-effect hover:shadow-2xl transition-all duration-500 premium-glow overflow-hidden">
-                <CardContent className="p-6">
+              <Card className="h-full bg-background/70 backdrop-blur-md border-border/70 hover:border-foreground/30 transition-all duration-500 shadow-lg hover:shadow-2xl overflow-hidden">
+                <CardContent className="p-8">
                   <div className="flex items-center justify-between mb-4">
                     <Badge
                       className="text-white border-0"
@@ -57,7 +63,7 @@ export function PopularCourses({ country }: PopularCoursesProps) {
                   </div>
 
                   <h3
-                    className="text-xl font-bold mb-4 transition-colors duration-300"
+                    className="text-2xl font-bold mb-4 transition-colors duration-300"
                     style={{ color: "oklch(0.65 0.25 260)" }}
                   >
                     {course.name}

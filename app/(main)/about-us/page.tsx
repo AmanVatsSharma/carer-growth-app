@@ -1,6 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
+import { useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -40,7 +42,36 @@ const scaleOnHover = {
   whileTap: { scale: 0.95 },
 }
 
+// Centralized image mapping for easy swaps and documentation
+// Uses a mix of external curated images (Unsplash) and local fallbacks
+const IMAGE_SRC = {
+  hero: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80",
+  whoWeAre: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
+  missionDecor: "https://images.unsplash.com/photo-1581092580691-3007b4d69ce8?auto=format&fit=crop&w=256&q=60",
+  visionDecor: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=256&q=60",
+  servicesBanner: "/pictures/marcin-nowak-iXqTqC-f6jI-unsplash.jpg",
+  alumniBg: "/pictures/sebastian-latorre-rrLyNHc9_Xc-unsplash.jpg",
+  services: {
+    career: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80",
+    selection: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80",
+    docs: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80",
+    scholarship: "https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?auto=format&fit=crop&w=1200&q=80",
+    visa: "https://images.unsplash.com/photo-1560520653-9e0e4c89e8da?auto=format&fit=crop&w=1200&q=80",
+    travel: "https://images.unsplash.com/photo-1502920917128-1aa500764ca4?auto=format&fit=crop&w=1200&q=80",
+  },
+  team: {
+    a: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+    b: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+    c: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=800&q=80",
+  },
+} as const
+
 export default function AboutPage() {
+  // Dev-only diagnostics for quick verification and future debugging
+  if (typeof window !== "undefined" && process.env.NODE_ENV !== "production") {
+    // eslint-disable-next-line no-console
+    console.debug("[AboutPage] image map", IMAGE_SRC)
+  }
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
@@ -51,10 +82,14 @@ export default function AboutPage() {
         transition={{ duration: 1 }}
       >
         <div className="absolute inset-0">
-          <img
-            src="/placeholder.svg?height=800&width=1200"
+          {/* Background hero image */}
+          <Image
+            src={IMAGE_SRC.hero}
             alt="International education campus"
-            className="w-full h-full object-cover opacity-20"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-card/80 to-background/90" />
         </div>
@@ -123,11 +158,14 @@ export default function AboutPage() {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="relative">
-              <div className="relative mb-6">
-                <img
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="IPD Education office"
-                  className="w-full h-64 object-cover rounded-lg shadow-lg"
+              <div className="relative mb-6 h-64">
+                {/* Who we are image (office/action shot) */}
+                <Image
+                  src={IMAGE_SRC.whoWeAre}
+                  alt="IPD Education team and workspace"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover rounded-lg shadow-lg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg" />
               </div>
@@ -178,11 +216,8 @@ export default function AboutPage() {
             <motion.div variants={fadeInUp}>
               <Card className="h-full p-8 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20 hover:border-primary/40 transition-all duration-300 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
-                  <img
-                    src="/placeholder.svg?height=128&width=128"
-                    alt="Mission"
-                    className="w-full h-full object-cover"
-                  />
+                  {/* Decorative mission iconography */}
+                  <Image src={IMAGE_SRC.missionDecor} alt="Mission" fill sizes="128px" className="object-cover" />
                 </div>
                 <CardContent className="space-y-6 p-0 relative z-10">
                   <div className="flex items-center space-x-4">
@@ -203,11 +238,8 @@ export default function AboutPage() {
             <motion.div variants={fadeInUp}>
               <Card className="h-full p-8 bg-gradient-to-br from-accent/10 to-accent/5 border-accent/20 hover:border-accent/40 transition-all duration-300 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
-                  <img
-                    src="/placeholder.svg?height=128&width=128"
-                    alt="Vision"
-                    className="w-full h-full object-cover"
-                  />
+                  {/* Decorative vision iconography */}
+                  <Image src={IMAGE_SRC.visionDecor} alt="Vision" fill sizes="128px" className="object-cover" />
                 </div>
                 <CardContent className="space-y-6 p-0 relative z-10">
                   <div className="flex items-center space-x-4">
@@ -257,11 +289,14 @@ export default function AboutPage() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="/placeholder.svg?height=400&width=1200"
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-64 md:h-80">
+              {/* Services banner (global city/aspiration) */}
+              <Image
+                src={IMAGE_SRC.servicesBanner}
                 alt="IPD Education services"
-                className="w-full h-64 md:h-80 object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 1200px"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
@@ -283,37 +318,37 @@ export default function AboutPage() {
                 icon: Users,
                 title: "Career Counselling & Profile Assessment",
                 description: "Identifying the best-fit course and country for each student",
-                image: "/placeholder.svg?height=200&width=300",
+                image: IMAGE_SRC.services.career,
               },
               {
                 icon: GraduationCap,
                 title: "University & Course Selection",
                 description: "Guidance on choosing globally recognized institutions",
-                image: "/placeholder.svg?height=200&width=300",
+                image: IMAGE_SRC.services.selection,
               },
               {
                 icon: CheckCircle,
                 title: "Application & Documentation Support",
                 description: "Streamlined process to maximize admissions success",
-                image: "/placeholder.svg?height=200&width=300",
+                image: IMAGE_SRC.services.docs,
               },
               {
                 icon: Award,
                 title: "Scholarship & Financial Guidance",
                 description: "Helping students access funding opportunities",
-                image: "/placeholder.svg?height=200&width=300",
+                image: IMAGE_SRC.services.scholarship,
               },
               {
                 icon: Shield,
                 title: "Visa Counselling & Interview Preparation",
                 description: "Ensuring hassle-free approvals",
-                image: "/placeholder.svg?height=200&width=300",
+                image: IMAGE_SRC.services.visa,
               },
               {
                 icon: Globe,
                 title: "Pre-Departure & Post-Arrival Support",
                 description: "From travel guidance to settling abroad",
-                image: "/placeholder.svg?height=200&width=300",
+                image: IMAGE_SRC.services.travel,
               },
             ].map((service, index) => (
               <motion.div key={index} variants={fadeInUp}>
@@ -322,11 +357,14 @@ export default function AboutPage() {
                   {...scaleOnHover}
                 >
                   <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={service.image || "/placeholder.svg"}
-                      alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
+                    {/* Service image */}
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover sm:object-center object-[50%_35%] group-hover:scale-110 transition-transform duration-300"
+                  />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
                   </div>
                   <CardContent className="space-y-4 p-6">
@@ -474,10 +512,13 @@ export default function AboutPage() {
         transition={{ duration: 0.8 }}
       >
         <div className="absolute inset-0">
-          <img
-            src="/placeholder.svg?height=600&width=1200"
+          {/* Alumni background */}
+          <Image
+            src={IMAGE_SRC.alumniBg}
             alt="Alumni network"
-            className="w-full h-full object-cover opacity-20"
+            fill
+            sizes="100vw"
+            className="object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-card/60 to-accent/20" />
         </div>
@@ -552,26 +593,29 @@ export default function AboutPage() {
               {
                 name: "Senior Education Counselors",
                 role: "Expert Guidance Team",
-                image: "/placeholder.svg?height=300&width=300",
+                image: IMAGE_SRC.team.a,
               },
               {
                 name: "Visa & Documentation Specialists",
                 role: "Application Support Team",
-                image: "/placeholder.svg?height=300&width=300",
+                image: IMAGE_SRC.team.b,
               },
               {
                 name: "Student Success Coordinators",
                 role: "Support & Follow-up Team",
-                image: "/placeholder.svg?height=300&width=300",
+                image: IMAGE_SRC.team.c,
               },
             ].map((member, index) => (
               <motion.div key={index} variants={fadeInUp}>
                 <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 group">
                   <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={member.image || "/placeholder.svg"}
+                    {/* Team portrait */}
+                    <Image
+                      src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      fill
+                      sizes="(max-width: 640px) 100vw, 33vw"
+                      className="object-cover sm:object-center object-top group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                   </div>
