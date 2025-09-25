@@ -191,9 +191,9 @@ const Footer = () => {
     {
       title: "Services",
       links: [
-        { name: "Student Counseling", href: "/about-us" },
+        { name: "Education Loan & Forex", href: "/services/education-loan-forex" },
         { name: "Visa Assistance", href: "/services/visa-assistance" },
-        { name: "Accommodation", href: "/about-us" },
+        { name: "Accommodation", href: "/services/accommodation-support" },
         // { name: "Career Support", href: "/about-us" },
       ],
     },
