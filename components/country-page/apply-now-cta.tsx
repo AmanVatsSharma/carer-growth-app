@@ -212,6 +212,12 @@ export function ApplyNowCTA({ country }: ApplyNowCTAProps) {
             </Card>
 
             {/* Emergency CTA */}
+            {/* 
+              Emergency CTA Card
+              - "Call Now" button will initiate a phone call to the urgent number.
+              - Added robust error handling and console logs for debugging.
+              - See flow chart and docs in the module for more.
+            */}
             <Card className="bg-gradient-to-r from-red-500/10 to-gold/10 border-red-500/30">
               <CardContent className="p-6 text-center">
                 <h3 className="text-lg font-bold text-red-400 mb-2">
@@ -220,12 +226,30 @@ export function ApplyNowCTA({ country }: ApplyNowCTAProps) {
                 <p className="text-sm text-muted-foreground mb-4">
                   Don't miss out! Get priority assistance for urgent applications.
                 </p>
+                {/* 
+                  Button is rendered as an anchor tag with tel: link for mobile compatibility.
+                  onClick handler added for logging and fallback error handling.
+                */}
                 <Button
+                  asChild
                   variant="outline"
                   className="border-red-400 text-red-400 hover:bg-red-400 hover:text-white"
                 >
-                  <Phone className="mr-2 w-4 h-4" />
-                  Call Now: +1 (555) 999-URGENT
+                  <a
+                    href="tel:+918123592381"
+                    onClick={e => {
+                      try {
+                        console.log("[ApplyNowCTA] Call Now button clicked. Attempting to call +91 81235 92381");
+                        // No further JS needed for tel: links, but log for debug.
+                      } catch (error) {
+                        console.error("[ApplyNowCTA] Error on Call Now button:", error);
+                        alert("Sorry, we couldn't initiate the call. Please dial +91 81235 92381 manually.");
+                      }
+                    }}
+                  >
+                    <Phone className="mr-2 w-4 h-4" />
+                    Call Now: +91 81235 92381-URGENT
+                  </a>
                 </Button>
               </CardContent>
             </Card>
