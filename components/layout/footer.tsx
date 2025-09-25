@@ -358,6 +358,12 @@ const Footer = () => {
 
               {/* Contact Info */}
               <div className="space-y-4 mb-8">
+                {/* 
+                  Phone Numbers Section
+                  - Each number is a clickable tel: link.
+                  - Robust error handling and console logs for debugging.
+                  - See docs in this module for flow and error handling.
+                */}
                 <motion.div
                   className="flex items-center gap-3 text-gray-200 dark:text-gray-300"
                   whileHover={{ x: 4 }}
@@ -366,10 +372,37 @@ const Footer = () => {
                   <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-500/20 to-yellow-500/20 flex items-center justify-center">
                     <Phone className="w-4 h-4 text-amber-400" />
                   </div>
-                  <a>
-{                    // todo: add clicable link to call
-}                  </a>
-                  <span>+91 81235 92381, +91 86600 96538</span>
+                  <div className="flex  gap-2">
+                    <a
+                      href="tel:+918123592381"
+                      className="hover:underline focus:underline text-inherit"
+                      onClick={e => {
+                        try {
+                          console.log("[Footer] Phone number +91 81235 92381 clicked. Attempting to open dialer.");
+                          // No further JS needed for tel: links, but log for debug.
+                        } catch (error) {
+                          console.error("[Footer] Error on phone link +91 81235 92381:", error);
+                          alert("Sorry, we couldn't initiate the call. Please dial +91 81235 92381 manually.");
+                        }
+                      }}
+                    >
+                      +91 81235 92381
+                    </a>
+                    <a
+                      href="tel:+918660096538"
+                      className="hover:underline focus:underline text-inherit"
+                      onClick={e => {
+                        try {
+                          console.log("[Footer] Phone number +91 86600 96538 clicked. Attempting to open dialer.");
+                        } catch (error) {
+                          console.error("[Footer] Error on phone link +91 86600 96538:", error);
+                          alert("Sorry, we couldn't initiate the call. Please dial +91 86600 96538 manually.");
+                        }
+                      }}
+                    >
+                      +91 86600 96538
+                    </a>
+                  </div>
                 </motion.div>
                 <motion.div
                   className="flex items-center gap-3 text-gray-200 dark:text-gray-300"
