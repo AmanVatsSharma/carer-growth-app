@@ -33,7 +33,7 @@ export const COUNTRIES: Country[] = [
   { code: "IE", name: "Ireland", flag: "🇮🇪" },
 ]
 
-export const INTAKE_TIMELINES = ["Fall 2024", "Spring 2025", "Fall 2025", "Spring 2026", "Not decided yet"]
+export const INTAKE_TIMELINES = ["Fall 2025", "Spring 2026", "Fall 2026", "Spring 2027", "Not decided yet"]
 
 export const STUDY_LEVELS = ["Bachelors", "Masters", "PhD", "MBA", "Diploma/Certificate", "Other", "Not decided yet"]
 

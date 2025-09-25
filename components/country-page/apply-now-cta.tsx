@@ -211,13 +211,7 @@ export function ApplyNowCTA({ country }: ApplyNowCTAProps) {
               </CardContent>
             </Card>
 
-            {/* Emergency CTA */}
-            {/* 
-              Emergency CTA Card
-              - "Call Now" button will initiate a phone call to the urgent number.
-              - Added robust error handling and console logs for debugging.
-              - See flow chart and docs in the module for more.
-            */}
+
             <Card className="bg-gradient-to-r from-red-500/10 to-gold/10 border-red-500/30">
               <CardContent className="p-6 text-center">
                 <h3 className="text-lg font-bold text-red-400 mb-2">
@@ -239,20 +233,63 @@ export function ApplyNowCTA({ country }: ApplyNowCTAProps) {
                     href="tel:+918123592381"
                     onClick={e => {
                       try {
-                        console.log("[ApplyNowCTA] Call Now button clicked. Attempting to call +91 81235 92381");
+                        console.log("[ApplyNowCTA] Call Now button clicked. Attempting to call +91 8123592381");
                         // No further JS needed for tel: links, but log for debug.
                       } catch (error) {
                         console.error("[ApplyNowCTA] Error on Call Now button:", error);
-                        alert("Sorry, we couldn't initiate the call. Please dial +91 81235 92381 manually.");
+                        alert("Sorry, we couldn't initiate the call. Please dial +91 8123592381 manually.");
                       }
                     }}
                   >
                     <Phone className="mr-2 w-4 h-4" />
-                    Call Now: +91 81235 92381-URGENT
+                    Call Now: +91 8123592381
                   </a>
                 </Button>
+                <div className="mt-4 flex flex-col items-center gap-2">
+                  <div className="flex items-center gap-2 justify-center">
+                    <MapPin className="w-4 h-4 text-gold" />
+                    <span className="text-sm text-muted-foreground">
+                      IPD Education, Bangalore Head Office, India
+                    </span>
+                  </div>
+                  {/* Clickable phone and mail for easy contact */}
+                  <div className="flex items-center gap-2 justify-center mt-2">
+                    <a
+                      href="tel:+918123592381"
+                      className="flex items-center gap-1 text-gold hover:underline"
+                      onClick={e => {
+                        try {
+                          console.log("[ApplyNowCTA] Phone link clicked. Attempting to call +91 8123592381");
+                        } catch (error) {
+                          console.error("[ApplyNowCTA] Error on phone link:", error);
+                          alert("Sorry, we couldn't initiate the call. Please dial +91 8123592381 manually.");
+                        }
+                      }}
+                    >
+                      <Phone className="w-4 h-4" />
+                      <span className="text-sm">+91 8123592381</span>
+                    </a>
+                    <span className="text-muted-foreground">|</span>
+                    <a
+                      href="mailto:info@ipdeducation.com"
+                      className="flex items-center gap-1 text-gold hover:underline"
+                      onClick={e => {
+                        try {
+                          console.log("[ApplyNowCTA] Mail link clicked. Attempting to open mailto:info@ipdeducation.com");
+                        } catch (error) {
+                          console.error("[ApplyNowCTA] Error on mail link:", error);
+                          alert("Sorry, we couldn't open your mail client. Please email info@ipdeducation.com manually.");
+                        }
+                      }}
+                    >
+                      <Mail className="w-4 h-4" />
+                      <span className="text-sm">info@ipdeducation.com</span>
+                    </a>
+                  </div>
+                </div>
               </CardContent>
             </Card>
+
           </motion.div>
         </div>
       </div>
