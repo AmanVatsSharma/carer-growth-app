@@ -1,7 +1,11 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 
-const brands = [
+// Brand item type for clarity and maintainability
+type Brand = { src: string; alt: string; darkSrc?: string };
+
+// Master brand list (can include duplicates; we will deduplicate below)
+const brands: Brand[] = [
   {
     src: "https://upload.wikimedia.org/wikipedia/en/5/56/University_of_Connecticut_seal.svg",
     alt: "Asteroid Kit Light",
@@ -54,9 +58,26 @@ const brands = [
   },
 ];
 
+// Ensure unique brands by `src` and `darkSrc` (robustness against accidental duplicates)
+const uniqueBrands: Brand[] = brands.filter((brand, index, self) =>
+  self.findIndex((b) => b.src === brand.src && b.darkSrc === brand.darkSrc) === index
+);
+
+// Split into two non-overlapping groups by index parity so the two marquees differ
+const topBrands: Brand[] = uniqueBrands.filter((_, index) => index % 2 === 0);
+const bottomBrands: Brand[] = uniqueBrands.filter((_, index) => index % 2 === 1);
+
 
 
 export default function BrandsLoveUs() {
+  // Dev-only diagnostics for quick verification and future debugging
+  if (typeof window !== "undefined" && process.env.NODE_ENV !== "production") {
+    // eslint-disable-next-line no-console
+    console.debug(
+      "[BrandsLoveUs] brand counts",
+      { total: uniqueBrands.length, top: topBrands.length, bottom: bottomBrands.length, autoFill: true }
+    );
+  }
   return (
     <section className="relative py-16 bg-white dark:bg-black ">
       <div className="max-w-7xl mx-auto px-4">
@@ -71,8 +92,9 @@ export default function BrandsLoveUs() {
           {/* Overlays above the marquees - responsive width for mobile */}
           <div className="pointer-events-none absolute top-0 left-0 h-full w-8 md:w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-30 dark:from-black dark:via-black/80 dark:to-transparent" />
           <div className="pointer-events-none absolute top-0 right-0 h-full w-8 md:w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-30 dark:from-black dark:via-black/80 dark:to-transparent" />
-          <Marquee speed={35} gradient={false}>
-            {brands.map((brand: { src: string; alt: string; darkSrc?: string }, i: number) => (
+          {/* Top row: even-indexed brands */}
+          <Marquee speed={35} gradient={false} autoFill>
+            {topBrands.map((brand: Brand, i: number) => (
               <div key={i} className="mx-2 md:mx-10 flex items-center">
                 <img
                   src={brand.src}
@@ -89,8 +111,9 @@ export default function BrandsLoveUs() {
               </div>
             ))}
           </Marquee>
-          <Marquee speed={35} gradient={false} direction="right" className="mt-5 md:mt-20">
-            {brands.map((brand: { src: string; alt: string; darkSrc?: string }, i: number) => (
+          {/* Bottom row: odd-indexed brands, reversed direction */}
+          <Marquee speed={35} gradient={false} direction="right" className="mt-5 md:mt-20" autoFill>
+            {bottomBrands.map((brand: Brand, i: number) => (
               <div key={i} className="mx-2 md:mx-10 flex items-center">
                 <img
                   src={brand.src}
