@@ -4,42 +4,57 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { prisma } from "@/lib/prisma"
 import { Users, UserCheck, GraduationCap, TrendingUp } from "lucide-react"
 
+// Force dynamic rendering to avoid build-time DB queries
+export const dynamic = 'force-dynamic'
+
 async function getStats() {
-  const [
-    totalLeads,
-    totalHeavyLeads,
-    totalUniversities,
-    newLeadsThisWeek,
-  ] = await Promise.all([
-    prisma.lead.count(),
-    prisma.heavyLead.count(),
-    prisma.university.count(),
-    prisma.lead.count({
-      where: {
-        createdAt: {
-          gte: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
+  try {
+    const [
+      totalLeads,
+      totalHeavyLeads,
+      totalUniversities,
+      newLeadsThisWeek,
+    ] = await Promise.all([
+      prisma.lead.count(),
+      prisma.heavyLead.count(),
+      prisma.university.count(),
+      prisma.lead.count({
+        where: {
+          createdAt: {
+            gte: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
+          },
         },
-      },
-    }),
-  ])
+      }),
+    ])
 
-  const recentLeads = await prisma.lead.findMany({
-    take: 5,
-    orderBy: { createdAt: "desc" },
-  })
+    const recentLeads = await prisma.lead.findMany({
+      take: 5,
+      orderBy: { createdAt: "desc" },
+    })
 
-  const recentHeavyLeads = await prisma.heavyLead.findMany({
-    take: 5,
-    orderBy: { createdAt: "desc" },
-  })
+    const recentHeavyLeads = await prisma.heavyLead.findMany({
+      take: 5,
+      orderBy: { createdAt: "desc" },
+    })
 
-  return {
-    totalLeads,
-    totalHeavyLeads,
-    totalUniversities,
-    newLeadsThisWeek,
-    recentLeads,
-    recentHeavyLeads,
+    return {
+      totalLeads,
+      totalHeavyLeads,
+      totalUniversities,
+      newLeadsThisWeek,
+      recentLeads,
+      recentHeavyLeads,
+    }
+  } catch (error) {
+    console.error("Error fetching stats:", error)
+    return {
+      totalLeads: 0,
+      totalHeavyLeads: 0,
+      totalUniversities: 0,
+      newLeadsThisWeek: 0,
+      recentLeads: [],
+      recentHeavyLeads: [],
+    }
   }
 }
 

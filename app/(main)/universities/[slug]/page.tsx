@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Award, DollarSign, MapPin, Globe, Clock, CheckCircle } from "lucide-react"
 
+// Force dynamic rendering to avoid build-time DB queries
+export const dynamic = 'force-dynamic'
 
 type PageProps = {
   params: { slug: string }

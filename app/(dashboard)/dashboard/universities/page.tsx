@@ -3,6 +3,9 @@ import { getUniversities } from "@/lib/universities-data"
 import { UniversityDataTable } from "@/components/admin/universities/university-data-table"
 import { columns } from "@/components/admin/universities/columns"
 
+// Force dynamic rendering to avoid build-time DB queries
+export const dynamic = 'force-dynamic'
+
 export default async function AdminUniversitiesPage() {
   const universities = await getUniversities({ includeCourses: true }) // Fetch with courses
 
