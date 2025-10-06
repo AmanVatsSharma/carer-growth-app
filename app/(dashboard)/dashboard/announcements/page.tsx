@@ -1,9 +1,9 @@
 import { Suspense } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
-import { HeavyLeadsTable } from "@/components/dashboard/heavy-leads/heavy-leads-table"
+import { AnnouncementsTable } from "@/components/dashboard/announcements/announcements-table"
 
-function HeavyLeadsTableSkeleton() {
+function AnnouncementsTableSkeleton() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
@@ -19,22 +19,22 @@ function HeavyLeadsTableSkeleton() {
   )
 }
 
-export default function HeavyLeadsPage() {
+export default function AnnouncementsPage() {
   return (
     <div className="container mx-auto py-8 px-4">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight">Heavy Lead Management</h1>
-        <p className="text-muted-foreground mt-2">Manage detailed leads from the journey form with complete information</p>
+        <h1 className="text-3xl font-bold tracking-tight">Announcements Management</h1>
+        <p className="text-muted-foreground mt-2">Create and manage announcements for your website</p>
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle>All Heavy Leads</CardTitle>
-          <CardDescription>View and manage leads with complete profile information</CardDescription>
+          <CardTitle>All Announcements</CardTitle>
+          <CardDescription>Add, edit, or remove announcements that appear on your site</CardDescription>
         </CardHeader>
         <CardContent>
-          <Suspense fallback={<HeavyLeadsTableSkeleton />}>
-            <HeavyLeadsTable />
+          <Suspense fallback={<AnnouncementsTableSkeleton />}>
+            <AnnouncementsTable />
           </Suspense>
         </CardContent>
       </Card>

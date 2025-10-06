@@ -27,7 +27,7 @@ import { Input } from "@/components/ui/input"
 import { PlusCircle } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { UniversityForm } from "./university-form"
-import type { UniversityWithCourses } from "@/lib/universities-data" // Create this type
+import type { UniversityWithCourses } from "@/lib/universities-data"
 
 export function UniversityDataTable({ columns, data }: { columns: ColumnDef<UniversityWithCourses>[], data: UniversityWithCourses[] }) {
   const [sorting, setSorting] = React.useState<SortingState>([])
@@ -46,7 +46,7 @@ export function UniversityDataTable({ columns, data }: { columns: ColumnDef<Univ
     getFilteredRowModel: getFilteredRowModel(),
     state: { sorting, columnFilters },
     meta: {
-      openModal: (university) => {
+      openModal: (university: UniversityWithCourses) => {
         setSelectedUniversity(university)
         setIsModalOpen(true)
       },
@@ -75,15 +75,63 @@ export function UniversityDataTable({ columns, data }: { columns: ColumnDef<Univ
         </Button>
       </div>
       <div className="rounded-md border">
-        {/* ... Table rendering code (same as your UniversityTable) ... */}
+        <Table>
+          <TableHeader>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <TableRow key={headerGroup.id}>
+                {headerGroup.headers.map((header) => (
+                  <TableHead key={header.id}>
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(header.column.columnDef.header, header.getContext())}
+                  </TableHead>
+                ))}
+              </TableRow>
+            ))}
+          </TableHeader>
+          <TableBody>
+            {table.getRowModel().rows?.length ? (
+              table.getRowModel().rows.map((row) => (
+                <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
+                  {row.getVisibleCells().map((cell) => (
+                    <TableCell key={cell.id}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell colSpan={columns.length} className="h-24 text-center">
+                  No universities found. Click &quot;Add University&quot; to create one.
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
-        {/* ... Pagination buttons (same as your UniversityTable) ... */}
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => table.previousPage()}
+          disabled={!table.getCanPreviousPage()}
+        >
+          Previous
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => table.nextPage()}
+          disabled={!table.getCanNextPage()}
+        >
+          Next
+        </Button>
       </div>
 
       {/* --- ADD/EDIT MODAL --- */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="sm:max-w-[800px] max-h-[90vh] overflow-y-auto">
+        <DialogContent className="sm:max-w-[900px] max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>{selectedUniversity ? "Edit University" : "Add New University"}</DialogTitle>
           </DialogHeader>

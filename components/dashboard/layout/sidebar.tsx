@@ -17,7 +17,7 @@ export function SidebarDashboard() {
   const links = [
     {
       label: "Dashboard",
-      href: "#",
+      href: "/dashboard",
       icon: (
         <IconBrandTabler className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
@@ -29,23 +29,23 @@ export function SidebarDashboard() {
         <IconMoneybag className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
-        {
+    {
       label: "Heavy Leads",
       href: "/dashboard/heavy-leads",
       icon: (
-        <IconMoneybag className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <IconUserBolt className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
-        {
-      label: "University Settings",
+    {
+      label: "Universities",
       href: "/dashboard/universities",
       icon: (
         <IconBrandWebflow className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
     {
-      label: "Website Settings",
-      href: "/site-edit",
+      label: "Announcements",
+      href: "/dashboard/announcements",
       icon: (
         <IconBrandWebflow className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
@@ -59,7 +59,7 @@ export function SidebarDashboard() {
     },
     {
       label: "Logout",
-      href: "#",
+      href: "/",
       icon: (
         <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
