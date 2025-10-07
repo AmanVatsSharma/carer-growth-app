@@ -3,6 +3,9 @@
 import { getUniversities, getAllCountries, getAllExams } from "@/lib/universities-data"
 import { UniversitiesView } from "@/components/universities/universities-view"
 
+// Force dynamic rendering to avoid build-time DB queries
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: "Universities | IPD Education",
   description:
