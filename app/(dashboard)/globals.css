@@ -43,73 +43,81 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/**
+ * FUTURISTIC DASHBOARD THEME
+ * Modern, clean, tech-focused design with deep blacks and cyan accents
+ * Designed for professional dashboard interfaces
+ */
+
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --radius: 0.5rem;
+  /* Light theme - minimal light grays */
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: #fafafa;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+  --primary: #06b6d4;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0a0a0a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #0ea5e9;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #06b6d4;
+  --chart-1: #06b6d4;
+  --chart-2: #3b82f6;
+  --chart-3: #8b5cf6;
+  --chart-4: #10b981;
+  --chart-5: #f59e0b;
+  --sidebar: #fafafa;
+  --sidebar-foreground: #0a0a0a;
+  --sidebar-primary: #06b6d4;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: #0a0a0a;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #06b6d4;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* FUTURISTIC DARK THEME - Deep blacks with cyan/blue tech accents */
+  --background: #000000;
+  --foreground: #e5e5e5;
+  --card: #0a0a0a;
+  --card-foreground: #e5e5e5;
+  --popover: #0a0a0a;
+  --popover-foreground: #e5e5e5;
+  --primary: #06b6d4;
+  --primary-foreground: #000000;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #e5e5e5;
+  --muted: #1a1a1a;
+  --muted-foreground: #737373;
+  --accent: #0ea5e9;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --border: #262626;
+  --input: #1a1a1a;
+  --ring: #06b6d4;
+  --chart-1: #06b6d4;
+  --chart-2: #3b82f6;
+  --chart-3: #8b5cf6;
+  --chart-4: #10b981;
+  --chart-5: #f59e0b;
+  --sidebar: #000000;
+  --sidebar-foreground: #e5e5e5;
+  --sidebar-primary: #06b6d4;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #e5e5e5;
+  --sidebar-border: #262626;
+  --sidebar-ring: #06b6d4;
 }
 
 @layer base {
@@ -122,82 +130,156 @@
 }
 
 
-/*  Added golden glow and sparkle animations */
-@keyframes golden-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.3); }
-}
+/**
+ * MODERN FUTURISTIC DASHBOARD STYLES
+ * Clean, professional animations and effects
+ * No cheap glow effects - only subtle, tech-focused aesthetics
+ */
 
-@keyframes sparkle {
-  0%, 100% { opacity: 0; transform: scale(0); }
-  50% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-/* Replaced golden animations with modern premium glow effects */
-@keyframes premium-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 20px oklch(0.65 0.25 260 / 0.3);
+/* Smooth fade-in animation for content */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  50% {
-    box-shadow: 0 0 40px oklch(0.65 0.25 260 / 0.6), 0 0 60px oklch(0.75 0.22 280 / 0.4);
-  }
-}
-
-@keyframes premium-pulse {
-  0%,
-  100% {
-    opacity: 0.8;
-    transform: scale(1);
-  }
-  50% {
+  to {
     opacity: 1;
-    transform: scale(1.05);
+    transform: translateY(0);
   }
 }
 
-@keyframes modern-gradient {
-  0% {
-    background-position: 0% 50%;
+/* Subtle pulse for status indicators */
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 1;
   }
   50% {
-    background-position: 100% 50%;
+    opacity: 0.6;
+  }
+}
+
+/* Scanning line effect for tech aesthetic */
+@keyframes scanLine {
+  0% {
+    transform: translateY(-100%);
   }
   100% {
-    background-position: 0% 50%;
+    transform: translateY(100%);
   }
 }
 
-.premium-glow {
-  animation: premium-glow 3s ease-in-out infinite;
+/* Grid background pattern for futuristic look */
+.tech-grid {
+  background-image: 
+    linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
-.premium-pulse {
-  animation: premium-pulse 2s ease-in-out infinite;
+.dark .tech-grid {
+  background-image: 
+    linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
-.modern-gradient {
-  /* Fallback color in case background-clip text is unsupported */
-  color: oklch(0.75 0.22 280);
-  background: linear-gradient(135deg, oklch(0.65 0.25 260), oklch(0.75 0.22 280), oklch(0.8 0.18 200));
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: modern-gradient 4s ease infinite;
+/* Modern card design with subtle borders */
+.dashboard-card {
+  @apply bg-card border border-border rounded-lg transition-all duration-300;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.glass-effect {
-  backdrop-filter: blur(20px);
-  background: oklch(0.1 0 0 / 0.1);
-  border: 1px solid oklch(0.65 0.25 260 / 0.2);
+.dashboard-card:hover {
+  @apply border-primary/30;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.1);
 }
 
-.dark .glass-effect {
-  background: oklch(0.9 0 0 / 0.05);
-  border: 1px solid oklch(0.75 0.22 280 / 0.3);
+.dark .dashboard-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.dark .dashboard-card:hover {
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
+}
+
+/* Status indicators with color coding */
+.status-online {
+  @apply text-green-500;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+.status-offline {
+  @apply text-red-500;
+}
+
+.status-warning {
+  @apply text-yellow-500;
+}
+
+.status-indicator {
+  @apply inline-block w-2 h-2 rounded-full mr-2;
+}
+
+.status-indicator.online {
+  @apply bg-green-500;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+.status-indicator.offline {
+  @apply bg-red-500;
+}
+
+.status-indicator.warning {
+  @apply bg-yellow-500;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+/* Data metric cards */
+.metric-card {
+  @apply dashboard-card p-6 relative overflow-hidden;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Scan line effect overlay (subtle tech aesthetic) */
+.scan-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.5), transparent);
+  animation: scanLine 3s ease-in-out infinite;
+  opacity: 0.3;
+}
+
+/* Tech border effect */
+.tech-border {
+  @apply border border-primary/20 relative;
+  background: linear-gradient(145deg, transparent, rgba(6, 182, 212, 0.03));
+}
+
+.dark .tech-border {
+  background: linear-gradient(145deg, transparent, rgba(6, 182, 212, 0.05));
+}
+
+/* Clean gradient text (no animation, just static) */
+.gradient-text {
+  @apply bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent;
+}
+
+/* Stat number highlighting */
+.stat-number {
+  @apply text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent;
+}
+
+/* Activity indicator dot */
+.activity-dot {
+  @apply inline-block w-1.5 h-1.5 rounded-full bg-cyan-500;
+  box-shadow: 0 0 4px rgba(6, 182, 212, 0.5);
+}
+
+/* Sidebar link active state */
+.sidebar-link-active {
+  @apply bg-primary/10 border-l-2 border-primary;
 }
