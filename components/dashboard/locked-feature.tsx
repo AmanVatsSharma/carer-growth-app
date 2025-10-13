@@ -3,6 +3,8 @@
  * 
  * Displays upgrade prompt for premium features
  * Shows benefits and contact information for Vedpragya Bharat Pvt. Ltd.
+ * 
+ * Note: This is a Client Component to support interactive buttons
  */
 
 "use client"
