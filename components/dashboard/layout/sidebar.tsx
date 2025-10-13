@@ -19,6 +19,11 @@ import {
   IconSettings,
   IconUserBolt,
   IconSchool,
+  IconChartBar,
+  IconMail,
+  IconRobot,
+  IconFileAnalytics,
+  IconPlugConnected,
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -62,9 +67,56 @@ export function SidebarDashboard() {
         <IconSpeakerphone className="h-5 w-5 shrink-0 text-yellow-500" />
       ),
     },
+  ];
+
+  // Premium locked features - require upgrade from Vedpragya Bharat Pvt. Ltd.
+  const premiumLinks = [
+    {
+      label: "Analytics",
+      href: "/dashboard/analytics",
+      icon: (
+        <IconChartBar className="h-5 w-5 shrink-0 text-cyan-400" />
+      ),
+      locked: true,
+    },
+    {
+      label: "Email Campaigns",
+      href: "/dashboard/email-campaigns",
+      icon: (
+        <IconMail className="h-5 w-5 shrink-0 text-blue-400" />
+      ),
+      locked: true,
+    },
+    {
+      label: "AI Assistant",
+      href: "/dashboard/ai-assistant",
+      icon: (
+        <IconRobot className="h-5 w-5 shrink-0 text-purple-400" />
+      ),
+      locked: true,
+    },
+    {
+      label: "Reports",
+      href: "/dashboard/reports",
+      icon: (
+        <IconFileAnalytics className="h-5 w-5 shrink-0 text-green-400" />
+      ),
+      locked: true,
+    },
+    {
+      label: "CRM Integration",
+      href: "/dashboard/crm",
+      icon: (
+        <IconPlugConnected className="h-5 w-5 shrink-0 text-orange-400" />
+      ),
+      locked: true,
+    },
+  ];
+
+  const settingsLinks = [
     {
       label: "Settings",
-      href: "#",
+      href: "/dashboard/settings",
       icon: (
         <IconSettings className="h-5 w-5 shrink-0 text-gray-400" />
       ),
@@ -77,18 +129,46 @@ export function SidebarDashboard() {
       ),
     },
   ];
+
   const [open, setOpen] = useState(false);
+  
   return (
     <Sidebar open={open} setOpen={setOpen}>
       <SidebarBody className="justify-between gap-10 border-r border-border/50">
         <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
           {open ? <Logo /> : <LogoIcon />}
+          
+          {/* Main Links */}
           <div className="mt-8 flex flex-col gap-2">
             {links.map((link, idx) => (
               <SidebarLink key={idx} link={link} />
             ))}
           </div>
+
+          {/* Premium Section */}
+          {open && (
+            <div className="mt-6 pt-6 border-t border-border/50">
+              <div className="flex items-center justify-between mb-3 px-2">
+                <span className="text-xs font-semibold text-muted-foreground uppercase">Premium</span>
+                <span className="text-xs bg-gradient-to-r from-cyan-400 to-blue-500 text-white px-2 py-0.5 rounded-full font-bold">PRO</span>
+              </div>
+              <div className="flex flex-col gap-2">
+                {premiumLinks.map((link, idx) => (
+                  <SidebarLink key={idx} link={link} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Settings Links */}
+          <div className="mt-6 pt-6 border-t border-border/50 flex flex-col gap-2">
+            {settingsLinks.map((link, idx) => (
+              <SidebarLink key={idx} link={link} />
+            ))}
+          </div>
         </div>
+
+        {/* Bottom Section */}
         <div>
           <div className="mb-5">
             <ModeToggle />
