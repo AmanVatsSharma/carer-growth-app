@@ -193,7 +193,7 @@ const premiumLinks = [
 
 ---
 
-## 📞 Contact Vedpragya
+## 📞 Contact Vedpragya Bharat Pvt. Ltd.
 
 ### How to Upgrade
 
@@ -201,7 +201,7 @@ const premiumLinks = [
 
 ### Company Information
 
-**Vedpragya**
+**Vedpragya Bharat Pvt. Ltd.**
 - Empowering businesses with cutting-edge technology solutions
 - Trusted by leading organizations worldwide
 - Professional support and onboarding included
@@ -297,5 +297,5 @@ Potential additions:
 ---
 
 **Last Updated:** 2025-10-13  
-**Maintained By:** Vedpragya  
+**Maintained By:** Vedpragya Bharat Pvt. Ltd.  
 **Website:** https://vedpragya.com

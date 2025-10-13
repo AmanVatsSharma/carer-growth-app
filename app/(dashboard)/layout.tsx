@@ -48,7 +48,7 @@ export default function RootLayout({
                         <SidebarDashboard />
                         
                         {/* Main Content Area with Tech Background - Offset for fixed sidebar */}
-                        <main className="flex-1 overflow-y-auto relative tech-grid md:ml-[300px]">
+                        <main className="flex-1 overflow-y-auto relative tech-grid md:ml-[300px] dashboard-scrollbar">
                             {children}
                         </main>
                     </div>

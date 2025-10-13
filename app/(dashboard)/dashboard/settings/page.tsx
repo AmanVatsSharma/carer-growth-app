@@ -189,7 +189,7 @@ export default function SettingsPage() {
                   rel="noopener noreferrer"
                   className="gradient-text font-semibold hover:underline"
                 >
-                  Vedpragya
+                  Vedpragya Bharat Pvt. Ltd.
                 </a>
               </p>
             </div>

@@ -134,8 +134,8 @@ export function SidebarDashboard() {
   
   return (
     <Sidebar open={open} setOpen={setOpen}>
-      <SidebarBody className="justify-between gap-10 border-r border-border/50">
-        <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
+      <SidebarBody className="justify-between gap-10 border-r border-border/50 sidebar-scrollbar">
+        <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto sidebar-scrollbar">
           {open ? <Logo /> : <LogoIcon />}
           
           {/* Main Links */}
@@ -194,9 +194,9 @@ export const Logo = () => {
   return (
     <a
       href="/dashboard"
-      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal"
+      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal group"
     >
-      <div className="h-8 w-8 shrink-0 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
+      <div className="h-8 w-8 shrink-0 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center shadow-lg group-hover:shadow-cyan-500/50 transition-all">
         <span className="text-white font-bold text-lg">I</span>
       </div>
       <motion.span
@@ -214,9 +214,9 @@ export const LogoIcon = () => {
   return (
     <a
       href="/dashboard"
-      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal"
+      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal group"
     >
-      <div className="h-8 w-8 shrink-0 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
+      <div className="h-8 w-8 shrink-0 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center shadow-lg group-hover:shadow-cyan-500/50 transition-all">
         <span className="text-white font-bold text-lg">I</span>
       </div>
     </a>

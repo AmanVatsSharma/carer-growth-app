@@ -126,7 +126,7 @@ export function LockedFeature({
             {/* Company Info */}
             <div className="mt-8 pt-6 border-t border-border text-center space-y-2">
               <p className="text-lg font-bold gradient-text">
-                Vedpragya
+                Vedpragya Bharat Pvt. Ltd.
               </p>
               <p className="text-sm text-muted-foreground">
                 Empowering businesses with cutting-edge technology solutions
