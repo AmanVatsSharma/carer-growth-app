@@ -43,12 +43,12 @@ export default function RootLayout({
                     disableTransitionOnChange
                 >
                     {/* Main Dashboard Container */}
-                    <div className="flex w-full min-h-screen md:flex-row flex-col overflow-hidden bg-background">
+                    <div className="flex w-full min-h-screen md:flex-row flex-col bg-background">
                         {/* Sidebar Navigation */}
                         <SidebarDashboard />
                         
-                        {/* Main Content Area with Tech Background */}
-                        <main className="flex-1 overflow-y-auto relative tech-grid">
+                        {/* Main Content Area with Tech Background - Offset for fixed sidebar */}
+                        <main className="flex-1 overflow-y-auto relative tech-grid md:ml-[300px]">
                             {children}
                         </main>
                     </div>

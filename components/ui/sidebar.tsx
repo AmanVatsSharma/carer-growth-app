@@ -88,7 +88,8 @@ export const DesktopSidebar = ({
     <>
       <motion.div
         className={cn(
-          "h-screen px-4 py-4 hidden md:flex md:flex-col bg-neutral-100 dark:bg-neutral-800 w-[300px] shrink-0 sticky top-0",
+          "h-screen px-4 py-4 hidden md:flex md:flex-col w-[300px] shrink-0 fixed top-0 left-0 z-40 border-r border-border/50",
+          "bg-black dark:bg-black",
           className
         )}
         animate={{
@@ -114,13 +115,13 @@ export const MobileSidebar = ({
     <>
       <div
         className={cn(
-          "h-12 px-4 py-4 flex flex-row md:hidden items-center justify-between bg-neutral-100 dark:bg-neutral-800 w-full sticky top-0 z-30 border-b"
+          "h-12 px-4 py-4 flex flex-row md:hidden items-center justify-between bg-black dark:bg-black w-full sticky top-0 z-30 border-b border-border/50"
         )}
         {...props}
       >
         <div className="flex justify-end z-20 w-full">
           <IconMenu2
-            className="text-neutral-800 dark:text-neutral-200"
+            className="text-neutral-200 dark:text-neutral-200"
             onClick={() => setOpen(!open)}
           />
         </div>
@@ -135,12 +136,12 @@ export const MobileSidebar = ({
                 ease: "easeInOut",
               }}
               className={cn(
-                "fixed h-full w-full inset-0 bg-white dark:bg-neutral-900 p-10 z-[100] flex flex-col justify-between",
+                "fixed h-full w-full inset-0 bg-black dark:bg-black p-10 z-[100] flex flex-col justify-between border-r border-border/50",
                 className
               )}
             >
               <div
-                className="absolute right-10 top-10 z-50 text-neutral-800 dark:text-neutral-200"
+                className="absolute right-10 top-10 z-50 text-neutral-200 dark:text-neutral-200"
                 onClick={() => setOpen(!open)}
               >
                 <IconX />
@@ -167,7 +168,7 @@ export const SidebarLink = ({
     <a
       href={link.href}
       className={cn(
-        "flex items-center justify-start gap-2 group/sidebar py-2 px-2 rounded-md hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors relative",
+        "flex items-center justify-start gap-2 group/sidebar py-2.5 px-3 rounded-md hover:bg-cyan-500/10 hover:border-l-2 hover:border-cyan-500 transition-all relative",
         link.locked && "opacity-70 hover:opacity-100",
         className
       )}
@@ -180,7 +181,7 @@ export const SidebarLink = ({
           display: animate ? (open ? "inline-block" : "none") : "inline-block",
           opacity: animate ? (open ? 1 : 0) : 1,
         }}
-        className="text-neutral-700 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0 flex items-center gap-2"
+        className="text-neutral-200 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0 flex items-center gap-2"
       >
         {link.label}
         {link.locked && (

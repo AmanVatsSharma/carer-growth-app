@@ -193,17 +193,15 @@ const premiumLinks = [
 
 ---
 
-## 📞 Contact Vedpragya Bharat Pvt. Ltd.
+## 📞 Contact Vedpragya
 
 ### How to Upgrade
 
-1. **Visit Website:** https://vedpragya.com
-2. **Email:** contact@vedpragya.com
-3. **Phone:** +91 123 456 7890
+**Visit Website:** https://vedpragya.com
 
 ### Company Information
 
-**Vedpragya Bharat Pvt. Ltd.**
+**Vedpragya**
 - Empowering businesses with cutting-edge technology solutions
 - Trusted by leading organizations worldwide
 - Professional support and onboarding included
@@ -299,5 +297,5 @@ Potential additions:
 ---
 
 **Last Updated:** 2025-10-13  
-**Maintained By:** Vedpragya Bharat Pvt. Ltd.  
-**For Support:** contact@vedpragya.com
+**Maintained By:** Vedpragya  
+**Website:** https://vedpragya.com

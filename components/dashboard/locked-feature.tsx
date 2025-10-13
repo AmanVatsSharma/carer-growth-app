@@ -11,7 +11,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Lock, Crown, Check, ExternalLink, Mail, Phone, Globe } from "lucide-react"
+import { Lock, Crown, Check, ExternalLink, Globe } from "lucide-react"
 
 interface LockedFeatureProps {
   featureName: string
@@ -98,70 +98,40 @@ export function LockedFeature({
         {/* Contact Information */}
         <Card className="dashboard-card">
           <CardHeader>
-            <CardTitle className="gradient-text text-center">Contact Vedpragya Bharat Pvt. Ltd.</CardTitle>
+            <CardTitle className="gradient-text text-center">Upgrade with Vedpragya</CardTitle>
             <CardDescription className="text-center">
-              Get in touch to unlock premium features and elevate your experience
+              Visit our website to unlock premium features and elevate your experience
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-3 gap-6">
-              {/* Website */}
-              <a 
-                href="https://vedpragya.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 p-6 rounded-lg bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 hover:border-cyan-500/40 transition-all group cursor-pointer"
-              >
-                <div className="h-12 w-12 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Globe className="h-6 w-6 text-white" />
-                </div>
-                <div className="text-center">
-                  <p className="text-sm font-semibold mb-1">Website</p>
-                  <p className="text-xs text-cyan-400 flex items-center gap-1">
-                    vedpragya.com
-                    <ExternalLink className="h-3 w-3" />
-                  </p>
-                </div>
-              </a>
-
-              {/* Email */}
-              <a 
-                href="mailto:contact@vedpragya.com"
-                className="flex flex-col items-center gap-3 p-6 rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 hover:border-blue-500/40 transition-all group cursor-pointer"
-              >
-                <div className="h-12 w-12 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Mail className="h-6 w-6 text-white" />
-                </div>
-                <div className="text-center">
-                  <p className="text-sm font-semibold mb-1">Email</p>
-                  <p className="text-xs text-blue-400">contact@vedpragya.com</p>
-                </div>
-              </a>
-
-              {/* Phone */}
-              <a 
-                href="tel:+911234567890"
-                className="flex flex-col items-center gap-3 p-6 rounded-lg bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 hover:border-purple-500/40 transition-all group cursor-pointer"
-              >
-                <div className="h-12 w-12 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Phone className="h-6 w-6 text-white" />
-                </div>
-                <div className="text-center">
-                  <p className="text-sm font-semibold mb-1">Phone</p>
-                  <p className="text-xs text-purple-400">+91 123 456 7890</p>
-                </div>
-              </a>
-            </div>
+            {/* Website Card */}
+            <a 
+              href="https://vedpragya.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex flex-col items-center gap-4 p-8 rounded-lg bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-2 border-cyan-500/30 hover:border-cyan-500/60 transition-all group cursor-pointer"
+            >
+              <div className="h-16 w-16 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                <Globe className="h-8 w-8 text-white" />
+              </div>
+              <div className="text-center">
+                <p className="text-sm font-semibold mb-2 text-muted-foreground">Visit us at</p>
+                <p className="text-2xl font-bold gradient-text flex items-center gap-2 justify-center">
+                  vedpragya.com
+                  <ExternalLink className="h-5 w-5" />
+                </p>
+              </div>
+            </a>
 
             {/* Company Info */}
             <div className="mt-8 pt-6 border-t border-border text-center space-y-2">
-              <p className="text-sm font-semibold gradient-text">
-                Vedpragya Bharat Pvt. Ltd.
+              <p className="text-lg font-bold gradient-text">
+                Vedpragya
               </p>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-sm text-muted-foreground">
                 Empowering businesses with cutting-edge technology solutions
               </p>
-              <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+              <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground mt-4">
                 <span className="activity-dot"></span>
                 <span>Trusted by leading organizations worldwide</span>
               </div>
