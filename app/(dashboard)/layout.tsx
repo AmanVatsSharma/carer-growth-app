@@ -48,14 +48,8 @@ export default function RootLayout({
                         <SidebarDashboard />
                         
                         {/* Main Content Area with Tech Background */}
-                        <main className="flex-1 overflow-y-auto relative">
-                            {/* Tech Grid Background Layer */}
-                            <div className="fixed inset-0 tech-grid pointer-events-none opacity-50" />
-                            
-                            {/* Content Layer */}
-                            <div className="relative z-10">
-                                {children}
-                            </div>
+                        <main className="flex-1 overflow-y-auto relative tech-grid">
+                            {children}
                         </main>
                     </div>
                     

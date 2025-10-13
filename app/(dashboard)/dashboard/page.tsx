@@ -341,7 +341,7 @@ export default function DashboardPage() {
   console.log('[DashboardPage] Rendering dashboard page...')
   
   return (
-    <div className="min-h-screen tech-grid">
+    <div className="min-h-screen">
       <div className="container mx-auto py-8 px-4">
         {/* Page Header */}
         <div className="mb-8">
