@@ -174,13 +174,13 @@ export function HeavyLeadsTable() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Name</TableHead>
-              <TableHead>Contact</TableHead>
-              <TableHead>Country</TableHead>
-              <TableHead>Study Level</TableHead>
-              <TableHead>Intake</TableHead>
+              <TableHead className="min-w-[160px]">Name</TableHead>
+              <TableHead className="hidden md:table-cell">Contact</TableHead>
+              <TableHead className="hidden md:table-cell">Country</TableHead>
+              <TableHead className="hidden lg:table-cell">Study Level</TableHead>
+              <TableHead className="hidden lg:table-cell">Intake</TableHead>
               <TableHead>Status</TableHead>
-              <TableHead>Created</TableHead>
+              <TableHead className="hidden lg:table-cell">Created</TableHead>
               <TableHead className="text-right">Actions</TableHead>
             </TableRow>
           </TableHeader>
@@ -194,17 +194,24 @@ export function HeavyLeadsTable() {
             ) : (
               filteredLeads.map((lead) => (
                 <TableRow key={lead.id} className="hover:bg-muted/50">
-                  <TableCell className="font-medium">{lead.name}</TableCell>
-                  <TableCell>
+                  <TableCell className="font-medium">
+                    {lead.name}
+                    <div className="md:hidden text-xs text-muted-foreground mt-1">
+                      {lead.email && <div className="text-blue-600">{lead.email}</div>}
+                      {lead.phone && <div>{lead.phone}</div>}
+                      <div>{lead.preferredCountry} • {lead.studyLevel}</div>
+                    </div>
+                  </TableCell>
+                  <TableCell className="hidden md:table-cell">
                     <div className="text-sm">
                       {lead.email && <div className="text-blue-600">{lead.email}</div>}
                       {lead.phone && <div>{lead.phone}</div>}
                       <div className="text-muted-foreground">{lead.currentCity}</div>
                     </div>
                   </TableCell>
-                  <TableCell>{lead.preferredCountry}</TableCell>
-                  <TableCell>{lead.studyLevel}</TableCell>
-                  <TableCell>{lead.intakeTimeline}</TableCell>
+                  <TableCell className="hidden md:table-cell">{lead.preferredCountry}</TableCell>
+                  <TableCell className="hidden lg:table-cell">{lead.studyLevel}</TableCell>
+                  <TableCell className="hidden lg:table-cell">{lead.intakeTimeline}</TableCell>
                   <TableCell>
                     <Select
                       value={lead.status}
@@ -223,7 +230,7 @@ export function HeavyLeadsTable() {
                       </SelectContent>
                     </Select>
                   </TableCell>
-                  <TableCell className="text-sm text-muted-foreground">
+                  <TableCell className="hidden lg:table-cell text-sm text-muted-foreground">
                     {format(lead.createdAt, "MMM dd, yyyy")}
                   </TableCell>
                   <TableCell className="text-right">

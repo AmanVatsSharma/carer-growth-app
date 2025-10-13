@@ -124,10 +124,10 @@ export function AnnouncementsTable() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[300px]">Title</TableHead>
-              <TableHead>Content</TableHead>
-              <TableHead>Created</TableHead>
-              <TableHead>Updated</TableHead>
+              <TableHead className="min-w-[180px] md:w-[300px]">Title</TableHead>
+              <TableHead className="hidden md:table-cell">Content</TableHead>
+              <TableHead className="hidden lg:table-cell">Created</TableHead>
+              <TableHead className="hidden lg:table-cell">Updated</TableHead>
               <TableHead className="text-right">Actions</TableHead>
             </TableRow>
           </TableHeader>
@@ -141,12 +141,17 @@ export function AnnouncementsTable() {
             ) : (
               announcements.map((announcement) => (
                 <TableRow key={announcement.id} className="hover:bg-muted/50">
-                  <TableCell className="font-medium">{announcement.title}</TableCell>
-                  <TableCell className="max-w-md truncate">{announcement.content}</TableCell>
-                  <TableCell className="text-sm text-muted-foreground">
+                  <TableCell className="font-medium">
+                    {announcement.title}
+                    <div className="md:hidden text-xs text-muted-foreground mt-1 truncate">
+                      {announcement.content}
+                    </div>
+                  </TableCell>
+                  <TableCell className="hidden md:table-cell max-w-md truncate">{announcement.content}</TableCell>
+                  <TableCell className="hidden lg:table-cell text-sm text-muted-foreground">
                     {format(announcement.createdAt, "MMM dd, yyyy")}
                   </TableCell>
-                  <TableCell className="text-sm text-muted-foreground">
+                  <TableCell className="hidden lg:table-cell text-sm text-muted-foreground">
                     {format(announcement.updatedAt, "MMM dd, yyyy")}
                   </TableCell>
                   <TableCell className="text-right">

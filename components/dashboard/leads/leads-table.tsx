@@ -206,27 +206,27 @@ export function LeadsTable() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[200px]">
+              <TableHead className="min-w-[160px] md:w-[200px]">
                 <div className="flex items-center gap-2">
                   <User className="h-4 w-4" />
                   Name
                 </div>
               </TableHead>
-              <TableHead>
+              <TableHead className="hidden md:table-cell">
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4" />
                   Phone
                 </div>
               </TableHead>
-              <TableHead className="text-center">Contacted</TableHead>
+              <TableHead className="hidden md:table-cell text-center">Contacted</TableHead>
               <TableHead>Status</TableHead>
-              <TableHead>
+              <TableHead className="hidden lg:table-cell">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
                   Created
                 </div>
               </TableHead>
-              <TableHead>
+              <TableHead className="hidden lg:table-cell">
                 <div className="flex items-center gap-2">
                   <Clock className="h-4 w-4" />
                   Updated
@@ -245,8 +245,18 @@ export function LeadsTable() {
             ) : (
               filteredLeads.map((lead) => (
                 <TableRow key={lead.id} className="hover:bg-muted/50">
-                  <TableCell className="font-medium">{lead.name}</TableCell>
-                  <TableCell>
+                  <TableCell className="font-medium">
+                    {lead.name}
+                    <div className="md:hidden text-xs text-muted-foreground mt-1">
+                      <a
+                        href={`tel:${lead.phone}`}
+                        className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                      >
+                        {lead.phone}
+                      </a>
+                    </div>
+                  </TableCell>
+                  <TableCell className="hidden md:table-cell">
                     <a
                       href={`tel:${lead.phone}`}
                       className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
@@ -254,7 +264,7 @@ export function LeadsTable() {
                       {lead.phone}
                     </a>
                   </TableCell>
-                  <TableCell className="text-center">
+                  <TableCell className="hidden md:table-cell text-center">
                     <Checkbox
                       checked={lead.contacted}
                       onCheckedChange={(checked) => updateLeadContacted(lead.id, checked as boolean)}
@@ -277,10 +287,10 @@ export function LeadsTable() {
                       </SelectContent>
                     </Select>
                   </TableCell>
-                  <TableCell className="text-sm text-muted-foreground">
+                  <TableCell className="hidden lg:table-cell text-sm text-muted-foreground">
                     {format(lead.createdAt, "MMM dd, yyyy")}
                   </TableCell>
-                  <TableCell className="text-sm text-muted-foreground">
+                  <TableCell className="hidden lg:table-cell text-sm text-muted-foreground">
                     {format(lead.updatedAt, "MMM dd, yyyy")}
                   </TableCell>
                   <TableCell className="text-right">

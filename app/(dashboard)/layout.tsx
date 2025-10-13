@@ -25,9 +25,11 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <div className="flex w-full h-screen">
+                    <div className="flex w-full min-h-screen md:flex-row flex-col overflow-hidden">
                         <SidebarDashboard />
-                        {children}
+                        <main className="flex-1 overflow-y-auto">
+                            {children}
+                        </main>
                     </div>
                     <Toaster />
                 </ThemeProvider>
