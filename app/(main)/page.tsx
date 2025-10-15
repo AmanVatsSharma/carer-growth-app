@@ -23,7 +23,7 @@ import { WorldMapSection } from "@/components/home-page/world-map-section";
 import SectionsGroup from "@/components/home-page/sections-group";
 import GoldenCta from "@/components/home-page/golden-cta-section";
 import FAQSection from "@/components/home-page/faq-section";
-import Video from "@/components/ui/Video";
+import { AdvancedBanner } from "@/components/advanced-banner/AdvancedBanner";
 
 export default function Home() {
   return (
@@ -40,12 +40,29 @@ export default function Home() {
         />
       </div> */}
 
-      <div className="main-video w-full h-[30vh] md:h-[70vh] overflow-hidden">
-        <Video
-          src="https://firebasestorage.googleapis.com/v0/b/theaweshop.appspot.com/o/IPD-Education%2Foutput.mp4?alt=media&token=d14f69bc-4def-48df-9fa6-aa52802bdc76"
-          poster="/pictures/priscilla-du-preez-AOdELn6senM-unsplash.jpg"
-        />
-      </div>
+      <AdvancedBanner
+        id="home-hero"
+        layout="video-hero"
+        theme="gradient"
+        badge={{ text: "🌍 Global Education Excellence" }}
+        eyebrow="Premium Guidance"
+        title={<span>Unlock Your Global Future</span>}
+        subtitle="Study abroad made simple, transparent, and effective"
+        description={
+          <>
+            From university selection to visas and beyond—our experts stay with you at every step.
+          </>
+        }
+        media={{
+          type: "video",
+          src: "https://firebasestorage.googleapis.com/v0/b/theaweshop.appspot.com/o/IPD-Education%2Foutput.mp4?alt=media&token=d14f69bc-4def-48df-9fa6-aa52802bdc76",
+          poster: "/pictures/priscilla-du-preez-AOdELn6senM-unsplash.jpg",
+        }}
+        primaryCta={{ label: "Start Your Journey", href: "/#contact" }}
+        secondaryCta={{ label: "Explore Services", href: "/app/(main)/services" }}
+        decoration={{ showRadials: true, showBeams: true, showNoise: true }}
+        minHeight="70vh"
+      />
 
       <CtaSectionSimple
         gridIntensity="opacity-90"

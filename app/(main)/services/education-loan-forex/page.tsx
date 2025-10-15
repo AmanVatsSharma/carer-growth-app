@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 import JourneyModal from '@/components/journey-modal/journey-modal'
+import { AdvancedBanner } from '@/components/advanced-banner/AdvancedBanner'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
@@ -68,34 +69,31 @@ export default function EducationLoanForexPage() {
 
   return (
     <div className="w-full bg-gradient-to-b from-[#0B0B0F] via-[#0b1020] to-[#0B0B0F] text-white">
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(88,80,236,0.35),transparent_45%),radial-gradient(ellipse_at_bottom,rgba(16,185,129,0.25),transparent_35%)]" />
-        <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-6 py-24 md:grid-cols-2 lg:py-32">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur">
-              <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-              <span>Smart. Secure. Transparent.</span>
-            </div>
-            <h1 className="text-balance text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">Education Loan & Forex Assistance</h1>
-            <p className="text-pretty text-lg text-white/70 md:text-xl">Smart financial planning for your study abroad journey.</p>
-            <div className="flex flex-wrap items-center gap-4">
-              <JourneyModal className="bg-gradient-to-r from-violet-500 via-indigo-500 to-emerald-500 shadow-lg shadow-emerald-500/20 hover:shadow-violet-500/30" arrow>
-                Get Loan Support
-              </JourneyModal>
-              <Button variant="outline" className="border-white/20 bg-transparent text-white hover:bg-white/10" onClick={onForexCTA}>
-                Plan Forex Now
-              </Button>
-            </div>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }} className="relative">
-            <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-violet-500/20 via-indigo-500/10 to-emerald-500/20 blur-2xl" />
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
-              <Image src="/illustrations/hero-loan-forex.svg" alt="Education loan and forex hero" width={900} height={700} className="h-auto w-full" priority />
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* HERO (AdvancedBanner) */}
+      <AdvancedBanner
+        id="loan-forex-hero"
+        layout="split"
+        theme="gradient"
+        badge={{ text: "💠 Smart. Secure. Transparent." }}
+        eyebrow="Education Loan & Forex Assistance"
+        title={<span>Finance Your Education with Clarity</span>}
+        description={
+          <>Smart financial planning for your study abroad journey.</>
+        }
+        media={{ type: 'image', src: '/illustrations/hero-loan-forex.svg', alt: 'Education loan and forex hero' }}
+        customCtas={
+          <div className="flex flex-wrap items-center gap-4">
+            <JourneyModal className="bg-gradient-to-r from-violet-500 via-indigo-500 to-emerald-500 shadow-lg shadow-emerald-500/20 hover:shadow-violet-500/30" arrow>
+              Get Loan Support
+            </JourneyModal>
+            <Button variant="outline" className="border-white/20 bg-transparent text-white hover:bg-white/10" onClick={onForexCTA}>
+              Plan Forex Now
+            </Button>
+          </div>
+        }
+        decoration={{ showRadials: true, showBeams: true, showNoise: true }}
+        minHeight="70vh"
+      />
 
       <Separator className="my-12 bg-white/10" />
 
