@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
+import { AdvancedBanner } from "@/components/advanced-banner/AdvancedBanner"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -74,58 +75,24 @@ export default function AboutPage() {
   }
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Hero Section */}
-      <motion.section
-        className="relative overflow-hidden bg-gradient-to-br from-background via-card to-background py-24 px-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="absolute inset-0">
-          {/* Background hero image */}
-          <Image
-            src={IMAGE_SRC.hero}
-            alt="International education campus"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-card/80 to-background/90" />
-        </div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(100,204,22,0.1),transparent_70%)]" />
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <motion.div className="text-center space-y-8" variants={staggerContainer} initial="initial" animate="animate">
-            <motion.div variants={fadeInUp}>
-              <Badge className="mb-4 bg-accent text-accent-foreground border-accent px-4 py-2 text-sm font-medium">
-                🌍 Global Education Excellence
-              </Badge>
-            </motion.div>
-
-            <motion.h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight" variants={fadeInUp}>
-              About IPD Education
-            </motion.h1>
-
-            <motion.p
-              className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
-              variants={fadeInUp}
-            >
-              Empowering dreams, building futures. We are your trusted partner in the journey to world-class
-              international education.
-            </motion.p>
-
-            <motion.div variants={fadeInUp}>
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Start Your Journey
-                <ExternalLink className="ml-2 h-5 w-5" />
-              </Button>
-            </motion.div>
-          </motion.div>
-        </div>
-      </motion.section>
+      <AdvancedBanner
+        id="about-hero"
+        layout="centered"
+        theme="light"
+        badge={{ text: "🌍 Global Education Excellence" }}
+        eyebrow="About IPD Education"
+        title={<span>Empowering Dreams, Building Futures</span>}
+        description={
+          <>
+            We are your trusted partner in the journey to world-class international education.
+          </>
+        }
+        media={{ type: "image", src: IMAGE_SRC.hero }}
+        primaryCta={{ label: "Start Your Journey" }}
+        secondaryCta={{ label: "Explore Services", href: "/app/(main)/services" }}
+        decoration={{ showRadials: true, showNoise: true }}
+        minHeight="60vh"
+      />
 
       {/* Who We Are Section */}
       <motion.section
