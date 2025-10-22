@@ -14,6 +14,8 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 import { CheckCircle, Home, Building2, Users2, Briefcase, MapPin, ArrowRight } from 'lucide-react'
 
+// Note: SEO metadata moved to layout.tsx for client component compatibility
+
 const options = [
   {
     key: 'on-campus',
@@ -99,7 +101,69 @@ const testimonials = [
 export default function AccommodationSupportPage() {
   useEffect(() => {
     console.info('[AccSupport] page mounted')
-    return () => console.info('[AccSupport] page unmounted')
+    
+    // Add structured data for SEO
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Student Accommodation Support",
+      "description": "Find safe, comfortable student accommodation abroad. IPD Education helps you secure housing options worldwide.",
+      "provider": {
+        "@type": "Organization",
+        "name": "IPD Education",
+        "url": "https://ipdeducation.com"
+      },
+      "serviceType": "Housing Services",
+      "areaServed": "Global",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Accommodation Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "On-Campus Housing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Off-Campus Housing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Homestay Options"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Temporary Stay Assistance"
+            }
+          }
+        ]
+      }
+    }
+    
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify(structuredData)
+    document.head.appendChild(script)
+    
+    return () => {
+      console.info('[AccSupport] page unmounted')
+      // Clean up structured data script
+      const existingScript = document.querySelector('script[type="application/ld+json"]')
+      if (existingScript) {
+        document.head.removeChild(existingScript)
+      }
+    }
   }, [])
 
   const [tab, setTab] = useState<string>('campus')
@@ -138,7 +202,19 @@ export default function AccommodationSupportPage() {
           <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }} className="relative">
             <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-violet-500/20 via-indigo-500/10 to-emerald-500/20 blur-2xl" />
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
-              <Image src="/illustrations/hero-accommodation.svg" alt="Accommodation hero" width={900} height={700} className="h-auto w-full" priority />
+              <Image 
+                src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop"
+                alt="Modern student dormitory room with comfortable furniture and study space"
+                width={900}
+                height={700}
+                className="h-auto w-full"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                onError={(e) => {
+                  console.error('[AccSupport] Hero image failed to load', e)
+                  e.currentTarget.src = '/placeholder.svg'
+                }}
+              />
             </div>
           </motion.div>
         </div>
@@ -161,7 +237,19 @@ export default function AccommodationSupportPage() {
         <div className="relative">
           <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-emerald-500/20 via-indigo-500/10 to-violet-500/20 blur-2xl" />
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
-            <Image src="/illustrations/overview-accommodation.svg" alt="Accommodation overview" width={800} height={700} className="h-auto w-full" />
+            <Image 
+              src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200&auto=format&fit=crop"
+              alt="Contemporary student housing complex with modern architecture"
+              width={800}
+              height={700}
+              className="h-auto w-full"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              onError={(e) => {
+                console.error('[AccSupport] Overview image failed to load', e)
+                e.currentTarget.src = '/placeholder.svg'
+              }}
+            />
           </div>
         </div>
       </section>
@@ -242,7 +330,19 @@ export default function AccommodationSupportPage() {
         <div className="relative order-2 md:order-1">
           <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-violet-500/20 via-indigo-500/10 to-emerald-500/20 blur-2xl" />
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
-            <Image src="/illustrations/why-accommodation.svg" alt="Why accommodation services" width={900} height={700} className="h-auto w-full" />
+            <Image 
+              src="https://images.unsplash.com/photo-1555854877-bab0e5c0b0c8?q=80&w=1200&auto=format&fit=crop"
+              alt="Safe student neighborhood with friendly community atmosphere"
+              width={900}
+              height={700}
+              className="h-auto w-full"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              onError={(e) => {
+                console.error('[AccSupport] Why choose image failed to load', e)
+                e.currentTarget.src = '/placeholder.svg'
+              }}
+            />
           </div>
         </div>
         <div className="order-1 space-y-4 md:order-2">
@@ -354,7 +454,19 @@ export default function AccommodationSupportPage() {
         <div className="relative order-1 md:order-2">
           <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-emerald-500/20 via-indigo-500/10 to-violet-500/20 blur-2xl" />
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
-            <Image src="/illustrations/faq-accommodation.svg" alt="Accommodation FAQ" width={800} height={700} className="h-auto w-full" />
+            <Image 
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop"
+              alt="Student receiving keys and moving into new accommodation"
+              width={800}
+              height={700}
+              className="h-auto w-full"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              onError={(e) => {
+                console.error('[AccSupport] FAQ image failed to load', e)
+                e.currentTarget.src = '/placeholder.svg'
+              }}
+            />
           </div>
         </div>
       </section>
@@ -380,7 +492,19 @@ export default function AccommodationSupportPage() {
           <div className="relative">
             <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-violet-500/20 via-indigo-500/10 to-emerald-500/20 blur-2xl" />
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
-              <Image src="/illustrations/cta-accommodation.svg" alt="CTA accommodation" width={900} height={700} className="h-auto w-full" />
+              <Image 
+                src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1200&auto=format&fit=crop"
+                alt="Happy student settled in comfortable accommodation with belongings"
+                width={900}
+                height={700}
+                className="h-auto w-full"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                onError={(e) => {
+                  console.error('[AccSupport] CTA image failed to load', e)
+                  e.currentTarget.src = '/placeholder.svg'
+                }}
+              />
             </div>
           </div>
         </div>

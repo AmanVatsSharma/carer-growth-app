@@ -14,6 +14,8 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 import { ShieldCheck, CheckCircle, BadgeDollarSign, Banknote, CreditCard, LineChart, ArrowRight } from 'lucide-react'
 
+// Note: SEO metadata moved to layout.tsx for client component compatibility
+
 const loanSteps = [
   { key: 'ls-1', title: 'Loan Selection & Strategy', illustration: '/illustrations/loan-strategy.svg', description: 'Compare banks and NBFCs for rates, repayment, fees. Build the right mix for tuition, living, and travel.' },
   { key: 'ls-2', title: 'Application & Documentation Support', illustration: '/illustrations/loan-documents.svg', description: 'Guidance on applications, income proof, tax returns, admission letters, and collateral documentation.' },
@@ -45,7 +47,55 @@ const testimonials = [
 export default function EducationLoanForexPage() {
   useEffect(() => {
     console.info('[LoanForex] page mounted')
-    return () => console.info('[LoanForex] page unmounted')
+    
+    // Add structured data for SEO
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Education Loan & Forex Assistance",
+      "description": "Expert guidance for education loans and forex planning for study abroad. Compare banks, manage currency risk, and secure funding.",
+      "provider": {
+        "@type": "Organization",
+        "name": "IPD Education",
+        "url": "https://ipdeducation.com"
+      },
+      "serviceType": "Education Finance Services",
+      "areaServed": "India",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Education Loan Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Education Loan Assistance"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Forex Planning"
+            }
+          }
+        ]
+      }
+    }
+    
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify(structuredData)
+    document.head.appendChild(script)
+    
+    return () => {
+      console.info('[LoanForex] page unmounted')
+      // Clean up structured data script
+      const existingScript = document.querySelector('script[type="application/ld+json"]')
+      if (existingScript) {
+        document.head.removeChild(existingScript)
+      }
+    }
   }, [])
 
   const [fxTab, setFxTab] = useState<string>('fx-plan')
@@ -91,7 +141,19 @@ export default function EducationLoanForexPage() {
           <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }} className="relative">
             <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-violet-500/20 via-indigo-500/10 to-emerald-500/20 blur-2xl" />
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
-              <Image src="/illustrations/hero-loan-forex.svg" alt="Education loan and forex hero" width={900} height={700} className="h-auto w-full" priority />
+              <Image 
+                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop"
+                alt="Student reviewing financial documents and loan applications on laptop"
+                width={900}
+                height={700}
+                className="h-auto w-full"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                onError={(e) => {
+                  console.error('[LoanForex] Hero image failed to load', e)
+                  e.currentTarget.src = '/placeholder.svg'
+                }}
+              />
             </div>
           </motion.div>
         </div>
@@ -114,7 +176,19 @@ export default function EducationLoanForexPage() {
         <div className="relative">
           <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-emerald-500/20 via-indigo-500/10 to-violet-500/20 blur-2xl" />
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
-            <Image src="/illustrations/overview-loan-forex.svg" alt="Loan & forex overview" width={800} height={700} className="h-auto w-full" />
+            <Image 
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop"
+              alt="Financial planning charts and graphs showing education investment analysis"
+              width={800}
+              height={700}
+              className="h-auto w-full"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              onError={(e) => {
+                console.error('[LoanForex] Overview image failed to load', e)
+                e.currentTarget.src = '/placeholder.svg'
+              }}
+            />
           </div>
         </div>
       </section>
@@ -195,7 +269,19 @@ export default function EducationLoanForexPage() {
         <div className="relative order-2 md:order-1">
           <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-violet-500/20 via-indigo-500/10 to-emerald-500/20 blur-2xl" />
         	<div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
-            	<Image src="/illustrations/why-loan-forex.svg" alt="Why choose loan & forex" width={900} height={700} className="h-auto w-full" />
+            	<Image 
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&auto=format&fit=crop"
+              alt="Professional financial advisor meeting with student discussing education loan options"
+              width={900}
+              height={700}
+              className="h-auto w-full"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              onError={(e) => {
+                console.error('[LoanForex] Why choose image failed to load', e)
+                e.currentTarget.src = '/placeholder.svg'
+              }}
+            />
           	</div>
         </div>
         <div className="order-1 space-y-4 md:order-2">
@@ -295,7 +381,19 @@ export default function EducationLoanForexPage() {
         <div className="relative order-1 md:order-2">
           <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-emerald-500/20 via-indigo-500/10 to-violet-500/20 blur-2xl" />
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
-            <Image src="/illustrations/faq-loan-forex.svg" alt="Loan & forex FAQ" width={800} height={700} className="h-auto w-full" />
+            <Image 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop"
+              alt="Student carefully reviewing loan documents and financial paperwork"
+              width={800}
+              height={700}
+              className="h-auto w-full"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              onError={(e) => {
+                console.error('[LoanForex] FAQ image failed to load', e)
+                e.currentTarget.src = '/placeholder.svg'
+              }}
+            />
           </div>
         </div>
       </section>
@@ -321,7 +419,19 @@ export default function EducationLoanForexPage() {
           <div className="relative">
             <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-violet-500/20 via-indigo-500/10 to-emerald-500/20 blur-2xl" />
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
-              <Image src="/illustrations/cta-loan-forex.svg" alt="CTA loan & forex" width={900} height={700} className="h-auto w-full" />
+              <Image 
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop"
+                alt="Successful student celebrating graduation with diploma and financial freedom"
+                width={900}
+                height={700}
+                className="h-auto w-full"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                onError={(e) => {
+                  console.error('[LoanForex] CTA image failed to load', e)
+                  e.currentTarget.src = '/placeholder.svg'
+                }}
+              />
             </div>
           </div>
         </div>

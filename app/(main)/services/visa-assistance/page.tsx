@@ -21,6 +21,8 @@ import {
   ArrowRight,
 } from 'lucide-react'
 
+// Note: SEO metadata moved to layout.tsx for client component compatibility
+
 // SECTION: Static content and configuration (safe to memoize)
 // Using descriptive arrays to map to UI elements. This enables easy updates and future i18n.
 const serviceCards = [
@@ -168,7 +170,69 @@ export default function VisaAssistancePage() {
   // Basic analytics and debug logging as requested for easy diagnostics
   useEffect(() => {
     console.info('[VisaAssistance] page mounted')
-    return () => console.info('[VisaAssistance] page unmounted')
+    
+    // Add structured data for SEO
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Student Visa Assistance",
+      "description": "Expert visa assistance for studying abroad. From documentation to approval, IPD Education provides end-to-end visa support.",
+      "provider": {
+        "@type": "Organization",
+        "name": "IPD Education",
+        "url": "https://ipdeducation.com"
+      },
+      "serviceType": "Immigration Services",
+      "areaServed": ["USA", "UK", "Canada", "Australia", "Germany", "France", "Netherlands"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Visa Assistance Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "F-1 Student Visa (USA)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service", 
+              "name": "Student Route Visa (UK)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Study Permit (Canada)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Subclass 500 Visa (Australia)"
+            }
+          }
+        ]
+      }
+    }
+    
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify(structuredData)
+    document.head.appendChild(script)
+    
+    return () => {
+      console.info('[VisaAssistance] page unmounted')
+      // Clean up structured data script
+      const existingScript = document.querySelector('script[type="application/ld+json"]')
+      if (existingScript) {
+        document.head.removeChild(existingScript)
+      }
+    }
   }, [])
 
   const [activeCountry, setActiveCountry] = useState<string>('usa')
@@ -244,12 +308,17 @@ export default function VisaAssistancePage() {
             <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-violet-500/20 via-indigo-500/10 to-emerald-500/20 blur-2xl" />
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
               <Image
-                src="/illustrations/hero-visa.svg"
-                alt="Visa assistance hero illustration"
+                src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1200&auto=format&fit=crop"
+                alt="Passport with visa stamps and travel documents on wooden desk"
                 width={900}
                 height={700}
                 className="h-auto w-full"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                onError={(e) => {
+                  console.error('[VisaAssistance] Hero image failed to load', e)
+                  e.currentTarget.src = '/placeholder.svg'
+                }}
               />
             </div>
           </motion.div>
@@ -278,11 +347,17 @@ export default function VisaAssistancePage() {
           <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-emerald-500/20 via-indigo-500/10 to-violet-500/20 blur-2xl" />
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
             <Image
-              src="/illustrations/overview.svg"
-              alt="Visa process overview illustration"
+              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop"
+              alt="Professional immigration consultant reviewing visa application documents"
               width={800}
               height={700}
               className="h-auto w-full"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              onError={(e) => {
+                console.error('[VisaAssistance] Overview image failed to load', e)
+                e.currentTarget.src = '/placeholder.svg'
+              }}
             />
           </div>
         </div>
@@ -415,11 +490,17 @@ export default function VisaAssistancePage() {
           <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-violet-500/20 via-indigo-500/10 to-emerald-500/20 blur-2xl" />
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
             <Image
-              src="/illustrations/choose-us.svg"
-              alt="Why choose IPD illustration"
+              src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1200&auto=format&fit=crop"
+              alt="Immigration expert providing personalized visa consultation to student"
               width={900}
               height={700}
               className="h-auto w-full"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              onError={(e) => {
+                console.error('[VisaAssistance] Why choose image failed to load', e)
+                e.currentTarget.src = '/placeholder.svg'
+              }}
             />
           </div>
         </div>
@@ -537,11 +618,17 @@ export default function VisaAssistancePage() {
           <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-emerald-500/20 via-indigo-500/10 to-violet-500/20 blur-2xl" />
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
             <Image
-              src="/illustrations/faq.svg"
-              alt="FAQ illustration"
+              src="https://images.unsplash.com/photo-1554224154-26032fced8bd?q=80&w=1200&auto=format&fit=crop"
+              alt="Helpful immigration information desk with documents and guidance"
               width={800}
               height={700}
               className="h-auto w-full"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              onError={(e) => {
+                console.error('[VisaAssistance] FAQ image failed to load', e)
+                e.currentTarget.src = '/placeholder.svg'
+              }}
             />
           </div>
         </div>
@@ -581,11 +668,17 @@ export default function VisaAssistancePage() {
             <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-violet-500/20 via-indigo-500/10 to-emerald-500/20 blur-2xl" />
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
               <Image
-                src="/illustrations/cta.svg"
-                alt="Get started with visa assistance"
+                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop"
+                alt="Student preparing for international travel with luggage and documents"
                 width={900}
                 height={700}
                 className="h-auto w-full"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                onError={(e) => {
+                  console.error('[VisaAssistance] CTA image failed to load', e)
+                  e.currentTarget.src = '/placeholder.svg'
+                }}
               />
             </div>
           </div>
