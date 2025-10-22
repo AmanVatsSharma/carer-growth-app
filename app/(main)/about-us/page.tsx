@@ -182,11 +182,11 @@ export default function AboutPage() {
                   </div>
                   <div className="grid grid-cols-2 gap-4 pt-4">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-primary">1000+</div>
+                      <div className="text-3xl font-bold text-primary">3000+</div>
                       <div className="text-sm text-muted-foreground">Students Placed</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-accent">50+</div>
+                      <div className="text-3xl font-bold text-primary">1000+</div>
                       <div className="text-sm text-muted-foreground">Partner Universities</div>
                     </div>
                   </div>
