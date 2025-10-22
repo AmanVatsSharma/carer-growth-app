@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, FormDescription } from "@/components/ui/form"
 import { useRouter } from "next/navigation"
-import { University } from "@prisma/client"
+import type { University } from "@/lib/universities-data"
 import { createOrUpdateUniversity } from "@/app/(dashboard)/dashboard/universities/actions"
 import { toast } from "sonner"
 import { Plus, Trash2 } from "lucide-react"
@@ -25,11 +25,13 @@ type UniversityFormProps = {
 
 const COMMON_EXAMS = ["IELTS", "TOEFL", "PTE", "SAT", "ACT", "GRE", "GMAT", "Duolingo"]
 const COURSE_LEVELS = ["Undergraduate", "Postgraduate", "Diploma", "Certificate"]
+const INTAKE_SEASONS = ["Fall", "Spring", "Summer", "Winter"]
 
 export function UniversityForm({ university, onFinished }: UniversityFormProps) {
   const router = useRouter()
   const [examInput, setExamInput] = useState("")
   const [tagInput, setTagInput] = useState("")
+  const [galleryImageInput, setGalleryImageInput] = useState("")
   
   // Parse courses from JSON if they exist
   const parsedCourses = university?.courses ? (university.courses as any[]) : []
@@ -57,6 +59,12 @@ export function UniversityForm({ university, onFinished }: UniversityFormProps) 
       scholarshipsHelp: university?.scholarshipsHelp || false,
       courses: parsedCourses,
       tags: university?.tags || [],
+      // Additional fields for enhanced university information
+      qsRanking: university?.qsRanking || undefined,
+      tuitionFeeFrom: university?.tuitionFeeFrom || undefined,
+      tuitionFeeTo: university?.tuitionFeeTo || undefined,
+      intakeSeasons: university?.intakeSeasons || [],
+      galleryImageUrls: university?.galleryImageUrls || [],
     },
   })
 
@@ -106,6 +114,27 @@ export function UniversityForm({ university, onFinished }: UniversityFormProps) 
 
   const removeCourse = (index: number) => {
     form.setValue("courses", form.getValues("courses").filter((_, i) => i !== index))
+  }
+
+  const addIntakeSeason = (season: string) => {
+    if (!form.getValues("intakeSeasons").includes(season)) {
+      form.setValue("intakeSeasons", [...form.getValues("intakeSeasons"), season])
+    }
+  }
+
+  const removeIntakeSeason = (season: string) => {
+    form.setValue("intakeSeasons", form.getValues("intakeSeasons").filter(s => s !== season))
+  }
+
+  const addGalleryImage = () => {
+    if (galleryImageInput && !form.getValues("galleryImageUrls").includes(galleryImageInput)) {
+      form.setValue("galleryImageUrls", [...form.getValues("galleryImageUrls"), galleryImageInput])
+      setGalleryImageInput("")
+    }
+  }
+
+  const removeGalleryImage = (url: string) => {
+    form.setValue("galleryImageUrls", form.getValues("galleryImageUrls").filter(u => u !== url))
   }
 
   return (
@@ -244,6 +273,105 @@ export function UniversityForm({ university, onFinished }: UniversityFormProps) 
                 </FormItem>
               )}
             />
+          </div>
+        </div>
+
+        {/* Key Information */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Key Information</h3>
+          
+          <div className="grid grid-cols-3 gap-4">
+            <FormField
+              control={form.control}
+              name="qsRanking"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>QS World Ranking</FormLabel>
+                  <FormControl>
+                    <Input 
+                      type="number" 
+                      placeholder="e.g., 33" 
+                      {...field}
+                      onChange={(e) => field.onChange(e.target.value ? parseInt(e.target.value) : undefined)}
+                    />
+                  </FormControl>
+                  <FormDescription>Optional QS World University Ranking</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="tuitionFeeFrom"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Min Tuition Fee (USD)</FormLabel>
+                  <FormControl>
+                    <Input 
+                      type="number" 
+                      placeholder="e.g., 25000" 
+                      {...field}
+                      onChange={(e) => field.onChange(e.target.value ? parseInt(e.target.value) : undefined)}
+                    />
+                  </FormControl>
+                  <FormDescription>Minimum annual tuition fee</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="tuitionFeeTo"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Max Tuition Fee (USD)</FormLabel>
+                  <FormControl>
+                    <Input 
+                      type="number" 
+                      placeholder="e.g., 45000" 
+                      {...field}
+                      onChange={(e) => field.onChange(e.target.value ? parseInt(e.target.value) : undefined)}
+                    />
+                  </FormControl>
+                  <FormDescription>Maximum annual tuition fee</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
+
+        {/* Intake Seasons */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Intake Seasons</h3>
+          <div className="flex flex-wrap gap-2">
+            {INTAKE_SEASONS.map(season => (
+              <Button
+                key={season}
+                type="button"
+                variant={form.watch("intakeSeasons").includes(season) ? "default" : "outline"}
+                size="sm"
+                onClick={() => {
+                  if (form.watch("intakeSeasons").includes(season)) {
+                    removeIntakeSeason(season)
+                  } else {
+                    addIntakeSeason(season)
+                  }
+                }}
+              >
+                {season}
+              </Button>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {form.watch("intakeSeasons").map(season => (
+              <Badge key={season} variant="secondary">
+                {season}
+                <button type="button" onClick={() => removeIntakeSeason(season)} className="ml-2">×</button>
+              </Badge>
+            ))}
           </div>
         </div>
 
@@ -513,6 +641,46 @@ export function UniversityForm({ university, onFinished }: UniversityFormProps) 
               </Badge>
             ))}
           </div>
+        </div>
+
+        {/* Gallery Images */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Gallery Images</h3>
+          <div className="flex gap-2">
+            <Input
+              value={galleryImageInput}
+              onChange={(e) => setGalleryImageInput(e.target.value)}
+              placeholder="Add gallery image URL"
+              onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addGalleryImage())}
+            />
+            <Button type="button" onClick={addGalleryImage}>Add</Button>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {form.watch("galleryImageUrls").map((url, index) => (
+              <div key={index} className="relative group">
+                <img 
+                  src={url} 
+                  alt={`Gallery image ${index + 1}`} 
+                  className="w-full h-24 object-cover rounded-md border"
+                  onError={(e) => {
+                    e.currentTarget.src = "/placeholder.svg?height=96&width=200&query=gallery"
+                  }}
+                />
+                <Button
+                  type="button"
+                  onClick={() => removeGalleryImage(url)}
+                  variant="destructive"
+                  size="sm"
+                  className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <Trash2 className="h-3 w-3" />
+                </Button>
+              </div>
+            ))}
+          </div>
+          {form.watch("galleryImageUrls").length === 0 && (
+            <p className="text-sm text-muted-foreground">No gallery images added yet.</p>
+          )}
         </div>
 
         <Button type="submit" disabled={form.formState.isSubmitting} className="w-full">

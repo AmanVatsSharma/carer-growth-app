@@ -30,6 +30,12 @@ export const universitySchema = z.object({
   scholarshipsHelp: z.boolean().default(false),
   courses: z.array(courseSchema).default([]),
   tags: z.array(z.string()).default([]),
+  // Additional fields for enhanced university information
+  qsRanking: z.number().int().positive("QS Ranking must be a positive integer.").optional(),
+  tuitionFeeFrom: z.number().int().min(0, "Tuition fee must be non-negative.").optional(),
+  tuitionFeeTo: z.number().int().min(0, "Tuition fee must be non-negative.").optional(),
+  intakeSeasons: z.array(z.string()).default([]),
+  galleryImageUrls: z.array(z.string()).default([]),
 })
 
 export type UniversityFormData = z.infer<typeof universitySchema>

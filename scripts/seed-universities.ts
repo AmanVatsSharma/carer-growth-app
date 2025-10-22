@@ -50,6 +50,16 @@ async function main() {
         },
       ],
       tags: ["Go8", "Research", "Australia"],
+      // Additional fields for enhanced university information
+      qsRanking: 33,
+      tuitionFeeFrom: 30000,
+      tuitionFeeTo: 45000,
+      intakeSeasons: ["Fall", "Spring"],
+      galleryImageUrls: [
+        "/universities/unimelb-campus-1.png",
+        "/universities/unimelb-campus-2.png",
+        "/universities/unimelb-campus-3.png"
+      ],
     },
     {
       slug: "university-of-toronto",
@@ -63,7 +73,7 @@ async function main() {
       contact: {
         email: "admissions.help@utoronto.ca",
         phone: "+1 416-978-2011",
-        address: "27 King’s College Cir, Toronto, ON M5S, Canada",
+        address: "27 King's College Cir, Toronto, ON M5S, Canada",
       },
       exams: ["IELTS", "TOEFL"],
       visaSupport: true,
@@ -89,6 +99,17 @@ async function main() {
         },
       ],
       tags: ["U15", "Canada", "Research"],
+      // Additional fields for enhanced university information
+      qsRanking: 21,
+      tuitionFeeFrom: 35000,
+      tuitionFeeTo: 50000,
+      intakeSeasons: ["Fall", "Winter"],
+      galleryImageUrls: [
+        "/universities/utoronto-campus-1.png",
+        "/universities/utoronto-campus-2.png",
+        "/universities/utoronto-campus-3.png",
+        "/universities/utoronto-campus-4.png"
+      ],
     },
     {
       slug: "harvard-university",
@@ -128,6 +149,67 @@ async function main() {
         },
       ],
       tags: ["Ivy", "USA", "Research"],
+      // Additional fields for enhanced university information
+      qsRanking: 5,
+      tuitionFeeFrom: 50000,
+      tuitionFeeTo: 60000,
+      intakeSeasons: ["Fall"],
+      galleryImageUrls: [
+        "/universities/harvard-yard-1.png",
+        "/universities/harvard-yard-2.png",
+        "/universities/harvard-campus-1.png",
+        "/universities/harvard-campus-2.png",
+        "/universities/harvard-campus-3.png"
+      ],
+    },
+    {
+      slug: "alug",
+      name: "Alug University",
+      country: "United Kingdom",
+      city: "London",
+      logoUrl: "/universities/alug-logo.png",
+      heroImageUrl: "/universities/alug-campus.png",
+      shortDescription: "A prestigious UK university offering world-class education in the heart of London.",
+      website: "https://www.alug.edu.uk",
+      contact: {
+        email: "admissions@alug.edu.uk",
+        phone: "+44 20 7123 4567",
+        address: "123 University Street, London SW1A 1AA, UK",
+      },
+      exams: ["IELTS", "TOEFL", "PTE"],
+      visaSupport: true,
+      accommodation: true,
+      forex: true,
+      counselling: true,
+      applicationFeeWaiver: true,
+      scholarshipsHelp: true,
+      courses: [
+        {
+          name: "Bachelor of Business Administration",
+          level: "Undergraduate",
+          duration: "3 years",
+          tuitionPerYearUSD: 28000,
+          eligibility: "IELTS 6.5 overall, min 6.0 in each band",
+        },
+        {
+          name: "Master of International Relations",
+          level: "Postgraduate",
+          duration: "1 year",
+          tuitionPerYearUSD: 35000,
+          eligibility: "Bachelor degree, IELTS 7.0 overall",
+        },
+      ],
+      tags: ["UK", "London", "Business", "International"],
+      // Additional fields for enhanced university information
+      qsRanking: 150,
+      tuitionFeeFrom: 25000,
+      tuitionFeeTo: 40000,
+      intakeSeasons: ["Fall", "Spring", "Summer"],
+      galleryImageUrls: [
+        "/universities/alug-campus-1.png",
+        "/universities/alug-campus-2.png",
+        "/universities/alug-campus-3.png"
+      ],
     },
   ]
 

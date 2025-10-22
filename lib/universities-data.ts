@@ -92,6 +92,12 @@ export async function getUniversities(filter: UniversityFilter = {}): Promise<Un
       counselling: true,
       applicationFeeWaiver: true,
       scholarshipsHelp: true,
+      // Additional fields for enhanced university information
+      qsRanking: true,
+      tuitionFeeFrom: true,
+      tuitionFeeTo: true,
+      intakeSeasons: true,
+      galleryImageUrls: true,
       // intentionally exclude exams/tags which may be mis-typed in DB
       createdAt: true,
       updatedAt: true,
@@ -173,15 +179,27 @@ export async function getUniversities(filter: UniversityFilter = {}): Promise<Un
 }
 
 export async function getUniversityBySlug(slug: string): Promise<University | null> {
-  const university = await prisma.university.findUnique({
-    where: { slug },
-  })
+  console.log(`[getUniversityBySlug] Fetching university with slug: ${slug}`)
   
-  if (!university) return null
-  
-  return {
-    ...university,
-    courses: (university.courses as any[]).map(c => c as Course)
+  try {
+    const university = await prisma.university.findUnique({
+      where: { slug },
+    })
+    
+    if (!university) {
+      console.log(`[getUniversityBySlug] No university found with slug: ${slug}`)
+      return null
+    }
+    
+    console.log(`[getUniversityBySlug] Successfully fetched university: ${university.name}`)
+    
+    return {
+      ...university,
+      courses: (university.courses as any[]).map(c => c as Course)
+    }
+  } catch (error) {
+    console.error(`[getUniversityBySlug] ERROR: Failed to fetch university with slug ${slug}`, error)
+    throw new Error(`Failed to fetch university: ${error instanceof Error ? error.message : 'Unknown database error'}`)
   }
 }
 

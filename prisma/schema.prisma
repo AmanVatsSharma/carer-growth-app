@@ -119,6 +119,13 @@ model University {
 
   tags               String[]
 
+  // Additional fields for enhanced university information
+  qsRanking          Int?      // QS World University Ranking
+  tuitionFeeFrom    Int?      // Minimum tuition fee per year in USD
+  tuitionFeeTo      Int?      // Maximum tuition fee per year in USD
+  intakeSeasons     String[]  @default([]) // Available intake seasons like ["Fall", "Spring"]
+  galleryImageUrls  String[]  @default([]) // Array of gallery image URLs
+
   createdAt          DateTime  @default(now())
   updatedAt          DateTime  @updatedAt
 
