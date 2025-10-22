@@ -1,10 +1,14 @@
-import { prisma } from "@/lib/prisma"
-import { PrismaClient } from "@prisma/client"
+import { PrismaClient } from "@/prisma/generated"
+
+const prisma = new PrismaClient()
 
 
 async function main() {
-  // Clear old data (optional, comment if you don’t want to wipe)
-  await prisma.university.deleteMany()
+  console.log("🌱 [seed-universities] Starting seed...")
+  try {
+    console.log("🧹 [seed-universities] Clearing existing universities...")
+    // Clear old data (optional, comment if you don’t want to wipe)
+    await prisma.university.deleteMany()
 
   // Hardcoded seed data
   const universities = [
@@ -127,19 +131,25 @@ async function main() {
     },
   ]
 
-  // Insert universities
-  for (const uni of universities) {
-    await prisma.university.create({ data: uni })
-  }
+    console.log("🏫 [seed-universities] Inserting universities...")
+    for (const uni of universities) {
+      const created = await prisma.university.create({ data: uni })
+      console.log(`✅ [seed-universities] Created: ${created.name}`)
+    }
 
-  console.log("✅ Universities seeded successfully!")
+    console.log("✨ [seed-universities] Universities seeded successfully!")
+  } catch (e) {
+    console.error("❌ [seed-universities] Error while seeding:", e)
+    throw e
+  }
 }
 
 main()
   .catch((e) => {
-    console.error(e)
+    console.error("❌ [seed-universities] Fatal:", e)
     process.exit(1)
   })
   .finally(async () => {
+    console.log("🔌 [seed-universities] Disconnecting Prisma...")
     await prisma.$disconnect()
   })
