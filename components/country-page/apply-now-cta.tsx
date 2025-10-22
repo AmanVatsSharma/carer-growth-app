@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Sparkles, Send, Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { getContactEmail, getMailtoHref } from '@/lib/contact';
 
 interface ApplyNowCTAProps {
   country: Country;
@@ -168,7 +169,22 @@ export function ApplyNowCTA({ country }: ApplyNowCTAProps) {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-gold" />
-                    <span>info@ipdeducation.com</span>
+                    <a
+                      href={getMailtoHref()}
+                      className="hover:underline focus:underline"
+                      onClick={(e) => {
+                        try {
+                          // eslint-disable-next-line no-console
+                          console.log('[ApplyNowCTA] Mail link clicked.', { mailto: getMailtoHref(), email: getContactEmail() });
+                        } catch (error) {
+                          // eslint-disable-next-line no-console
+                          console.error('[ApplyNowCTA] Error on mail link:', error);
+                          alert(`Sorry, we couldn't open your mail client. Please email ${getContactEmail()} manually.`);
+                        }
+                      }}
+                    >
+                      {getContactEmail()}
+                    </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <MapPin className="w-5 h-5 text-gold" />
@@ -271,19 +287,21 @@ export function ApplyNowCTA({ country }: ApplyNowCTAProps) {
                     </a>
                     <span className="text-muted-foreground">|</span>
                     <a
-                      href="mailto:info@ipdeducation.com"
+                      href={getMailtoHref()}
                       className="flex items-center gap-1 text-gold hover:underline"
                       onClick={e => {
                         try {
-                          console.log("[ApplyNowCTA] Mail link clicked. Attempting to open mailto:info@ipdeducation.com");
+                          // eslint-disable-next-line no-console
+                          console.log('[ApplyNowCTA] Mail link clicked.', { mailto: getMailtoHref(), email: getContactEmail() });
                         } catch (error) {
-                          console.error("[ApplyNowCTA] Error on mail link:", error);
-                          alert("Sorry, we couldn't open your mail client. Please email info@ipdeducation.com manually.");
+                          // eslint-disable-next-line no-console
+                          console.error('[ApplyNowCTA] Error on mail link:', error);
+                          alert(`Sorry, we couldn't open your mail client. Please email ${getContactEmail()} manually.`);
                         }
                       }}
                     >
                       <Mail className="w-4 h-4" />
-                      <span className="text-sm">info@ipdeducation.com</span>
+                      <span className="text-sm">{getContactEmail()}</span>
                     </a>
                   </div>
                 </div>

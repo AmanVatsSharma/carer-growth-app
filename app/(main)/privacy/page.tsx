@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { getContactEmail, getMailtoHref } from "@/lib/contact"
 
 export const metadata = {
   title: "Privacy Policy | IPD Education",
@@ -76,7 +77,7 @@ export default function PrivacyPage() {
           <p>
             If you have any questions about our Privacy Policy, please contact us at:
             <br />
-            Email: info@ipdeducation.in
+            Email: <a href={getMailtoHref()} className="underline">{getContactEmail()}</a>
             <br />
             Phone: +91 81235 92381
           </p>

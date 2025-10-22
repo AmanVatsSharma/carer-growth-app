@@ -21,6 +21,7 @@ import {
 } from "lucide-react"
 import { useState } from "react"
 import { NavbarLogo } from "../ui/resizable-navbar"
+import { getContactEmail, getMailtoHref } from "@/lib/contact"
 
 const LeadFormDialog = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [formData, setFormData] = useState({
@@ -412,7 +413,22 @@ const Footer = () => {
                   <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-500/20 to-yellow-500/20 flex items-center justify-center">
                     <Mail className="w-4 h-4 text-amber-400" />
                   </div>
-                  <span>info@ipdeducation.in</span>
+                  <a
+                    href={getMailtoHref()}
+                    className="hover:underline focus:underline text-inherit"
+                    onClick={e => {
+                      try {
+                        // eslint-disable-next-line no-console
+                        console.log("[Footer] Mail link clicked.", { mailto: getMailtoHref(), email: getContactEmail() })
+                      } catch (error) {
+                        // eslint-disable-next-line no-console
+                        console.error("[Footer] Error on mail link:", error)
+                        alert(`Sorry, we couldn't open your mail client. Please email ${getContactEmail()} manually.`)
+                      }
+                    }}
+                  >
+                    {getContactEmail()}
+                  </a>
                 </motion.div> 
                 <motion.div
                   className="flex items-center gap-3 text-gray-200 dark:text-gray-300"

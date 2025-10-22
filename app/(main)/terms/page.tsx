@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { getContactEmail, getMailtoHref } from "@/lib/contact"
 
 export const metadata = {
   title: "Terms of Service | IPD Education",
@@ -99,7 +100,7 @@ export default function TermsPage() {
           <p>
             For questions about these Terms of Service:
             <br />
-            Email: info@ipdeducation.in
+            Email: <a href={getMailtoHref()} className="underline">{getContactEmail()}</a>
             <br />
             Phone: +91 81235 92381
           </p>
