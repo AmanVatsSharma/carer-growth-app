@@ -325,6 +325,7 @@ const Footer = () => {
                 ))}
               </motion.div>
             </div>
+
           </div>
         </motion.div>
 
@@ -581,6 +582,17 @@ const Footer = () => {
                   </motion.a>
                 ))}
               </motion.div>
+            </div>
+
+            <div className="mt-4 pt-4 border-t border-gray-700/40 text-center">
+              <a
+                href="https://vedpragya.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-400 dark:text-gray-500 hover:text-amber-400 dark:hover:text-amber-400 transition-colors duration-200"
+              >
+                Powered by Vedpragya
+              </a>
             </div>
           </div>
         </motion.div>
