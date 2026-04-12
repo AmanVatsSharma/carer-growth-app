@@ -54,6 +54,17 @@ export default function RootLayout({
                     </div>
                     
                     {/* Toast Notifications */}
+                    <div className="border-t border-border/60 bg-background/95 px-6 py-4 text-center text-sm text-muted-foreground">
+                        <a
+                            href="https://vedpragya.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-primary transition-colors"
+                        >
+                            Powered by Vedpragya
+                        </a>
+                    </div>
+
                     <Toaster 
                         position="top-right"
                         toastOptions={{
